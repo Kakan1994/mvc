@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <h1>kalo22.mvc</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ path('home') }}">Home</a></li>
+            <li><a href="{{ path('about') }}">About</a></li>
+            <li><a href="{{ path('report') }}">Report</a></li>
+            <li><a href="{{ path('lucky') }}">Lucky</a></li>
+            <li><a href="{{ path('api_quote')}}">Quote</a></li>
+        </ul>
+    </nav>
+    <div class="main">
+    {% block body %}{% endblock %}
+    </div>
+    <footer>
+        <p>&copy; {{ 'now'|date('Y') }}. All rights reserved.</p>
+    </footer>
+    {% block javascripts %}
+        <script src="{{ asset('build/app.js') }}"></script>
+    {% endblock %}
+</body>
+</html>

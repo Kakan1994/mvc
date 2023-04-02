@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lucky{% endblock %}
+
+{% block body %}
+    <h2>Lucky number: {{ lucky_number }}</h2>
+    
+    {% set interesting_objects = [
+        { 'name': 'A beautiful sunset', 'image': 'sunset.jpg' },
+        { 'name': 'A relaxing beach', 'image': 'beach.jpg' },
+        { 'name': 'A serene mountain', 'image': 'mountain.jpg' },
+        { 'name': 'An exciting city', 'image': 'city.jpg' }
+    ] %}
+    
+    {% set random_object = interesting_objects[random(0, interesting_objects|length - 1)] %}
+    
+    <h3>{{ random_object.name }}</h3>
+    <img src="{{ asset('images/' ~ random_object.image) }}" alt="{{ random_object.name }}" style="max-width: 100%;">
+
+{% endblock %}
