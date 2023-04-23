@@ -4,6 +4,20 @@
 
 {% block body %}
 <h1>Card App</h1>
+<p>
+    In this project, we have four main classes that represent a deck of cards and its components: Card, JokerCard, CardHand, and DeckOfCards.
+    <br><br>
+    1. Card: This is the base class for all card types. It holds information about the suit and value of a card. It also has a method to convert the card to a string representation.
+    <br><br>
+    2. JokerCard: This class is a specialized type of Card that represents a Joker card. It inherits from the Card class and overrides the string representation method to display 'Joker' instead of the suit and value.
+    <br><br>
+    3. CardHand: This class represents a collection of cards, typically held by a player. It contains an array of Card objects and provides methods to add cards to the hand and retrieve the cards in the hand.
+    <br><br>
+    4. DeckOfCards: This class represents a standard deck of cards. It holds an array of Card objects, including all suits and values. It also provides methods to shuffle the deck, draw cards from the deck, and get the remaining cards in the deck.
+    <br><br>
+    Below is a UML class diagram illustrating the relationships between these classes:
+</p>
+<img src="{{ asset('images/Cards.png') }}" alt="UML-diagram" style="max-width: 100%;">
 
 <ul>
     <li><a href="{{ path('card_deck') }}">Display sorted deck of cards</a></li>
