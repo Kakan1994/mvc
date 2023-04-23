@@ -4,7 +4,7 @@ namespace App\Cards;
 
 class DeckOfCards {
     private $cards;
-    private $suits = ['♠', '♣', '♦', '♥'];
+    private $suits = ['♥', '♠', '♦', '♣'];
     private $values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
 
     public function __construct() {

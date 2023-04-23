@@ -7,7 +7,7 @@
 
 <div class="drawn-cards">
     {% for card in cards %}
-        <span class="card">{{ card }}</span>
+        <span class="card{% if card.getSuit() in ['♥', '♦'] %} red{% endif %}">{{ card }}</span>
     {% endfor %}
 </div>
 

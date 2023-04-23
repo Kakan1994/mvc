@@ -1,0 +1,22 @@
+.card {
+    display: inline-block;
+    width: 120px;
+    height: 180px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 183px;
+    line-height: 180px;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    color: black;
+    margin-right: 10px;
+
+    &.red {
+        color: red;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
