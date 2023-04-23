@@ -6,8 +6,14 @@ use App\Cards\CardHand;
 use App\Cards\DeckOfCards;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Positive;
 
 class CardController extends AbstractController
 {
@@ -44,11 +50,13 @@ class CardController extends AbstractController
             'cards' => $deck->getCards(),
         ]);
     }
+
     /**
      * @Route("/card/deck/draw/{count}", name="card_deck_draw")
      */
-    public function draw(SessionInterface $session, int $count = 1): Response
+    public function draw(SessionInterface $session, $count): Response
     {
+        $count = (int) $count; // cast count to an integer
         $deck = $session->get('deck');
         if (!$deck) {
             $deck = new DeckOfCards();
@@ -63,4 +71,33 @@ class CardController extends AbstractController
             'remaining_cards' => count($deck->getCards()),
         ]);
     }
+
+    /**
+     * @Route("/card/draw-many", name="card_draw_many")
+     */
+    public function drawManyForm(Request $request): Response
+    {
+        $form = $this->createFormBuilder()
+            ->add('count', IntegerType::class, [
+                'constraints' => [
+                    new NotBlank(),
+                    new Positive(),
+                ]
+            ])
+            ->add('draw', SubmitType::class)
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            $count = $data['count'];
+            return $this->redirectToRoute('card_deck_draw', ['count' => $count]);
+        }
+
+        return $this->render('card/draw_form.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
 }
