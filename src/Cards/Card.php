@@ -19,6 +19,12 @@ class Card {
         return $this->value;
     }
 
+    public function getCardText(): string
+    {
+        return $this->suit . $this->value;
+    }
+
+
     public function __toString() {
         $unicode = '';
 

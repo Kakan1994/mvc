@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}API Overview{% endblock %}
+
+{% block body %}
+    <h1>API Overview</h1>
+    <p>
+        This page provides an overview of the available JSON API routes for the Card application.
+    </p>
+    <ul>
+        <li>
+            <a href="{{ url('api_quote') }}">GET api/quote</a>
+            <p>Returns a random quote in JSON format.</p>
+        </li>
+        <br><br>
+        <li>
+            <a href="{{ url('api_deck') }}">GET api/deck</a>
+            <p>Returns a JSON structure with the entire sorted deck of cards, sorted by suit and value.</p>
+        </li>
+        <br><br>
+        <li>
+            POST api/deck/shuffle
+            <p>Shuffles the deck and returns a JSON structure with the shuffled deck of cards.</p>
+        </li>
+        <br><br>
+        <li>
+            POST api/deck/draw
+            <p>Draws one card from the deck and returns a JSON structure with the drawn card and the remaining number of cards in the deck.</p>
+        </li>
+        <br><br>
+        <li>
+            POST api/deck/draw/:number
+            <p>Draws :number cards from the deck and returns a JSON structure with the drawn cards and the remaining number of cards in the deck. Replace ':number' with the desired number of cards to draw.</p>
+        </li>
+    </ul>
+{% endblock %}
