@@ -21,16 +21,36 @@
         <li>
             POST api/deck/shuffle
             <p>Shuffles the deck and returns a JSON structure with the shuffled deck of cards.</p>
+            <button onclick="postRequest('api/deck/shuffle')">Test POST api/deck/shuffle</button>
         </li>
         <br><br>
         <li>
             POST api/deck/draw
             <p>Draws one card from the deck and returns a JSON structure with the drawn card and the remaining number of cards in the deck.</p>
+            <button onclick="postRequest('api/deck/draw')">Test POST api/deck/draw</button>
         </li>
         <br><br>
         <li>
             POST api/deck/draw/:number
             <p>Draws :number cards from the deck and returns a JSON structure with the drawn cards and the remaining number of cards in the deck. Replace ':number' with the desired number of cards to draw.</p>
+            <input id="numberOfCards" type="number" min="1" placeholder="Number of cards to draw">
+            <button onclick="postRequest('api/deck/draw/' + document.getElementById('numberOfCards').value)">Test POST api/deck/draw/:number</button>
         </li>
     </ul>
+
+    <script>
+    function postRequest(url) {
+        fetch(url, { method: 'POST' })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                alert(JSON.stringify(data, null, 2));
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('Error: ' + error);
+            });
+    }
+    </script>
+
 {% endblock %}

@@ -2,12 +2,14 @@
 
 namespace App\Cards;
 
-class DeckOfCards {
+class DeckOfCards
+{
     private $cards;
     private $suits = ['♥', '♠', '♦', '♣'];
     private $values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->cards = [];
 
         foreach ($this->suits as $suit) {
@@ -17,11 +19,13 @@ class DeckOfCards {
         }
     }
 
-    public function shuffle() {
+    public function shuffle()
+    {
         shuffle($this->cards);
     }
 
-    public function draw($count = 1) {
+    public function draw($count = 1)
+    {
         $drawnCards = [];
 
         for ($i = 0; $i < $count && !empty($this->cards); $i++) {
@@ -31,7 +35,8 @@ class DeckOfCards {
         return $drawnCards;
     }
 
-    public function getCards() {
+    public function getCards()
+    {
         return $this->cards;
     }
 }
