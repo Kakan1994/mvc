@@ -4,7 +4,7 @@ namespace App\Cards;
 
 class JokerCard extends Card
 {
-    public function __construct($suit = null, $value = 'Joker')
+    public function __construct(string $suit = '♠', string $value = 'Joker')
     {
         parent::__construct($suit, $value);
     }

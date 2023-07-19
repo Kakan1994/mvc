@@ -4,6 +4,9 @@ namespace App\Cards;
 
 class CardHand
 {
+    /**
+     * @var Card[]
+     */
     private $cards;
 
     public function __construct()
@@ -11,12 +14,15 @@ class CardHand
         $this->cards = [];
     }
 
-    public function addCard(Card $card)
+    public function addCard(Card $card): void
     {
         $this->cards[] = $card;
     }
 
-    public function getCards()
+    /**
+     * @return Card[]
+     */
+    public function getCards(): array
     {
         return $this->cards;
     }

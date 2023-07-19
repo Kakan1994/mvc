@@ -43,6 +43,9 @@ class ApiDeckController extends AbstractController
      */
     public function drawCards(SessionInterface $session, int $number): JsonResponse
     {
+        /**
+         * @var DeckOfCards $deck
+         */
         $deck = $session->get('deck', new DeckOfCards());
         $drawnCards = $deck->draw($number);
         $cardData = array_map(fn ($card) => $card->getCardText(), $drawnCards);

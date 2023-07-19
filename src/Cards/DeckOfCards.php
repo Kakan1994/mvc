@@ -4,8 +4,17 @@ namespace App\Cards;
 
 class DeckOfCards
 {
+    /**
+     * @var Card[]
+     */
     private $cards;
+    /**
+     * @var string[]
+     */
     private $suits = ['♥', '♠', '♦', '♣'];
+    /**
+     * @var string[]
+     */
     private $values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
 
     public function __construct()
@@ -19,12 +28,15 @@ class DeckOfCards
         }
     }
 
-    public function shuffle()
+    public function shuffle(): void
     {
         shuffle($this->cards);
     }
 
-    public function draw($count = 1)
+    /**
+     * @return Card[]
+     */
+    public function draw(int $count = 1): array
     {
         $drawnCards = [];
 
@@ -35,7 +47,10 @@ class DeckOfCards
         return $drawnCards;
     }
 
-    public function getCards()
+    /**
+     * @return Card[]
+     */
+    public function getCards(): array
     {
         return $this->cards;
     }

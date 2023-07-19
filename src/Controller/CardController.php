@@ -54,9 +54,13 @@ class CardController extends AbstractController
     /**
      * @Route("/card/deck/draw/{count}", name="card_deck_draw")
      */
-    public function draw(SessionInterface $session, $count): Response
+    public function draw(SessionInterface $session, int $count): Response
     {
         $count = (int) $count; // cast count to an integer
+
+        /**
+         * @var DeckOfCards|null $deck
+         */
         $deck = $session->get('deck');
         if (!$deck) {
             $deck = new DeckOfCards();
@@ -90,6 +94,9 @@ class CardController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            /**
+             * @var int[] $data
+             */
             $data = $form->getData();
             $count = $data['count'];
             return $this->redirectToRoute('card_deck_draw', ['count' => $count]);

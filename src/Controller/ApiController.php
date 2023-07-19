@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use DateTime;
 
 class ApiController extends AbstractController
 {
@@ -30,7 +31,7 @@ class ApiController extends AbstractController
 
 
         $quote = $quotes[array_rand($quotes)];
-        $timestamp = new \DateTime();
+        $timestamp = new DateTime();
 
         return new JsonResponse([
             'quote' => $quote,

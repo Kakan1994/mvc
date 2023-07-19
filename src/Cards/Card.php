@@ -4,21 +4,21 @@ namespace App\Cards;
 
 class Card
 {
-    private $suit;
-    private $value;
+    private string $suit;
+    private string $value;
 
-    public function __construct($suit, $value)
+    public function __construct(string $suit, string $value)
     {
         $this->suit = $suit;
         $this->value = $value;
     }
 
-    public function getSuit()
+    public function getSuit(): string
     {
         return $this->suit;
     }
 
-    public function getValue()
+    public function getValue(): string
     {
         return $this->value;
     }
@@ -31,45 +31,25 @@ class Card
 
     public function __toString()
     {
-        $unicode = '';
+        $suitMapping = [
+            '♠' => '&#x1F0A', // Spades
+            '♥' => '&#x1F0B', // Hearts
+            '♦' => '&#x1F0C', // Diamonds
+            '♣' => '&#x1F0D', // Clubs
+        ];
 
-        switch ($this->suit) {
-            case '♠':
-                $unicode = '&#x1F0A'; // Spades
-                break;
-            case '♥':
-                $unicode = '&#x1F0B'; // Hearts
-                break;
-            case '♦':
-                $unicode = '&#x1F0C'; // Diamonds
-                break;
-            case '♣':
-                $unicode = '&#x1F0D'; // Clubs
-                break;
-            default:
-                $unicode = '';
-        }
+        $valueMapping = [
+            'A' => '1',
+            '10' => 'A',
+            'J' => 'B',
+            'Q' => 'D',
+            'K' => 'E'
+        ];
 
-        switch ($this->value) {
-            case 'A':
-                $unicode .= '1';
-                break;
-            case '10':
-                $unicode .= 'A';
-                break;
-            case 'J':
-                $unicode .= 'B';
-                break;
-            case 'Q':
-                $unicode .= 'D';
-                break;
-            case 'K':
-                $unicode .= 'E';
-                break;
-            default:
-                $unicode .= $this->value;
-        }
+        $unicode = $suitMapping[$this->suit] ?? '';
+        $unicode .= $valueMapping[$this->value] ?? $this->value;
 
         return html_entity_decode($unicode . ';', ENT_COMPAT, 'UTF-8');
     }
+
 }
