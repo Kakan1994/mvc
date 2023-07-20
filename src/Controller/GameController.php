@@ -84,7 +84,6 @@ class GameController extends AbstractController
                 return $this->redirectToRoute('game_blackjack');
             } elseif ($action === 'reset') {
                 $game->reset();
-                error_log(print_r("här2", true));
             }
             $session->set('game', $game);
         }

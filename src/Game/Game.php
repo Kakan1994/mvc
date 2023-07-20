@@ -39,7 +39,7 @@ class Game
      */
     private $lastDealerScore;
     /**
-     * @var string
+     * @var string|null
      */
     private $winner;
     /**
@@ -143,8 +143,9 @@ class Game
         } elseif ($this->dealerScore < $this->playerScore) {
             $this->setWinner('Player');
             $this->gameOver();
+        } elseif ($this->dealerScore > $this->playerScore || $this->dealerScore === $this->playerScore) {
+            $this->setWinner('Dealer');
         }
-        $this->setWinner('Dealer');
         $this->gameOver();
     }
 
@@ -184,7 +185,6 @@ class Game
             error_log('Attempted to set $winner to null');
             debug_print_backtrace();
         }
-
         $this->winner = $winner;
     }
 
@@ -241,6 +241,18 @@ class Game
         }
     }
 
+    /**
+     * @return array{
+     *      playerCards: array<int, string>,
+     *      dealerCards: array<int, string>,
+     *      dealerHiddenCardRevealed: bool,
+     *      playerScore: int,
+     *      dealerScore: int,
+     *      lastPlayerScore: int,
+     *      lastDealerScore: int,
+     *      lastWinner: string|null
+     * }
+     */
     public function jsonSerialize(): array
     {
         return [
