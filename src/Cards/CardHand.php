@@ -26,4 +26,18 @@ class CardHand
     {
         return $this->cards;
     }
+
+    /**
+     * @return string[]
+     */
+    public function getCardsAsArray(): array
+    {
+        $cards = [];
+
+        foreach ($this->cards as $card) {
+            $cards[] = $card->getSuit() . $card->getValue();
+        }
+
+        return $cards;
+    }
 }

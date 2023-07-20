@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Card Game{% endblock %}
+
+{% block body %}
+
+<h1>Blackjack</h1>
+<h2>Last round winner: {{ game.winner }}</h2>
+<h2>Player score last round: {{ game.getLastPlayerScore }}</h2>
+<h2>Dealer score last round: {{ game.getLastDealerScore }}</h2>
+
+<h2>Cards left in deck: {{ game.getDeck.getCards|length }}</h2>
+<h2>Player: {{ game.getPlayerScore }}</h2>
+<!-- Display player cards -->
+{% for card in game.getPlayer.getHand.getCards %}
+    <span class="card{% if card.getSuit() in ['♥', '♦'] %} red{% endif %}">{{ card }}</span>
+{% endfor %}
+
+<h2>Dealer: {{ game.getDealerScore }}</h2>
+<!-- Display dealer cards -->
+{% for card in game.getDealer.getHand.getCards %}
+    <span class="card{% if card.getSuit() in ['♥', '♦'] %} red{% endif %}">{{ card }}</span>
+{% endfor %}
+
+<!-- Game control buttons -->
+{% if game.isGameOver %}
+    <h2>Game over</h2>
+    <h2>Winner: {{ game.winner }}</h2>
+    <a href="{{ path('game_blackjack_action', { 'action': 'next' }) }}">Next round</a>
+{% else %}
+    <a href="{{ path('game_blackjack_action', { 'action': 'hit' }) }}">Hit</a>
+    <a href="{{ path('game_blackjack_action', { 'action': 'stand' }) }}">Stand</a>
+{% endif %}
+
+
+<a href="{{ path('game_blackjack_action', { 'action': 'reset' }) }}">Reset the game</a> <!-- Starts the game -->
+<a href="{{ path('game_doc') }}">Documentation</a> <!-- Link to the documentation -->
+
+{% endblock %}

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Cards\DeckOfCards;
+use App\Game\Game;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -57,5 +58,23 @@ class ApiDeckController extends AbstractController
             'drawnCards' => $cardData,
             'remainingCards' => $remainingCards,
         ]);
+    }
+
+    /**
+     * @Route("/api/game", name="api_game", methods={"GET"})
+     */
+    public function getGameStatus(SessionInterface $session): JsonResponse
+    {
+        /**
+         * @var Game|null $game
+         */
+        $game = $session->get('game');
+        if (!$game) {
+            return new JsonResponse([
+                'error' => 'No game found',
+            ], 404);
+        }
+
+        return new JsonResponse($game->jsonSerialize());
     }
 }

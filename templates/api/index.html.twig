@@ -36,6 +36,11 @@
             <input id="numberOfCards" type="number" min="1" placeholder="Number of cards to draw">
             <button onclick="postRequest('api/deck/draw/' + document.getElementById('numberOfCards').value)">Test POST api/deck/draw/:number</button>
         </li>
+        <br><br>
+        <li>
+            <a href="{{ url('api_game') }}">GET api/game </a>
+            <p> Show info about the active game </p>
+        </li>
     </ul>
 
     <script>

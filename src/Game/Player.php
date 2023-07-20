@@ -6,20 +6,20 @@ use App\Cards\Card;
 use App\Cards\CardHand;
 use App\Cards\DeckOfCards;
 
-class Player 
+class Player
 {
     /**
      * @var string
      */
-    private $name;
+    protected $name;
     /**
      * @var CardHand
      */
-    private $hand;
+    protected $hand;
     /**
      * @var int
      */
-    private $score;
+    protected $score;
 
     public function __construct(string $name)
     {
@@ -51,5 +51,10 @@ class Player
     public function addScore(int $score): void
     {
         $this->score += $score;
+    }
+
+    public function clearHand(): void
+    {
+        $this->hand = new CardHand();
     }
 }

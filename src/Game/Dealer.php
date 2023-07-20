@@ -13,6 +13,10 @@ class Dealer extends Player
      * @var Card[]
      */
     private $hiddenCard;
+    /**
+     * @var bool
+     */
+    protected $hiddenCardRevealed;
 
     public function __construct()
     {
@@ -20,14 +24,10 @@ class Dealer extends Player
         $this->hiddenCard = [];
     }
 
-    public function drawCard(DeckOfCards $deck): void
-    {
-        $this->hand->addCard($deck->draw()[0]);
-    }
-
     public function drawHiddenCard(DeckOfCards $deck): void
     {
-        $this->hiddenCard = $deck->draw()[0];
+        $this->hiddenCard = $deck->draw();
+        $this->hiddenCardRevealed = false;
     }
 
     public function getHand(): CardHand
@@ -52,7 +52,14 @@ class Dealer extends Player
 
     public function revealHiddenCard(): void
     {
-        $this->hand->addCard($this->hiddenCard);
+        error_log(print_r($this->hiddenCard, true));
+        $this->hand->addCard($this->hiddenCard[0]);
+        $this->hiddenCardRevealed = true;
         $this->hiddenCard = [];
+    }
+
+    public function isHiddenCardRevealed(): bool
+    {
+        return $this->hiddenCardRevealed;
     }
 }
