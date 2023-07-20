@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Card Game{% endblock %}
+
+{% block body %}
+<h1>Welcome to my Card Game!</h1>
+
+<p>This is a simple implementation of the card game Black Jack </p>
+<p> The goal of the game is to get as close to 21 as possible without going over 21 </p>
+<p> The rules are simple: </p>
+<ul>
+    <li>Each player and the dealer is dealt 2 cards</li>
+    <li>The player can choose to draw another card or to stop</li>
+    <li>If the player has a higher score than the dealer or if the dealer goes over 21, he wins</li>
+    <li>If the player has a lower score than the dealer or is over 21, he loses</li>
+    <li>If the player and the dealer have the same score, the dealer wins</li>
+    <li>The dealer always stops on 17 or higher and draws otherwise</li>
+    <li>The cards 1 through 9 is worths its value</li>
+    <li>The cards 10, Jack, Queen and King is worth 10</li>
+    <li>The card Ace is worth 1 or 11, depending on which is best for the player</li>
+</ul>
+
+<a href="{{ path('card_deck_shuffle') }}">Start the game</a> <!-- Starts the game -->
+<a href="{{ path('game_doc') }}">Documentation</a> <!-- Link to the documentation -->
+
+{% endblock %}

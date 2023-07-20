@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Card Game{% endblock %}
+
+{% block body %}
+<div class="game-doc">
+    <h1>Documentation</h1>
+    <div class="game-doc_flow">
+        <h2> Flow of the game </h2>
+        <img src="{{ asset('images/flow.png') }}" width="500" alt="Flow of the game">
+    </div>
+    <div class="game-doc_flow">
+        <h2> Pseudo code </h2>
+        <img src="{{ asset('images/code.png') }}" width="500" alt="Pseudo code">
+    </div>
+    <div class="game-doc_classes">
+        <h2> Classes </h2>
+        <h3 class="class"> Card-class </h3>
+        <p>Represents a playing card. Purpose: To hold the suit and value of a card. </p>
+        <h3 class="class"> Deck-class </h3>
+        <p>Represents a deck of cards. Purpose: To generate a standard deck of 52 playing cards, shuffle, and deal them.</p>
+        <h3 class="class"> Player-class </h3>
+        <p>Represents a player in the game. Purpose: To hold the player's current hand and implement player actions (e.g., hit, stand).</p>
+        <h3 class="class"> Dealer-class </h3>
+        <p>This could be a subclass of Player. Purpose: To implement dealer-specific actions (e.g., must hit until 17 or more).</p>
+        <h3 class="class"> Game-class </h3>
+        <p>Represents the game itself. Purpose: To control the flow of the game, keep track of the deck and the players, and determine when the game is over and who has won.</p>
+</div>
+
+
+{% endblock %}

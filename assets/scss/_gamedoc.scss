@@ -1,0 +1,47 @@
+.game-doc {
+    background-color: rgb(85, 93, 93);
+    h1 {
+        font-size: 3rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        text-align: center;
+        text-decoration-line: underline;
+    }
+    .game-doc_flow {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        h2 {
+            font-size: 2rem;
+            padding: 1rem;
+            text-align: center;
+            text-decoration-line: underline;
+        }
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    }
+    .game-doc_classes {
+        h2 {
+            font-size: 2rem;
+            padding: 1rem;
+            text-align: center;
+            text-decoration-line: underline;
+        }
+        .class{
+            font-size: 1.5rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            font-weight: 600;
+        }
+        p {
+            font-size: 1rem;
+        }
+        margin-left: 2rem;
+        margin-right: 2rem;
+        padding-bottom: 1rem;
+    }
+}
