@@ -258,47 +258,47 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Dealer",
             "name": "Dealer",
-            "summary": "Class\u0020Player",
+            "summary": "Class\u0020Dealer",
             "url": "classes/App-Game-Dealer.html"
         },                {
             "fqsen": "\\App\\Game\\Dealer\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Player\u0020constructor.",
+            "summary": "Dealer\u0020constructor.",
             "url": "classes/App-Game-Dealer.html#method___construct"
         },                {
             "fqsen": "\\App\\Game\\Dealer\u003A\u003AdrawHiddenCard\u0028\u0029",
             "name": "drawHiddenCard",
-            "summary": "",
+            "summary": "Draw\u0020a\u0020hidden\u0020card\u0020from\u0020the\u0020deck.",
             "url": "classes/App-Game-Dealer.html#method_drawHiddenCard"
         },                {
             "fqsen": "\\App\\Game\\Dealer\u003A\u003AgetHand\u0028\u0029",
             "name": "getHand",
-            "summary": "Get\u0020the\u0020players\u0020hand.",
+            "summary": "Get\u0020the\u0020dealers\u0020hand.",
             "url": "classes/App-Game-Dealer.html#method_getHand"
         },                {
             "fqsen": "\\App\\Game\\Dealer\u003A\u003AgetName\u0028\u0029",
             "name": "getName",
-            "summary": "Get\u0020the\u0020name\u0020of\u0020the\u0020player.",
+            "summary": "Get\u0020the\u0020dealers\u0020name.",
             "url": "classes/App-Game-Dealer.html#method_getName"
         },                {
             "fqsen": "\\App\\Game\\Dealer\u003A\u003AgetScore\u0028\u0029",
             "name": "getScore",
-            "summary": "Get\u0020the\u0020score\u0020of\u0020the\u0020players\u0020current\u0020hand.",
+            "summary": "Get\u0020the\u0020dealers\u0020score.",
             "url": "classes/App-Game-Dealer.html#method_getScore"
         },                {
             "fqsen": "\\App\\Game\\Dealer\u003A\u003AaddScore\u0028\u0029",
             "name": "addScore",
-            "summary": "Add\u0020a\u0020score\u0020to\u0020the\u0020players\u0020current\u0020score.",
+            "summary": "Add\u0020to\u0020the\u0020dealers\u0020score.",
             "url": "classes/App-Game-Dealer.html#method_addScore"
         },                {
             "fqsen": "\\App\\Game\\Dealer\u003A\u003ArevealHiddenCard\u0028\u0029",
             "name": "revealHiddenCard",
-            "summary": "",
+            "summary": "Reveal\u0020the\u0020hidden\u0020card.",
             "url": "classes/App-Game-Dealer.html#method_revealHiddenCard"
         },                {
             "fqsen": "\\App\\Game\\Dealer\u003A\u003AisHiddenCardRevealed\u0028\u0029",
             "name": "isHiddenCardRevealed",
-            "summary": "",
+            "summary": "Check\u0020if\u0020the\u0020hidden\u0020card\u0020has\u0020been\u0020revealed.",
             "url": "classes/App-Game-Dealer.html#method_isHiddenCardRevealed"
         },                {
             "fqsen": "\\App\\Game\\Dealer\u003A\u003A\u0024hiddenCard",
