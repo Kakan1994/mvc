@@ -1,1 +1,1 @@
-{"version":1,"defects":{"App\\Cards\\CardTest::testToString":7},"times":{"App\\Cards\\CardTest::testCreateObject":0.016,"App\\Cards\\CardTest::testGetCardText":0.001,"App\\Cards\\CardTest::testToString":0.001}}
+{"version":1,"defects":{"App\\Cards\\CardTest::testToString":7},"times":{"App\\Cards\\CardTest::testCreateObject":0.001,"App\\Cards\\CardTest::testGetCardText":0,"App\\Cards\\CardTest::testToString":0}}
