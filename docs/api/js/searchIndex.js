@@ -43,27 +43,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\CardHand",
             "name": "CardHand",
-            "summary": "",
+            "summary": "Class\u0020CardHand",
             "url": "classes/App-Cards-CardHand.html"
         },                {
             "fqsen": "\\App\\Cards\\CardHand\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "CardHand\u0020constructor.",
             "url": "classes/App-Cards-CardHand.html#method___construct"
         },                {
             "fqsen": "\\App\\Cards\\CardHand\u003A\u003AaddCard\u0028\u0029",
             "name": "addCard",
-            "summary": "",
+            "summary": "Add\u0020a\u0020card\u0020to\u0020the\u0020hand.",
             "url": "classes/App-Cards-CardHand.html#method_addCard"
         },                {
             "fqsen": "\\App\\Cards\\CardHand\u003A\u003AgetCards\u0028\u0029",
             "name": "getCards",
-            "summary": "",
+            "summary": "Get\u0020the\u0020cards\u0020in\u0020the\u0020hand.",
             "url": "classes/App-Cards-CardHand.html#method_getCards"
         },                {
             "fqsen": "\\App\\Cards\\CardHand\u003A\u003AgetCardsAsArray\u0028\u0029",
             "name": "getCardsAsArray",
-            "summary": "",
+            "summary": "Get\u0020the\u0020cards\u0020in\u0020the\u0020hand\u0020as\u0020an\u0020array\u0020of\u0020strings.",
             "url": "classes/App-Cards-CardHand.html#method_getCardsAsArray"
         },                {
             "fqsen": "\\App\\Cards\\CardHand\u003A\u003A\u0024cards",

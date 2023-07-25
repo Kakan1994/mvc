@@ -4,8 +4,7 @@ namespace App\Cards;
 
 /**
  * Class Card
- * @package App\Cards
- * 
+ *
  * Represents a playing card with a suit and a value.
  */
 class Card

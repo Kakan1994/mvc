@@ -1,1 +1,1 @@
-{"version":1,"defects":{"App\\Cards\\CardTest::testToString":7},"times":{"App\\Cards\\CardTest::testCreateObject":0.001,"App\\Cards\\CardTest::testGetCardText":0,"App\\Cards\\CardTest::testToString":0}}
+{"version":1,"defects":{"App\\Cards\\CardTest::testToString":7},"times":{"App\\Cards\\CardTest::testCreateObject":0.001,"App\\Cards\\CardTest::testGetCardText":0.001,"App\\Cards\\CardTest::testToString":0.001,"App\\Cards\\CardHandTest::testCreateObject":0.027,"App\\Cards\\CardHandTest::testAddCard":0.001,"App\\Cards\\CardHandTest::testGetCardsAsArray":0.001}}

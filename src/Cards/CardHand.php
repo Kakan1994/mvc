@@ -2,25 +2,42 @@
 
 namespace App\Cards;
 
+/**
+ * Class CardHand
+ *
+ * Represents a hand of cards.
+ */
 class CardHand
 {
     /**
-     * @var Card[]
+     * @var Card[] $cards   The cards in the hand.
      */
     private $cards;
 
+    /**
+     * CardHand constructor.
+     */
     public function __construct()
     {
         $this->cards = [];
     }
 
+    /**
+     * Add a card to the hand.
+     *
+     * @param Card $card   The card to add.
+     *
+     * @return void
+     */
     public function addCard(Card $card): void
     {
         $this->cards[] = $card;
     }
 
     /**
-     * @return Card[]
+     * Get the cards in the hand.
+     *
+     * @return Card[] The cards in the hand.
      */
     public function getCards(): array
     {
@@ -28,7 +45,9 @@ class CardHand
     }
 
     /**
-     * @return string[]
+     * Get the cards in the hand as an array of strings.
+     *
+     * @return string[] The cards in the hand as an array of strings.
      */
     public function getCardsAsArray(): array
     {
