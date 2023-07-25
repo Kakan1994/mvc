@@ -113,17 +113,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\JokerCard",
             "name": "JokerCard",
-            "summary": "Class\u0020Card",
+            "summary": "Class\u0020JokerCard",
             "url": "classes/App-Cards-JokerCard.html"
         },                {
             "fqsen": "\\App\\Cards\\JokerCard\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Card\u0020constructor.",
+            "summary": "JokerCard\u0020constructor.",
             "url": "classes/App-Cards-JokerCard.html#method___construct"
         },                {
             "fqsen": "\\App\\Cards\\JokerCard\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
-            "summary": "Convert\u0020the\u0020card\u0020to\u0020a\u0020string\u0020in\u0020a\u0020unicode\u0020format.",
+            "summary": "Get\u0020the\u0020card\u0020as\u0020a\u0020string\u0020in\u0020the\u0020format\u0020suit\u0020\u002B\u0020value.",
             "url": "classes/App-Cards-JokerCard.html#method___toString"
         },                {
             "fqsen": "\\App\\Controller\\ApiController",
