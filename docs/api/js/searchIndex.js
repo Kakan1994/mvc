@@ -123,7 +123,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\JokerCard\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
-            "summary": "Get\u0020the\u0020card\u0020as\u0020a\u0020string\u0020in\u0020the\u0020format\u0020suit\u0020\u002B\u0020value.",
+            "summary": "Get\u0020the\u0020joker\u0020unicode\u0020character.",
             "url": "classes/App-Cards-JokerCard.html#method___toString"
         },                {
             "fqsen": "\\App\\Controller\\ApiController",
@@ -258,12 +258,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Dealer",
             "name": "Dealer",
-            "summary": "",
+            "summary": "Class\u0020Player",
             "url": "classes/App-Game-Dealer.html"
         },                {
             "fqsen": "\\App\\Game\\Dealer\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Player\u0020constructor.",
             "url": "classes/App-Game-Dealer.html#method___construct"
         },                {
             "fqsen": "\\App\\Game\\Dealer\u003A\u003AdrawHiddenCard\u0028\u0029",
@@ -273,22 +273,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Dealer\u003A\u003AgetHand\u0028\u0029",
             "name": "getHand",
-            "summary": "",
+            "summary": "Get\u0020the\u0020players\u0020hand.",
             "url": "classes/App-Game-Dealer.html#method_getHand"
         },                {
             "fqsen": "\\App\\Game\\Dealer\u003A\u003AgetName\u0028\u0029",
             "name": "getName",
-            "summary": "",
+            "summary": "Get\u0020the\u0020name\u0020of\u0020the\u0020player.",
             "url": "classes/App-Game-Dealer.html#method_getName"
         },                {
             "fqsen": "\\App\\Game\\Dealer\u003A\u003AgetScore\u0028\u0029",
             "name": "getScore",
-            "summary": "",
+            "summary": "Get\u0020the\u0020score\u0020of\u0020the\u0020players\u0020current\u0020hand.",
             "url": "classes/App-Game-Dealer.html#method_getScore"
         },                {
             "fqsen": "\\App\\Game\\Dealer\u003A\u003AaddScore\u0028\u0029",
             "name": "addScore",
-            "summary": "",
+            "summary": "Add\u0020a\u0020score\u0020to\u0020the\u0020players\u0020current\u0020score.",
             "url": "classes/App-Game-Dealer.html#method_addScore"
         },                {
             "fqsen": "\\App\\Game\\Dealer\u003A\u003ArevealHiddenCard\u0028\u0029",
@@ -463,42 +463,42 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Player",
             "name": "Player",
-            "summary": "",
+            "summary": "Class\u0020Player",
             "url": "classes/App-Game-Player.html"
         },                {
             "fqsen": "\\App\\Game\\Player\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Player\u0020constructor.",
             "url": "classes/App-Game-Player.html#method___construct"
         },                {
             "fqsen": "\\App\\Game\\Player\u003A\u003AdrawCard\u0028\u0029",
             "name": "drawCard",
-            "summary": "",
+            "summary": "Draw\u0020a\u0020card\u0020from\u0020the\u0020deck\u0020and\u0020add\u0020it\u0020to\u0020the\u0020players\u0020hand.",
             "url": "classes/App-Game-Player.html#method_drawCard"
         },                {
             "fqsen": "\\App\\Game\\Player\u003A\u003AgetHand\u0028\u0029",
             "name": "getHand",
-            "summary": "",
+            "summary": "Get\u0020the\u0020players\u0020hand.",
             "url": "classes/App-Game-Player.html#method_getHand"
         },                {
             "fqsen": "\\App\\Game\\Player\u003A\u003AgetName\u0028\u0029",
             "name": "getName",
-            "summary": "",
+            "summary": "Get\u0020the\u0020name\u0020of\u0020the\u0020player.",
             "url": "classes/App-Game-Player.html#method_getName"
         },                {
             "fqsen": "\\App\\Game\\Player\u003A\u003AgetScore\u0028\u0029",
             "name": "getScore",
-            "summary": "",
+            "summary": "Get\u0020the\u0020score\u0020of\u0020the\u0020players\u0020current\u0020hand.",
             "url": "classes/App-Game-Player.html#method_getScore"
         },                {
             "fqsen": "\\App\\Game\\Player\u003A\u003AaddScore\u0028\u0029",
             "name": "addScore",
-            "summary": "",
+            "summary": "Add\u0020a\u0020score\u0020to\u0020the\u0020players\u0020current\u0020score.",
             "url": "classes/App-Game-Player.html#method_addScore"
         },                {
             "fqsen": "\\App\\Game\\Player\u003A\u003AclearHand\u0028\u0029",
             "name": "clearHand",
-            "summary": "",
+            "summary": "Clear\u0020the\u0020players\u0020hand\u0020by\u0020creating\u0020a\u0020new\u0020empty\u0020hand.",
             "url": "classes/App-Game-Player.html#method_clearHand"
         },                {
             "fqsen": "\\App\\Game\\Player\u003A\u003A\u0024name",
