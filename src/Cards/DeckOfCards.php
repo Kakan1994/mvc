@@ -2,21 +2,29 @@
 
 namespace App\Cards;
 
+/**
+ * Class DeckOfCards
+ *
+ * Represents a deck of cards.
+ */
 class DeckOfCards
 {
     /**
-     * @var Card[]
+     * @var Card[] $cards   The cards in the deck.
      */
     private $cards;
     /**
-     * @var string[]
+     * @var string[] $suits   The suits of the cards.
      */
     private $suits = ['♥', '♠', '♦', '♣'];
     /**
-     * @var string[]
+     * @var string[] $values   The values of the cards.
      */
     private $values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
 
+    /**
+     * DeckOfCards constructor.
+     */
     public function __construct()
     {
         $this->cards = [];
@@ -28,13 +36,22 @@ class DeckOfCards
         }
     }
 
+    /**
+     * Shuffle the deck.
+     *
+     * @return void
+     */
     public function shuffle(): void
     {
         shuffle($this->cards);
     }
 
     /**
-     * @return Card[]
+     * Draw a card from the deck.
+     *
+     * @param int $count   The number of cards to draw.
+     *
+     * @return Card[] The drawn cards.
      */
     public function draw(int $count = 1): array
     {
@@ -48,7 +65,9 @@ class DeckOfCards
     }
 
     /**
-     * @return Card[]
+     * Get the cards in the deck.
+     *
+     * @return Card[] The cards in the deck.
      */
     public function getCards(): array
     {

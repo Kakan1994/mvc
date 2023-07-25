@@ -73,27 +73,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Cards\\DeckOfCards",
             "name": "DeckOfCards",
-            "summary": "",
+            "summary": "Class\u0020DeckOfCards",
             "url": "classes/App-Cards-DeckOfCards.html"
         },                {
             "fqsen": "\\App\\Cards\\DeckOfCards\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "DeckOfCards\u0020constructor.",
             "url": "classes/App-Cards-DeckOfCards.html#method___construct"
         },                {
             "fqsen": "\\App\\Cards\\DeckOfCards\u003A\u003Ashuffle\u0028\u0029",
             "name": "shuffle",
-            "summary": "",
+            "summary": "Shuffle\u0020the\u0020deck.",
             "url": "classes/App-Cards-DeckOfCards.html#method_shuffle"
         },                {
             "fqsen": "\\App\\Cards\\DeckOfCards\u003A\u003Adraw\u0028\u0029",
             "name": "draw",
-            "summary": "",
+            "summary": "Draw\u0020a\u0020card\u0020from\u0020the\u0020deck.",
             "url": "classes/App-Cards-DeckOfCards.html#method_draw"
         },                {
             "fqsen": "\\App\\Cards\\DeckOfCards\u003A\u003AgetCards\u0028\u0029",
             "name": "getCards",
-            "summary": "",
+            "summary": "Get\u0020the\u0020cards\u0020in\u0020the\u0020deck.",
             "url": "classes/App-Cards-DeckOfCards.html#method_getCards"
         },                {
             "fqsen": "\\App\\Cards\\DeckOfCards\u003A\u003A\u0024cards",
