@@ -9,7 +9,7 @@ class JokerCardTest extends TestCase
     /**
      * Construct object.
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
         $jokerCard = new JokerCard();
         $this->assertInstanceOf("\App\Cards\JokerCard", $jokerCard);
@@ -26,7 +26,7 @@ class JokerCardTest extends TestCase
     /**
      * Test __toString method.
      */
-    public function testToString()
+    public function testToString(): void
     {
         $jokerCard = new JokerCard();
         $res = $jokerCard->__toString();

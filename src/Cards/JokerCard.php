@@ -4,14 +4,14 @@ namespace App\Cards;
 
 /**
  * Class JokerCard
- * 
+ *
  * Represents a joker card.
  */
 class JokerCard extends Card
 {
     /**
      * JokerCard constructor.
-     * 
+     *
      * @param string $suit   The suit of the card.
      * @param string $value  The value of the card.
      */

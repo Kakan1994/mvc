@@ -32,7 +32,7 @@ class Card
 
     /**
      * Get the suit of the card.
-     * 
+     *
      * @return string The suit of the card.
      */
     public function getSuit(): string
@@ -42,7 +42,7 @@ class Card
 
     /**
      * Get the value of the card.
-     * 
+     *
      * @return string The value of the card.
      */
     public function getValue(): string

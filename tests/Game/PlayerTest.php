@@ -10,7 +10,7 @@ class PlayerTest extends TestCase
     /**
      * Construct object.
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
         $player = new Player('Player');
         $this->assertInstanceOf("\App\Game\Player", $player);
@@ -23,7 +23,7 @@ class PlayerTest extends TestCase
     /**
      * Test drawCard method.
      */
-    public function testDrawCard()
+    public function testDrawCard(): void
     {
         $player = new Player('Player');
         $deck = new DeckOfCards();
@@ -36,7 +36,7 @@ class PlayerTest extends TestCase
     /**
      * Test getScore method.
      */
-    public function testGetScore()
+    public function testGetScore(): void
     {
         $player = new Player('Player');
         $res = $player->getScore();
@@ -47,7 +47,7 @@ class PlayerTest extends TestCase
     /**
      * Test addScore method.
      */
-    public function testAddScore()
+    public function testAddScore(): void
     {
         $player = new Player('Player');
         $player->addScore(10);
@@ -59,7 +59,7 @@ class PlayerTest extends TestCase
     /**
      * Test clearHand method.
      */
-    public function testClearHand()
+    public function testClearHand(): void
     {
         $player = new Player('Player');
         $deck = new DeckOfCards();

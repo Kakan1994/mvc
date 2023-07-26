@@ -10,9 +10,9 @@ class DealerTest extends TestCase
     /**
      * Construct object.
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
-        $dealer = new Dealer('Dealer');
+        $dealer = new Dealer();
         $this->assertInstanceOf("\App\Game\Dealer", $dealer);
 
         $res = $dealer->getName();
@@ -23,9 +23,9 @@ class DealerTest extends TestCase
     /**
      * Test drawHiddenCard method.
      */
-    public function testDrawHiddenCard()
+    public function testDrawHiddenCard(): void
     {
-        $dealer = new Dealer('Dealer');
+        $dealer = new Dealer();
         $deck = new DeckOfCards();
         $dealer->drawHiddenCard($deck);
         $res = $dealer->getHand()->getCards();
@@ -41,9 +41,9 @@ class DealerTest extends TestCase
     /**
      * Test getScore method.
      */
-    public function testGetScore()
+    public function testGetScore(): void
     {
-        $dealer = new Dealer('Dealer');
+        $dealer = new Dealer();
         $res = $dealer->getScore();
         $exp = 0;
         $this->assertEquals($exp, $res);
@@ -52,9 +52,9 @@ class DealerTest extends TestCase
     /**
      * Test addScore method.
      */
-    public function testAddScore()
+    public function testAddScore(): void
     {
-        $dealer = new Dealer('Dealer');
+        $dealer = new Dealer();
         $dealer->addScore(10);
         $res = $dealer->getScore();
         $exp = 10;
@@ -64,9 +64,9 @@ class DealerTest extends TestCase
     /**
      * Test isHiddenCardRevealed method.
      */
-    public function testIsHiddenCardRevealed()
+    public function testIsHiddenCardRevealed(): void
     {
-        $dealer = new Dealer('Dealer');
+        $dealer = new Dealer();
         $desk = new DeckOfCards();
 
         $dealer->drawHiddenCard($desk);

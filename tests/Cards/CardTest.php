@@ -9,7 +9,7 @@ class CardTest extends TestCase
     /**
      * Construct object.
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
         $card = new Card('♥', 'A');
         $this->assertInstanceOf("\App\Cards\Card", $card);
@@ -28,7 +28,7 @@ class CardTest extends TestCase
     /**
      * Test getCardText method.
      */
-    public function testGetCardText()
+    public function testGetCardText(): void
     {
         $card = new Card('♥', 'A');
         $res = $card->getCardText();
@@ -42,7 +42,7 @@ class CardTest extends TestCase
     /**
      * Test __toString method.
      */
-    public function testToString()
+    public function testToString(): void
     {
         $card = new Card('♥', 'A');
         $res = $card->__toString();
