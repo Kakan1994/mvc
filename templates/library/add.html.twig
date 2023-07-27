@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="form-title-container">
+        <h1>Create new Book</h1>
+    </div>
+    {{ form_start(form, {'attr': {'class': 'form-container'}}) }}
+        {{ form_label(form.title, 'Title', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.title, {'attr': {'class': 'form-input'}}) }}
+
+        {{ form_label(form.author, 'Author', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.author, {'attr': {'class': 'form-input'}}) }}
+
+        {{ form_label(form.isbn, 'ISBN', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.isbn, {'attr': {'class': 'form-input'}}) }}
+
+        {{ form_label(form.img, 'Image', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.img, {'attr': {'class': 'form-input'}}) }}
+
+        <button type="submit" class="btn">Create</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('app_library') }}" class="btn">Back to landing</a>
+{% endblock %}

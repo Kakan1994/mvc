@@ -1,0 +1,227 @@
+body {
+    font-family: $font-family;
+    background-color: $primary-color;
+    color: $text-color;
+}
+
+.example-wrapper {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.book-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $secondary-color;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.book-details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.book-info, .book-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .book-details {
+        flex-direction: column;
+    }
+}
+
+button.btn {
+    background-color: $tertiary-color;
+    border: none;
+    color: $text-color;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken($tertiary-color, 10%);
+    }
+
+    a {
+        color: $text-color;
+    }
+}
+
+button.btn-danger {
+    background-color: $accent-color;
+    border: none;
+    color: $text-color;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken($tertiary-color, 10%);
+    }
+}
+
+.book-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    background-color: $secondary-color;
+    border-radius: 5px;
+    color: $text-color;
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: $secondary-color;
+    color: $text-color;
+
+    th, td {
+        border: 1px solid darken($secondary-color, 10%);
+        padding: 8px;
+    }
+
+    th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: $tertiary-color;
+    }
+}
+
+img.book-img {
+    max-width: 100%;
+    height: auto;
+}
+
+img.small-book-img {
+    width: 50px;
+    height: auto;
+}
+
+.alert {
+    color: $text-color;
+    background-color: darken($tertiary-color, 20%);
+    border-color: darken($tertiary-color, 30%);
+}
+
+.alert-danger {
+    color: $text-color;
+    background-color: darken($accent-color, 20%);
+    border-color: darken($accent-color, 30%);
+}
+
+form {
+    display: inline-block;
+    input[type="int"], input[type="submit"] {
+        padding: 15px 32px;
+        font-size: 16px;
+        border: none;
+        margin: 4px 2px;
+        cursor: pointer;
+        transition-duration: 0.4s;
+    }
+
+    input[type="int"] {
+        background-color: $secondary-color;
+        color: $text-color;
+        text-align: center;
+    }
+
+    input[type="submit"] {
+        background-color: $tertiary-color;
+        color: $text-color;
+
+        &:hover {
+            background-color: darken($tertiary-color, 10%);
+        }
+    }
+}
+
+.button-group, .form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.input-field, .submit-button {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form-container {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $secondary-color;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.form-field {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 16px;
+    border: 2px solid darken($secondary-color, 10%);
+    background-color: lighten($secondary-color, 10%);
+    color: $text-color;
+    text-align: left;
+}
+
+.form-label {
+    width: 50px;  /* adjust as necessary */
+    text-align: center;
+    margin-right: 10px;
+}
+
+.form-input {
+    flex-grow: 1;
+    width: 300px;
+    text-align: center;
+}
+
+.form-title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}

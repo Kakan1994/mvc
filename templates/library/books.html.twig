@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All Books{% endblock %}
+
+{% block body %}
+<h1>All Books</h1>
+<button class="btn">
+    <a href="{{ path('app_library_add') }}">
+        Add New Book
+    </a>
+</button>
+<button class="btn">
+    <a href="{{ path('app_library') }}">
+        Back
+    </a>
+</button>
+<table>
+    <tr>
+        <th>Cover</th>
+        <th>Title</th>
+        <th>ISBN</th>
+        <th>Author</th>
+        <th>Edit</th>
+    </tr>
+    {% for book in books %}
+    <tr>
+        <td>
+            <img class="small-book-img" src="{{ asset('images/' ~ book.img) }}" alt="{{ book.title }} cover" />
+        <td>
+            <a href="{{ path('app_library_book', {'id': book.id}) }}">
+                {{ book.title }}
+            </a>
+        </td>
+        <td>{{ book.isbn }}</td>
+        <td>{{ book.author }}</td>
+        <td>
+            <button class="btn">
+                <a href="{{ path('app_library_book_edit', {'id': book.id}) }}">
+                    Edit
+                </a>
+            </button>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Book{% endblock %}
+
+{% block body %}
+<div class="form-title-container">
+    <h1>Edit Book</h1>
+</div>
+{{ form_start(form, {'attr': {'class': 'form-container'}}) }}
+    {{ form_label(form.title, 'Title', {'label_attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.title, {'attr': {'class': 'form-input'}}) }}
+
+    {{ form_label(form.author, 'Author', {'label_attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.author, {'attr': {'class': 'form-input'}}) }}
+
+    {{ form_label(form.isbn, 'ISBN', {'label_attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.isbn, {'attr': {'class': 'form-input'}}) }}
+
+    {{ form_label(form.img, 'Image', {'label_attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.img, {'attr': {'class': 'form-input'}}) }}
+
+    <div class="button-group">
+        <button type="submit" class="btn">Update</button>
+    </div>
+{{ form_end(form) }}
+<a href="{{ path('app_library_books') }}">Back to list</a>
+{% endblock %}
