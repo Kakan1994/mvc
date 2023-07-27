@@ -41,6 +41,28 @@
             <a href="{{ url('api_game') }}">GET api/game </a>
             <p> Show info about the active game </p>
         </li>
+        <br><br>
+        <li>
+            <a href="{{ url('api_books') }}">GET api/library/books</a>
+            <p>Returns all books in the library in JSON format.</p>
+        </li>
+        <br><br>
+        <li>
+            GET api/library/book/:isbn
+            <p>Displays a single book by its ISBN number. Replace ':isbn' with the desired ISBN number.</p>
+            <input id="isbn" type="text" placeholder="ISBN">
+            <button onclick="fetch('api/library/book/' + document.getElementById('isbn').value)
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log(data);
+                                alert(JSON.stringify(data, null, 2));
+                            })
+                            .catch((error) => {
+                                console.error('Error:', error);
+                                alert('Error: ' + error);
+                            });">Test GET api/library/book/:isbn</button>
+                            <button onclick="postRequest('api/library/book/9780439064873')">Test with 9780439064873</button>
+        </li>
     </ul>
 
     <script>
