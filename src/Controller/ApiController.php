@@ -48,7 +48,7 @@ class ApiController extends AbstractController
     {
         $books = $libraryRepository->findAll();
         $booksArray = [];
-        foreach($books as $book){
+        foreach($books as $book) {
             $booksArray[] = [
                 'id' => $book->getId(),
                 'title' => $book->getTitle(),
@@ -66,7 +66,7 @@ class ApiController extends AbstractController
     /**
      * @Route("/api/library/book/{isbn}", name="api_book")
      */
-    public function getBookByIsbn($isbn, LibraryRepository $libraryRepository): JsonResponse
+    public function getBookByIsbn(string $isbn, LibraryRepository $libraryRepository): JsonResponse
     {
         $book = $libraryRepository->findOneBy(['isbn' => $isbn]);
 

@@ -16,6 +16,7 @@ class BookType extends AbstractType
             ->add('isbn')
             ->add('author')
             ->add('img');
+
     }
 
     public function configureOptions(OptionsResolver $resolver)
@@ -24,5 +25,5 @@ class BookType extends AbstractType
             'data_class' => Library::class,
         ]);
     }
-    
+
 }

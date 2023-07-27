@@ -43,13 +43,13 @@ class LibraryController extends AbstractController
     }
 
     #[Route('/library/book/{id}', name: 'app_library_book', methods: ['GET'])]
-    public function viewBook(LibraryRepository $libraryRepository, $id): Response
+    public function viewBook(LibraryRepository $libraryRepository, int $idBook): Response
     {
-        $book = $libraryRepository->find($id);
+        $book = $libraryRepository->find($idBook);
 
         if (!$book) {
             throw $this->createNotFoundException(
-                'No book found for id '.$id
+                'No book found for id '.$idBook
             );
         }
 
@@ -69,13 +69,13 @@ class LibraryController extends AbstractController
     }
 
     #[Route('/library/book/{id}/edit', name: 'app_library_book_edit', methods: ['GET', 'POST'])]
-    public function update(Request $request, ManagerRegistry $doctrine, LibraryRepository $libraryRepository, $id): Response
+    public function update(Request $request, ManagerRegistry $doctrine, LibraryRepository $libraryRepository, int $idBook): Response
     {
-        $book = $libraryRepository->find($id);
+        $book = $libraryRepository->find($idBook);
 
         if (!$book) {
             throw $this->createNotFoundException(
-                'No book found for id '.$id
+                'No book found for id '.$idBook
             );
         }
 
@@ -96,13 +96,13 @@ class LibraryController extends AbstractController
     }
 
     #[Route('/library/delete/{id}', name: 'app_library_delete', methods: ['POST'])]
-    public function delete(Request $request, ManagerRegistry $doctrine, LibraryRepository $libraryRepository, $id): Response
+    public function delete(ManagerRegistry $doctrine, LibraryRepository $libraryRepository, int $idBook): Response
     {
-        $book = $libraryRepository->find($id);
+        $book = $libraryRepository->find($idBook);
 
         if (!$book) {
             throw $this->createNotFoundException(
-                'No book found for id '.$id
+                'No book found for id '.$idBook
             );
         }
 
@@ -118,12 +118,12 @@ class LibraryController extends AbstractController
     {
         $bookId = $request->request->get('bookId');
         $book = $libraryRepository->find($bookId);
-    
+
         if (!$book) {
             $this->addFlash('error', 'No book found with id ' . $bookId);
             return $this->redirectToRoute('app_library');
         }
-    
+
         return $this->redirectToRoute('app_library_book', ['id' => $bookId]);
     }
 

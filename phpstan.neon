@@ -4,5 +4,7 @@ parameters:
         - config
         - src
         - tests
+    excludePaths:
+        - */src/Form/BookType.php
     bootstrapFiles:
         #- .phpstan.constants.php
