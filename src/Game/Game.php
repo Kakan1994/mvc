@@ -342,18 +342,18 @@ class Game
     }
 
     /**
-     * Serialize the game to JSON.
-     * @return array{
-     *      playerCards: array<int, string>,
-     *      dealerCards: array<int, string>,
-     *      dealerHiddenCardRevealed: bool,
-     *      playerScore: int,
-     *      dealerScore: int,
-     *      lastPlayerScore: int,
-     *      lastDealerScore: int,
-     *      lastWinner: string|null
-     * }
-     */
+    * Serialize the game to JSON.
+    *
+    * @return array Array with keys:
+    *      'playerCards' (array<int, string>),
+    *      'dealerCards' (array<int, string>),
+    *      'dealerHiddenCardRevealed' (bool),
+    *      'playerScore' (int),
+    *      'dealerScore' (int),
+    *      'lastPlayerScore' (int),
+    *      'lastDealerScore' (int),
+    *      'lastWinner' (string|null)
+    */
     public function jsonSerialize(): array
     {
         return [
