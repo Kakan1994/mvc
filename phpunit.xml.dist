@@ -20,6 +20,9 @@
       <directory>tests</directory>
     </testsuite>
   </testsuites>
+      <logging>
+        <junit outputFile="docs/junit.xml" />
+    </logging>
   <!-- Run `composer require symfony/panther` before enabling this extension -->
   <!--
     <extensions>

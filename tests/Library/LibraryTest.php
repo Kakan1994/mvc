@@ -7,7 +7,7 @@ use ReflectionClass;
 
 class LibraryTest extends TestCase
 {
-    public function testGetId()
+    public function testGetId(): void
     {
         $library = new Library();
 
