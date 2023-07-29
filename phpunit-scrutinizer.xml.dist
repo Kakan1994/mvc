@@ -18,7 +18,7 @@
   <testsuites>
     <testsuite name="Project Test Suite">
       <directory>tests</directory>
-      <exclude>tests/Controller/ApiLibraryControllerTest.php</exclude>
+      <exclude>tests/Controller/CardControllerTest.php</exclude>
     </testsuite>
   </testsuites>
       <logging>
@@ -36,7 +36,7 @@
     </include>
     <exclude>
       <file>src/Kernel.php</file>
-      <file>src/Controller/ApiLibraryController.php</file>
+      <file>src/Controller/CardController.php</file>
       <!-- <directory>src/Controller</directory> -->
       <directory>src/Repository</directory>
     </exclude>
