@@ -98,6 +98,9 @@ class Dealer extends Player
      */
     public function isHiddenCardRevealed(): bool
     {
-        return $this->hiddenCardRevealed;
+        if ($this->hiddenCardRevealed) {
+            return true;
+        }
+        return false;
     }
 }

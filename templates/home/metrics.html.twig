@@ -19,7 +19,6 @@
             Kodstil (Codestyle) handlar om att följa konsekventa riktlinjer när man skriver kod.
             Detta kan innefatta regler för indentering, namngivning, kommentarer och kodorganisation.
             Att hålla en enhetlig kodstil förbättrar kodens läsbarhet och underhållbarhet.
-            
         </p>
 
 
@@ -31,7 +30,7 @@
             Det är viktigt att prioritera att testa de mest kritiska delarna av koden för att säkerställa korrekt funktionalitet.
             <br><br>
             Jag har valt att exkludera repository-katalogen från analysen då det är kod jag inte skrivit och är svår att testa.
-
+            Behöver även lägga till tester för mina controllers.
         </p>
         <div class="analysis image">
             <img
@@ -99,8 +98,8 @@
             Å andra sidan, om koden är enkel och vältestad, kommer den att ha ett lågt CRAP-värde, vilket innebär en lägre risk.
             Denna metrik hjälper utvecklare att identifiera delar av koden som kan behöva mer tester eller behöver förenklas för att minska risken för problem.
             <br><br>
-            Jag upplever inte att någon metod i min kod har något super högt CRAP-värde.
-            Men calculateScore-metoden och stand-metoden i Game-klassen har ett CRAP-värde på 7 respektive 6.
+            I min kod ser jag två metoder som sticker ut i CRAP-värde.
+            Dessa är gameBlackjack i GameController med 42 och update i LibraryController med 20.
         </p>
         <div class="analysis image">
             <img
@@ -112,7 +111,74 @@
     </div>
     <h2>PHP Metrics</h2>
     <p>
-
+        Från PHP Metrics så har jag valt ut detta att kolla närmare på:
     </p>
+    <ul>
+        <li>
+            Komplexitet i Game-klassen (18 i cyclomatic complexity)
+        </li>
+        <li>
+            Coupling i DeckOfCards-klassen (5 i afferent coupling)
+        </li>
+        <li>
+            Coupling i Card-controllern (8 i efferent coupling)
+        </li>
+    </ul>
+
+    <h2>Scrutinizer</h2>
+        <div class="scrutinizer-badges">
+            <div class="badge scrutinizer">
+                <img
+                    src="{{ asset('images/metrics/quality-score.svg') }}"
+                    alt="quality score badge"
+                    width="140"
+                >
+            </div>
+            <div class="badge coverage">
+                <img
+                    src="{{ asset('images/metrics/coverage.svg') }}"
+                    alt="coverage badge"
+                    width="140"
+                >
+            </div>
+            <div class="badge build">
+                <img
+                    src="{{ asset('images/metrics/build.svg') }}"
+                    alt="build badge"
+                    width="118"
+                >
+            </div>
+        </div>
+        <figcaption><em>Badges före åtgärder</em></figcaption>
+        <p>
+            Från Scrutinizer-rapporten så har jag valt ut detta att kolla närmare på:
+        </p>
+        <ul>
+            <li>Kodtäckningen ligger endast på 52%</li>
+            <li>Höga CRAP-värden på två metoder</li>
+            <li>Metoden calculateScore i Game-klassen för att få upp Code quality lite till</li>
+        </ul>
+
+        <h2>Förbättringar</h2>
+        <p>
+            De förbättringar som jag kommer att fokusera på är att följande 3:
+        </p>
+        <ol>
+            <li>
+                Förbättra kodtäckningen
+                <ul>
+                    <li>Skapa tester för controllers</li>
+                </ul>
+            </li>
+            <li>
+                Öka calculateScore-metoden i Game-klassen till ett A i Scrutinizer.
+            </li>
+            <li>
+                Minska CRAP-score för gameBlackjack i GameController
+            </li>
+        </ol>
+
+        <h2>Åtgärder</h2>
+
 </div>
 {% endblock %}
