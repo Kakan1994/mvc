@@ -36,7 +36,7 @@
     </include>
     <exclude>
       <file>src/Kernel.php</file>
-      <!-- <directory>src/Controller</directory> -->
+      <directory>src/Controller</directory>
       <directory>src/Repository</directory>
     </exclude>
   </source>
