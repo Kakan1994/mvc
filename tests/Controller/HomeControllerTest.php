@@ -14,5 +14,43 @@ use App\Game\Game;
 
 class HomeControllerTest extends WebTestCase
 {
-    
+    public function testIndex(): void
+    {
+        $client = static::createClient();
+        $client->request('GET', '/');
+        $this->assertResponseIsSuccessful();
+        $this->assertRouteSame('home');
+    }
+
+    public function testAbout(): void
+    {
+        $client = static::createClient();
+        $client->request('GET', '/about');
+        $this->assertResponseIsSuccessful();
+        $this->assertRouteSame('about');
+    }
+
+    public function testReport(): void
+    {
+        $client = static::createClient();
+        $client->request('GET', '/report');
+        $this->assertResponseIsSuccessful();
+        $this->assertRouteSame('report');
+    }
+
+    public function testLucky(): void
+    {
+        $client = static::createClient();
+        $client->request('GET', '/lucky');
+        $this->assertResponseIsSuccessful();
+        $this->assertRouteSame('lucky');
+    }
+
+    public function testMetrics(): void
+    {
+        $client = static::createClient();
+        $client->request('GET', '/metrics');
+        $this->assertResponseIsSuccessful();
+        $this->assertRouteSame('metrics');
+    }
 }

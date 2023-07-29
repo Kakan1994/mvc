@@ -44,14 +44,6 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/card", name="cards")
-     */
-    public function card(): Response
-    {
-        return $this->render('card/index.html.twig');
-    }
-
-    /**
      * @Route("/metrics", name="metrics")
      */
     public function metrics(): Response

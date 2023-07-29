@@ -51,7 +51,7 @@ class GameControllerTest extends WebTestCase
         // Retrieving the container and setting the mocked service
         $client->getContainer()->set('session', $mockedSession);
 
-        $crawler = $client->request('GET', '/game/blackjack');
+        $client->request('GET', '/game/blackjack');
 
         $this->assertResponseIsSuccessful();
         $this->assertRouteSame('game_blackjack');
