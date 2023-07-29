@@ -45,15 +45,6 @@ class CardControllerTest extends WebTestCase
         $this->assertSelectorExists('.card');
     }
 
-    // public function testDrawManyForm(): void
-    // {
-    //     $client = static::createClient();
-    //     $client->request('GET', '/card/draw-many');
-
-    //     $this->assertEquals(200, $client->getResponse()->getStatusCode());
-    //     $this->assertSelectorExists('form'); // Assumes the form has a tag "form"
-    // }
-
     public function testDrawMany(): void
     {
         $client = static::createClient();
