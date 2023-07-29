@@ -9,12 +9,12 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ApiControllerTest extends WebTestCase
 {
-    // public function testIndex(): void
-    // {
-    //     $client = static::createClient();
-    //     $client->request('GET', '/api');
-    //     $this->assertResponseIsSuccessful();
-    // }
+    public function testIndex(): void
+    {
+        $client = static::createClient();
+        $client->request('GET', '/api');
+        $this->assertResponseIsSuccessful();
+    }
 
     public function testQuote(): void
     {
