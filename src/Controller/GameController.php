@@ -54,10 +54,6 @@ class GameController extends AbstractController
             $game->startGame();
             $session->set('game', $game);
         }
-        if ($game->isGameOver()) {
-            $game->revealDealerCard();
-            $session->set('game', $game);
-        }
 
         return $this->render('game/game.html.twig', [
             'controller_name' => 'GameController',

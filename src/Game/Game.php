@@ -274,7 +274,10 @@ class Game
      */
     public function isGameOver(): bool
     {
-        return $this->gameOver;
+        if ($this->gameOver === true) {
+            return true;
+        }
+        return false;
     }
 
     /**

@@ -2,10 +2,7 @@
 
 namespace App\Controller;
 
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use App\Entity\Library;
-use Symfony\Component\HttpFoundation\Response;
 
 class ApiControllerTest extends WebTestCase
 {
@@ -14,6 +11,7 @@ class ApiControllerTest extends WebTestCase
         $client = static::createClient();
         $client->request('GET', '/api');
         $this->assertResponseIsSuccessful();
+        $this->assertRouteSame('api_index');
     }
 
     public function testQuote(): void
@@ -22,5 +20,6 @@ class ApiControllerTest extends WebTestCase
         $client->request('GET', '/api/quote');
         $this->assertResponseIsSuccessful();
         $this->assertJson($client->getResponse()->getContent());
+        $this->assertRouteSame('api_quote');
     }
 }
