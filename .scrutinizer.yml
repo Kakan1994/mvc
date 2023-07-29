@@ -20,8 +20,8 @@ build:
                     - php-scrutinizer-run
     tests:
         override:
-            -   command: "composer phpunit"
-                # command: "XDEBUG_MODE=coverage vendor/bin/phpunit"
+            -   # command: "composer phpunit"
+                command: "XDEBUG_MODE=coverage vendor/bin/phpunit --configuration phpunit-scrutinizer.xml.dist"
                 coverage:
                     file: "docs/coverage.clover"
                     format: "php-clover"
