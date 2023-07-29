@@ -1,64 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="/home/kalo22/dbwebb-kurser/mvc/me/report/phpunit.xml.dist" tests="40" assertions="82" errors="0" failures="0" skipped="0" time="0.069461">
-    <testsuite name="Project Test Suite" tests="40" assertions="82" errors="0" failures="0" skipped="0" time="0.069461">
-      <testsuite name="App\Cards\CardHandTest" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" tests="3" assertions="4" errors="0" failures="0" skipped="0" time="0.018723">
-        <testcase name="testCreateObject" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="12" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="2" time="0.016841"/>
-        <testcase name="testAddCard" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="27" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="1" time="0.001035"/>
-        <testcase name="testGetCardsAsArray" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="43" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="1" time="0.000847"/>
+  <testsuite name="/home/kalo22/dbwebb-kurser/mvc/me/report/phpunit.xml.dist" tests="40" assertions="82" errors="0" failures="0" skipped="0" time="0.068024">
+    <testsuite name="Project Test Suite" tests="40" assertions="82" errors="0" failures="0" skipped="0" time="0.068024">
+      <testsuite name="App\Cards\CardHandTest" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" tests="3" assertions="4" errors="0" failures="0" skipped="0" time="0.019345">
+        <testcase name="testCreateObject" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="12" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="2" time="0.017263"/>
+        <testcase name="testAddCard" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="27" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="1" time="0.001313"/>
+        <testcase name="testGetCardsAsArray" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/CardHandTest.php" line="43" class="App\Cards\CardHandTest" classname="App.Cards.CardHandTest" assertions="1" time="0.000769"/>
       </testsuite>
-      <testsuite name="App\Cards\CardTest" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/CardTest.php" tests="3" assertions="10" errors="0" failures="0" skipped="0" time="0.002507">
-        <testcase name="testCreateObject" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/CardTest.php" line="12" class="App\Cards\CardTest" classname="App.Cards.CardTest" assertions="3" time="0.000841"/>
-        <testcase name="testGetCardText" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/CardTest.php" line="31" class="App\Cards\CardTest" classname="App.Cards.CardTest" assertions="2" time="0.000891"/>
-        <testcase name="testToString" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/CardTest.php" line="45" class="App\Cards\CardTest" classname="App.Cards.CardTest" assertions="5" time="0.000775"/>
+      <testsuite name="App\Cards\CardTest" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/CardTest.php" tests="3" assertions="10" errors="0" failures="0" skipped="0" time="0.002351">
+        <testcase name="testCreateObject" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/CardTest.php" line="12" class="App\Cards\CardTest" classname="App.Cards.CardTest" assertions="3" time="0.000733"/>
+        <testcase name="testGetCardText" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/CardTest.php" line="31" class="App\Cards\CardTest" classname="App.Cards.CardTest" assertions="2" time="0.000848"/>
+        <testcase name="testToString" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/CardTest.php" line="45" class="App\Cards\CardTest" classname="App.Cards.CardTest" assertions="5" time="0.000770"/>
       </testsuite>
-      <testsuite name="App\Cards\DeckOfCardsTest" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" tests="4" assertions="12" errors="0" failures="0" skipped="0" time="0.005400">
-        <testcase name="testCreateObject" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="12" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="2" time="0.000947"/>
+      <testsuite name="App\Cards\DeckOfCardsTest" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" tests="4" assertions="12" errors="0" failures="0" skipped="0" time="0.005326">
+        <testcase name="testCreateObject" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="12" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="2" time="0.000960"/>
         <testcase name="testShuffle" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="26" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="2" time="0.002470"/>
-        <testcase name="testDrawCard" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="39" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="2" time="0.001007"/>
-        <testcase name="testDrawManyCards" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="52" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="6" time="0.000977"/>
+        <testcase name="testDrawCard" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="39" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="2" time="0.000944"/>
+        <testcase name="testDrawManyCards" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/DeckOfCardsTest.php" line="52" class="App\Cards\DeckOfCardsTest" classname="App.Cards.DeckOfCardsTest" assertions="6" time="0.000951"/>
       </testsuite>
-      <testsuite name="App\Cards\JokerCardTest" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/JokerCardTest.php" tests="2" assertions="4" errors="0" failures="0" skipped="0" time="0.001679">
-        <testcase name="testCreateObject" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/JokerCardTest.php" line="12" class="App\Cards\JokerCardTest" classname="App.Cards.JokerCardTest" assertions="3" time="0.000919"/>
-        <testcase name="testToString" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/JokerCardTest.php" line="29" class="App\Cards\JokerCardTest" classname="App.Cards.JokerCardTest" assertions="1" time="0.000759"/>
+      <testsuite name="App\Cards\JokerCardTest" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/JokerCardTest.php" tests="2" assertions="4" errors="0" failures="0" skipped="0" time="0.001625">
+        <testcase name="testCreateObject" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/JokerCardTest.php" line="12" class="App\Cards\JokerCardTest" classname="App.Cards.JokerCardTest" assertions="3" time="0.000895"/>
+        <testcase name="testToString" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Cards/JokerCardTest.php" line="29" class="App\Cards\JokerCardTest" classname="App.Cards.JokerCardTest" assertions="1" time="0.000730"/>
       </testsuite>
-      <testsuite name="App\Game\DealerTest" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/DealerTest.php" tests="5" assertions="8" errors="0" failures="0" skipped="0" time="0.004552">
-        <testcase name="testCreateObject" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/DealerTest.php" line="13" class="App\Game\DealerTest" classname="App.Game.DealerTest" assertions="2" time="0.001108"/>
-        <testcase name="testDrawHiddenCard" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/DealerTest.php" line="26" class="App\Game\DealerTest" classname="App.Game.DealerTest" assertions="2" time="0.001050"/>
-        <testcase name="testGetScore" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/DealerTest.php" line="44" class="App\Game\DealerTest" classname="App.Game.DealerTest" assertions="1" time="0.000744"/>
-        <testcase name="testAddScore" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/DealerTest.php" line="55" class="App\Game\DealerTest" classname="App.Game.DealerTest" assertions="1" time="0.000741"/>
-        <testcase name="testIsHiddenCardRevealed" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/DealerTest.php" line="67" class="App\Game\DealerTest" classname="App.Game.DealerTest" assertions="2" time="0.000909"/>
+      <testsuite name="App\Game\DealerTest" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/DealerTest.php" tests="5" assertions="8" errors="0" failures="0" skipped="0" time="0.004519">
+        <testcase name="testCreateObject" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/DealerTest.php" line="13" class="App\Game\DealerTest" classname="App.Game.DealerTest" assertions="2" time="0.001065"/>
+        <testcase name="testDrawHiddenCard" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/DealerTest.php" line="26" class="App\Game\DealerTest" classname="App.Game.DealerTest" assertions="2" time="0.001037"/>
+        <testcase name="testGetScore" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/DealerTest.php" line="44" class="App\Game\DealerTest" classname="App.Game.DealerTest" assertions="1" time="0.000751"/>
+        <testcase name="testAddScore" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/DealerTest.php" line="55" class="App\Game\DealerTest" classname="App.Game.DealerTest" assertions="1" time="0.000782"/>
+        <testcase name="testIsHiddenCardRevealed" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/DealerTest.php" line="67" class="App\Game\DealerTest" classname="App.Game.DealerTest" assertions="2" time="0.000884"/>
       </testsuite>
-      <testsuite name="App\Game\GameTest" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" tests="16" assertions="31" errors="0" failures="0" skipped="0" time="0.021506">
-        <testcase name="testCreateObject" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="14" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="1" time="0.001369"/>
-        <testcase name="testStartGame" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="23" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="3" time="0.000997"/>
-        <testcase name="testHit" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="43" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="1" time="0.000989"/>
-        <testcase name="testHitWithScoreLessThan21" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="56" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="3" time="0.002561"/>
-        <testcase name="testHitWithScoreMoreThan21" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="77" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="3" time="0.001222"/>
-        <testcase name="testHitWithScore21" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="98" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="2" time="0.001211"/>
-        <testcase name="testStandRevealHiddenCard" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="121" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="1" time="0.001050"/>
-        <testcase name="testStandWithDealerScoreMoreThan21" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="132" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="2" time="0.001100"/>
-        <testcase name="testRevealDealerCard" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="149" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="1" time="0.001082"/>
-        <testcase name="testGetLastPlayerScore" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="160" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="1" time="0.001189"/>
-        <testcase name="testGetLastDealerScore" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="174" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="1" time="0.001175"/>
-        <testcase name="testSetAndGetWinner" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="188" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="1" time="0.001251"/>
-        <testcase name="testReset" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="209" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="6" time="0.002489"/>
-        <testcase name="testCheckDeck" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="225" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="2" time="0.001411"/>
-        <testcase name="testSetDeck" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="239" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="2" time="0.001084"/>
-        <testcase name="testJsonSerialize" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="251" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="1" time="0.001327"/>
+      <testsuite name="App\Game\GameTest" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" tests="16" assertions="31" errors="0" failures="0" skipped="0" time="0.019786">
+        <testcase name="testCreateObject" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="14" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="1" time="0.001342"/>
+        <testcase name="testStartGame" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="23" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="3" time="0.001104"/>
+        <testcase name="testHit" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="43" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="1" time="0.001162"/>
+        <testcase name="testHitWithScoreLessThan21" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="56" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="3" time="0.001537"/>
+        <testcase name="testHitWithScoreMoreThan21" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="77" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="3" time="0.001244"/>
+        <testcase name="testHitWithScore21" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="98" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="2" time="0.001178"/>
+        <testcase name="testStandRevealHiddenCard" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="121" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="1" time="0.001070"/>
+        <testcase name="testStandWithDealerScoreMoreThan21" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="132" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="2" time="0.001376"/>
+        <testcase name="testRevealDealerCard" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="149" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="1" time="0.001036"/>
+        <testcase name="testGetLastPlayerScore" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="160" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="1" time="0.001168"/>
+        <testcase name="testGetLastDealerScore" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="174" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="1" time="0.001151"/>
+        <testcase name="testSetAndGetWinner" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="188" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="1" time="0.001275"/>
+        <testcase name="testReset" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="209" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="6" time="0.001208"/>
+        <testcase name="testCheckDeck" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="225" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="2" time="0.001287"/>
+        <testcase name="testSetDeck" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="239" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="2" time="0.001374"/>
+        <testcase name="testJsonSerialize" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/GameTest.php" line="251" class="App\Game\GameTest" classname="App.Game.GameTest" assertions="1" time="0.001275"/>
       </testsuite>
-      <testsuite name="App\Game\PlayerTest" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" tests="5" assertions="6" errors="0" failures="0" skipped="0" time="0.004639">
-        <testcase name="testCreateObject" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="13" class="App\Game\PlayerTest" classname="App.Game.PlayerTest" assertions="2" time="0.000892"/>
-        <testcase name="testDrawCard" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="26" class="App\Game\PlayerTest" classname="App.Game.PlayerTest" assertions="1" time="0.000964"/>
-        <testcase name="testGetScore" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="39" class="App\Game\PlayerTest" classname="App.Game.PlayerTest" assertions="1" time="0.000859"/>
-        <testcase name="testAddScore" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="50" class="App\Game\PlayerTest" classname="App.Game.PlayerTest" assertions="1" time="0.001043"/>
-        <testcase name="testClearHand" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="62" class="App\Game\PlayerTest" classname="App.Game.PlayerTest" assertions="1" time="0.000882"/>
+      <testsuite name="App\Game\PlayerTest" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" tests="5" assertions="6" errors="0" failures="0" skipped="0" time="0.004268">
+        <testcase name="testCreateObject" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="13" class="App\Game\PlayerTest" classname="App.Game.PlayerTest" assertions="2" time="0.000871"/>
+        <testcase name="testDrawCard" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="26" class="App\Game\PlayerTest" classname="App.Game.PlayerTest" assertions="1" time="0.000883"/>
+        <testcase name="testGetScore" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="39" class="App\Game\PlayerTest" classname="App.Game.PlayerTest" assertions="1" time="0.000763"/>
+        <testcase name="testAddScore" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="50" class="App\Game\PlayerTest" classname="App.Game.PlayerTest" assertions="1" time="0.000861"/>
+        <testcase name="testClearHand" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Game/PlayerTest.php" line="62" class="App\Game\PlayerTest" classname="App.Game.PlayerTest" assertions="1" time="0.000890"/>
       </testsuite>
-      <testsuite name="App\Form\BookTypeTest" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Library/BookTypeTest.php" tests="1" assertions="6" errors="0" failures="0" skipped="0" time="0.009593">
-        <testcase name="testSubmitValidData" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Library/BookTypeTest.php" line="11" class="App\Form\BookTypeTest" classname="App.Form.BookTypeTest" assertions="6" time="0.009593"/>
+      <testsuite name="App\Form\BookTypeTest" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Library/BookTypeTest.php" tests="1" assertions="6" errors="0" failures="0" skipped="0" time="0.010022">
+        <testcase name="testSubmitValidData" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Library/BookTypeTest.php" line="11" class="App\Form\BookTypeTest" classname="App.Form.BookTypeTest" assertions="6" time="0.010022"/>
       </testsuite>
-      <testsuite name="App\Entity\LibraryTest" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Library/LibraryTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.000862">
-        <testcase name="testGetId" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Library/LibraryTest.php" line="10" class="App\Entity\LibraryTest" classname="App.Entity.LibraryTest" assertions="1" time="0.000862"/>
+      <testsuite name="App\Entity\LibraryTest" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Library/LibraryTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.000783">
+        <testcase name="testGetId" file="/home/kalo22/dbwebb-kurser/mvc/me/report/tests/Library/LibraryTest.php" line="10" class="App\Entity\LibraryTest" classname="App.Entity.LibraryTest" assertions="1" time="0.000783"/>
       </testsuite>
     </testsuite>
   </testsuite>

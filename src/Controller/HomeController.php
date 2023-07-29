@@ -42,11 +42,20 @@ class HomeController extends AbstractController
             'lucky_number' => $luckyNumber,
         ]);
     }
+
     /**
      * @Route("/card", name="cards")
      */
     public function card(): Response
     {
         return $this->render('card/index.html.twig');
+    }
+
+    /**
+     * @Route("/metrics", name="metrics")
+     */
+    public function metrics(): Response
+    {
+        return $this->render('home/metrics.html.twig');
     }
 }
