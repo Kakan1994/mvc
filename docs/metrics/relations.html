@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-07-29 05:10:00        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-07-30 22:08:44        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -455,14 +455,23 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\Routing\\Annotation\\Route",
             "\\Symfony\\Component\\HttpFoundation\\JsonResponse",
-            "\\DateTime",
-            "\\App\\Repository\\LibraryRepository"
+            "\\DateTime"
         ]
     },
     {
         "name": "\\DateTime",
         "size": 3000,
         "relations": []
+    },
+    {
+        "name": "\\App\\Controller\\ApiLibraryController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\JsonResponse",
+            "\\App\\Repository\\LibraryRepository",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
+        ]
     },
     {
         "name": "\\App\\Game\\GameException",

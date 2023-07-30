@@ -70,7 +70,6 @@ class LibraryControllerTest extends WebTestCase
     public function testViewBooks(): void
     {
         $client = static::createClient();
-        $entityManager = static::getContainer()->get(EntityManagerInterface::class);
 
         $client->request('GET', '/library/books');
 
@@ -90,67 +89,6 @@ class LibraryControllerTest extends WebTestCase
 
         $client->request('GET', '/library/book/'.$nonExistentBookId.'/edit');
     }
-
-    // public function testUpdate(): void
-    // {
-    //     // Boot the kernel.
-    //     $kernel = static::createKernel();
-    //     $kernel->boot();
-    
-    //     // Create a client.
-    //     $client = static::createClient();
-    
-    //     // Add a book to the database to edit.
-    //     $library = new Library();
-    //     $library->setTitle('Test Book');
-    //     $library->setAuthor('Test Author');
-    //     $library->setIsbn('1234567890');
-    
-    //     // Get the EntityManagerInterface service from dependency injection.
-    //     $entityManager = $kernel->getContainer()->get('doctrine.orm.entity_manager');
-    
-    //     $entityManager->persist($library);
-    //     $entityManager->flush();
-    
-    //     // Retrieve the book from the database.
-    //     $bookId = $library->getId();
-    
-    //     // Data for form submission.
-    //     $formData = [
-    //         'title' => 'Test Book 2',
-    //         'author' => 'Test Author 2',
-    //         'isbn' => '0987654321'
-    //     ];
-    
-    //     // Send a POST request to the edit page.
-    //     $client->request(
-    //         'POST',
-    //         '/library/book/'.$bookId.'/edit',
-    //         [
-    //             'book' => $formData,
-    //         ]
-    //     );
-    
-    //     // Assert that the form was submitted.
-    //     $this->assertTrue($client->getResponse()->isSuccessful());
-    
-    //     // Assert that the book was updated.
-    //     $updatedBook = $entityManager->getRepository(Library::class)->find($bookId);
-    //     $this->assertNotSame($formData['title'], $updatedBook->getTitle());
-    //     print_r($updatedBook->getTitle());
-    //     print_r($formData['title']);
-    //     $this->assertNotSame($formData['author'], $updatedBook->getAuthor());
-    //     $this->assertNotSame($formData['isbn'], $updatedBook->getIsbn());
-    
-    //     // Remove the book from the database.
-    //     $libraryRepository = $entityManager->getRepository(Library::class);
-    //     $book = $libraryRepository->find($bookId);
-    //     if ($book) {
-    //         $entityManager->remove($book);
-    //         $entityManager->flush();
-    //     }
-    // }
-
 
     public function testDeleteNotExist(): void
     {
@@ -181,7 +119,6 @@ class LibraryControllerTest extends WebTestCase
     
         // Retrieve the book from the database.
         $bookId = $library->getId();
-        print_r($bookId);
     
         // Send a POST request to the delete page.
         $client->request(
