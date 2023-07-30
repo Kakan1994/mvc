@@ -22,6 +22,8 @@
       <exclude>tests/Controller/ApiControllerTest.php</exclude>
       <exclude>tests/Controller/GameControllerTest.php</exclude>
       <exclude>tests/Controller/HomeControllerTest.php</exclude>
+      <exclude>tests/Controller/LibraryControllerTest.php</exclude>
+
     </testsuite>
   </testsuites>
       <logging>
@@ -43,6 +45,7 @@
       <file>src/Controller/ApiController.php</file>
       <file>src/Controller/GameController.php</file>
       <file>src/Controller/HomeController.php</file>
+      <file>src/Controller/LibraryController.php</file>
       <!-- <directory>src/Controller</directory> -->
       <directory>src/Repository</directory>
     </exclude>
