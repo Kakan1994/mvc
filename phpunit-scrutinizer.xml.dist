@@ -42,12 +42,12 @@
     </include>
     <exclude>
       <file>src/Kernel.php</file>
-      <file>src/Controller/CardController.php</file>
+      <!-- <file>src/Controller/CardController.php</file>
       <file>src/Controller/ApiController.php</file>
       <file>src/Controller/GameController.php</file>
       <file>src/Controller/HomeController.php</file>
       <file>src/Controller/LibraryController.php</file>
-      <file>src/Controller/LibraryFormController.php</file>
+      <file>src/Controller/LibraryFormController.php</file> -->
       <!-- <directory>src/Controller</directory> -->
       <directory>src/Repository</directory>
     </exclude>
