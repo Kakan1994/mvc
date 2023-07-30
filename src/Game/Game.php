@@ -128,11 +128,15 @@ class Game
             $value = $card->getValue();
             $score += intval($scoreValues[$value]);
         }
-        if ($score > 21 && $aces > 0) {
-            while ($aces > 0 && $score > 21) {
-                $score -= 10;
-                $aces -= 1;
-            }
+        $score = $this->calcAces($score, $aces);
+        return $score;
+    }
+
+    public function calcAces(int $score, int $aces): int
+    {
+        while ($aces > 0 && $score > 21) {
+            $score -= 10;
+            $aces -= 1;
         }
         return $score;
     }
