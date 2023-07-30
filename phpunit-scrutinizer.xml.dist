@@ -23,6 +23,7 @@
       <exclude>tests/Controller/GameControllerTest.php</exclude>
       <exclude>tests/Controller/HomeControllerTest.php</exclude>
       <exclude>tests/Controller/LibraryControllerTest.php</exclude>
+      <exclude>tests/Controller/LibraryFormControllerTest.php</exclude>
 
     </testsuite>
   </testsuites>
@@ -46,6 +47,7 @@
       <file>src/Controller/GameController.php</file>
       <file>src/Controller/HomeController.php</file>
       <file>src/Controller/LibraryController.php</file>
+      <file>src/Controller/LibraryFormController.php</file>
       <!-- <directory>src/Controller</directory> -->
       <directory>src/Repository</directory>
     </exclude>
