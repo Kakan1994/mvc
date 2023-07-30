@@ -17,7 +17,7 @@
         {{ form_label(form.img, 'Image', {'label_attr': {'class': 'form-label'}}) }}
         {{ form_widget(form.img, {'attr': {'class': 'form-input'}}) }}
 
-        <button type="submit" class="btn">Create</button>
+        <button type="submit" name="submit" class="btn">Create</button>
     {{ form_end(form) }}
 
     <a href="{{ path('app_library') }}" class="btn">Back to landing</a>

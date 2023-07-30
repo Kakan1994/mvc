@@ -1,0 +1,3 @@
+services:
+    Symfony\Component\Security\Csrf\CsrfTokenManager: ~
+    Symfony\Component\Security\Csrf\CsrfTokenManagerInterface: '@Symfony\Component\Security\Csrf\CsrfTokenManager'

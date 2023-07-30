@@ -6,6 +6,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\Entity\Library;
 use Symfony\Component\HttpFoundation\Response;
+use App\Repository\LibraryRepository;
 
 class ApiLibraryControllerTest extends WebTestCase
 {
@@ -27,6 +28,17 @@ class ApiLibraryControllerTest extends WebTestCase
 
         $this->assertResponseIsSuccessful();
         $this->assertJson($client->getResponse()->getContent());
+
+        // Remove the book from the database.
+        $responseContent = $client->getResponse()->getContent();
+        $responseArray = json_decode($responseContent, true);
+        $isbn = '1234567890';
+        $libraryRepository = $entityManager->getRepository(Library::class);
+        $book = $libraryRepository->findOneBy(['isbn' => $isbn]);
+        if ($book) {
+            $entityManager->remove($book);
+            $entityManager->flush();
+        }
     }
 
     public function testGetBooksEmpty(): void
@@ -55,6 +67,17 @@ class ApiLibraryControllerTest extends WebTestCase
 
         $this->assertResponseIsSuccessful();
         $this->assertJson($client->getResponse()->getContent());
+
+        // Remove the book from the database.
+        $responseContent = $client->getResponse()->getContent();
+        $responseArray = json_decode($responseContent, true);
+        $id = $responseArray['id'];
+        $libraryRepository = $entityManager->getRepository(Library::class);
+        $book = $libraryRepository->find($id);
+        if ($book) {
+            $entityManager->remove($book);
+            $entityManager->flush();
+        }
     }
 
     public function testGetBookByISBNNotFound(): void
