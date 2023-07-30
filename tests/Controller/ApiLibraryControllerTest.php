@@ -30,7 +30,6 @@ class ApiLibraryControllerTest extends WebTestCase
         $this->assertJson($client->getResponse()->getContent());
 
         // Remove the book from the database.
-        $responseContent = $client->getResponse()->getContent();
         $isbn = '1234567890';
         $libraryRepository = $entityManager->getRepository(Library::class);
         $book = $libraryRepository->findOneBy(['isbn' => $isbn]);
