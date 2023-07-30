@@ -102,18 +102,37 @@ class Game
      */
     public function calculateScore(CardHand $hand): int
     {
+        $scoreValues = [
+            '1' => '1',
+            '2' => '2',
+            '3' => '3',
+            '4' => '4',
+            '5' => '5',
+            '6' => '6',
+            '7' => '7',
+            '8' => '8',
+            '9' => '9',
+            '10' => '10',
+            'J' => '10',
+            'Q' => '10',
+            'K' => '10',
+            'A' => '11',
+        ];
         $score = 0;
+        $aces = 0;
         $cards = $hand->getCards();
         foreach ($cards as $card) {
-            $value = $card->getValue();
-            if ($value === 'A') {
-                $score += $score + 11 > 21 ? 1 : 11;
-                continue;
-            } elseif ($value === 'J' || $value === 'Q' || $value === 'K') {
-                $score += 10;
-                continue;
+            if ($card->getValue() === 'A') {
+                $aces += 1;
             }
-            $score += intval($value);
+            $value = $card->getValue();
+            $score += intval($scoreValues[$value]);
+        }
+        if ($score > 21 && $aces > 0) {
+            while ($aces > 0 && $score > 21) {
+                $score -= 10;
+                $aces -= 1;
+            }
         }
         return $score;
     }
