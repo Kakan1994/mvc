@@ -8,6 +8,7 @@ body {
     font-family: $font-family;
     background-color: $primary-color;
     color: $text-color;
+    font-size: $base-font-size;
     display: flex;
     flex-direction: column;
     min-height: 100vh;

@@ -1,0 +1,75 @@
+.metrics-container {
+    margin: 0 $magic-number * 2;
+
+    h2 {
+        text-align: center;
+        width: 100px;
+        font-size: $base-font-size * 1.5;
+    }
+
+    p {
+        font-size: $base-font-size;
+        margin-bottom: $magic-number;
+        letter-spacing: 0.7px;
+    }
+
+    figcaption {
+        font-size: $base-font-size * 0.8;
+        margin-bottom: $magic-number * 0.5;
+    }
+
+    .left {
+        text-align: left;
+        font-size: $base-font-size * 1.2;
+        margin-bottom: $magic-number *0.25;
+    }
+
+    .scrutinizer-badges {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .badge {
+        margin-right: 1rem;
+    }
+
+    .analysis.image {
+        text-align: center;
+    }
+
+    .analysis-image {
+        box-shadow: $box-shadow-main;
+        margin-bottom: $magic-number;
+    }
+
+    .metrics-heading{
+        h1 {
+            text-align: center;
+            border-bottom: 4px double;
+            width: 30%;
+            margin: 0 auto;
+            font-size: $base-font-size * 3.5;
+        }
+    }
+
+    
+    ul, ol {
+        padding-left: $magic-number*2;
+    }
+
+    ul li {
+        list-style: disc;
+        line-height: $base-line-height;
+    }
+
+    ol li {
+        line-height: $base-line-height;
+    }
+
+    .wider {
+        width: fit-content;
+        text-align: left;
+        margin-top: $magic-number;
+        margin-bottom: $magic-number *0.5;
+    }
+}

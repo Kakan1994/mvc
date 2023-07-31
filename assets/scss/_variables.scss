@@ -4,3 +4,7 @@ $tertiary-color: rgb(85, 93, 93);
 $accent-color: #ff0000;
 $text-color: #f0f0f0;
 $font-family: Arial, sans-serif;
+$box-shadow-main: 5px 10px 8px 4px #888888;
+$base-line-height: 1.4;
+$base-font-size: 1.1em;
+$magic-number: $base-line-height * $base-font-size;

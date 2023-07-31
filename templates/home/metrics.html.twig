@@ -8,13 +8,13 @@
         <h1>Metrics</h1>
     </div>
     <div class="metrics-intro">
-        <h2>Introduktion</h2>
+        <h2 class="wider">Introduktion</h2>
         <p>
             Som en introduktion till denna analys kommer jag att försöka beskriva de sex C:na - kodstil (codestyle),
             kodtäckning (coverage), komplexitet (complexity), sammanhållning (cohesion), koppling (coupling) och CRAP.
         </p>
 
-        <h3>Codestyle</h3>
+        <h3 class="left">Codestyle</h3>
         <p>
             Kodstil (Codestyle) handlar om att följa konsekventa riktlinjer när man skriver kod.
             Detta kan innefatta regler för indentering, namngivning, kommentarer och kodorganisation.
@@ -22,7 +22,7 @@
         </p>
 
 
-        <h3>Coverage</h3>
+        <h3 class="left">Coverage</h3>
         <p>
             Kodtäckning, eller Coverage, refererar till den procentandel av koden som testas av automatiserade tester, ofta enhetstester.
             Målet med kodtäckning är att säkerställa att varje del av koden har blivit exekverad åtminstone en gång under testningen, vilket minskar chansen för oupptäckta fel.
@@ -40,7 +40,7 @@
                 alt="coverage">
         </div>
 
-        <h3>Complexity</h3>
+        <h3 class="left">Complexity</h3>
         <p>
             Komplexitet är ett mätvärde som beskriver hur svårt det är att förstå och ändra en del av koden.
             Detta kan vara resultatet av stora klasser eller metoder, för många villkor och loopar, eller överdriven användning av arv.
@@ -61,7 +61,7 @@
                 alt="coverage">
         </div>
 
-        <h3>Cohesion</h3>
+        <h3 class="left">Cohesion</h3>
         <p>
             Kohesion refererar till hur nära relaterade och fokuserade klassens eller modulens ansvarsområden är.
             En hög kohesion innebär att varje klass eller modul har ett tydligt och specifikt syfte, vilket leder till enklare underhåll, förståelse och testning av koden.
@@ -70,7 +70,7 @@
             Genom att säkerställa att varje klass eller modul endast har ett ansvarsområde kan vi uppnå hög kohesion och mer underhållbar kod.
         </p>
 
-        <h3>Coupling</h3>
+        <h3 class="left">Coupling</h3>
         <p>
             Koppling, eller coupling på engelska, refererar till den grad av beroende mellan olika moduler eller klasser i en programvara.
             Idealiskt sett bör en modul eller klass vara så oberoende som möjligt.
@@ -90,7 +90,7 @@
                 alt="coupling">
         </div>
 
-        <h3>CRAP</h3>
+        <h3 class="left">CRAP</h3>
         <p>
             CRAP, vilket står för Change Risk Analysis and Predictions, är en metrik som används för att mäta risk och kvalitet i kod.
             CRAP-indexet är en kombination av kodens komplexitet och testtäckning.
@@ -109,7 +109,7 @@
                 alt="crap">
         </div>
     </div>
-    <h2>PHP Metrics</h2>
+    <h2 class="wider">PHP Metrics</h2>
     <p>
         Från PHP Metrics så har jag valt ut detta att kolla närmare på:
     </p>
@@ -125,7 +125,7 @@
         </li>
     </ul>
 
-    <h2>Scrutinizer</h2>
+    <h2 class="wider">Scrutinizer</h2>
         <div class="scrutinizer-badges">
             <div class="badge scrutinizer">
                 <img
@@ -159,7 +159,7 @@
             <li>Metoden calculateScore i Game-klassen för att få upp Code quality lite till</li>
         </ul>
 
-        <h2>Förbättringar</h2>
+        <h2 class="wider">Förbättringar</h2>
         <p>
             De förbättringar som jag kommer att fokusera på är att följande 3:
         </p>
@@ -178,8 +178,8 @@
             </li>
         </ol>
 
-        <h2>Åtgärder</h2>
-        <h3>1. Coverage</h3>
+        <h2 class="wider">Åtgärder</h2>
+        <h3 class="left">1. Coverage</h3>
         <p>
             För att förbättra kodtäckningen så har jag skapat tester för mina controllers.
             Det var en utmaning att lyckas med tester för vissa av metoderna i controllers som använder sig av sessions. Men efter en del trial and error så lyckades jag.
@@ -198,7 +198,7 @@
                 alt="coverage">
         </div>
 
-        <h3>2. calculateScore</h3>
+        <h3 class="left">2. calculateScore</h3>
         <p>
             På calculateScore så var det Conditions-värde som drog ner den metoden till ett B i scrutinizer.
             För att minska antalet conditions så bröt jag ut en del av koden till en egen metod.
@@ -212,12 +212,72 @@
                 alt="coverage">
         </div>
 
-        <h3>3. gameBlackjack</h3>
+        <h3 class="left">3. Game</h3>
         <p>
             Då GameController är en av dom kontrollerklasser som jag inte fick testerna att fungera i
             Scrutinizer så är det svårt för mig att avgöra om jag lyckas sänka CRAP värdet.
-            Istället 
+            <br><br>
+            Istället valde jag att refaktorera Game klassen för att minska komplexiteten.
+            Detta gjorde jag genom att flytta ut metoderna som sköter poängen till en egen klass GameScore.
+            Det gjorde att Game-klassen gick från 18 i cyclomatic complexity till 11.
         </p>
-
+        <div class="analysis image">
+            <img
+                class="analysis-image"
+                src="{{ asset('images/metrics/complexity_after.jpg') }}"
+                width="80%"
+                alt="coverage">
+        </div>
+        <div class="scrutinizer-badges">
+            <div class="badge scrutinizer">
+                <img
+                    src="{{ asset('images/metrics/quality-score_after.svg') }}"
+                    alt="quality score badge"
+                    width="140"
+                >
+            </div>
+            <div class="badge coverage">
+                <img
+                    src="{{ asset('images/metrics/coverage_after.svg') }}"
+                    alt="coverage badge"
+                    width="140"
+                >
+            </div>
+            <div class="badge build">
+                <img
+                    src="{{ asset('images/metrics/build_after.svg') }}"
+                    alt="build badge"
+                    width="118"
+                >
+            </div>
+        </div>
+        <figcaption><em>Badges efter åtgärder</em></figcaption>
+        <h2 class="wider">Diskussion</h2>
+        <p>
+            Att aktivt arbeta med kodkvalitet och "clean code" på det här sättet har visat sig vara mycket givande.
+            Genom att konstant utvärdera och förbättra min kod med hjälp av verktyg som PHP Metrics och Scrutinizer,
+            har jag kunnat skapa mer effektiv och läsbar kod som lättare att underhålla.
+            Dessa verktyg ger tydlig feedback om var koden kan förbättras,
+            vilket sparar tid och ansträngning jämfört med att försöka identifiera potentiella problem manuellt.
+            <br><br>
+            Fördelarna med att arbeta på detta sätt är många.
+            För det första, genom att aktivt fokusera på att skapa "clean code", skapar vi kod som är lättare att läsa och förstå,
+            vilket sparar tid för oss själva och andra utvecklare som kan behöva arbeta med vår kod i framtiden.
+            För det andra, genom att fokusera på kodkvalitet, kan vi också upptäcka och rätta till buggar tidigare i utvecklingsprocessen,
+            vilket kan bidra till att förbättra produktens övergripande kvalitet och tillförlitlighet.
+            <br><br>
+            Det finns dock också några potentiella nackdelar.
+            Att ständigt refaktorisera och förbättra koden kan ta tid,
+            och det kan vara frestande att prioritera tillägg av nya funktioner över att förbättra den befintliga koden.
+            Det kan också vara utmanande att hitta rätt balans mellan att skriva "perfekt" kod och
+            att skriva kod som är "tillräckligt bra" och levererar värde till användaren.
+            <br><br>
+            För att ytterligare förbättra kodkvaliteten,
+            skulle jag kunna överväga att implementera ytterligare bästa praxis för "clean code",
+            som att följa SOLID-principerna, använda kodgranskningar och parprogrammering för att upptäcka problem tidigare
+            och lära av andra utvecklare, och att kontinuerligt lära mig om nya tekniker och metoder för att skriva bättre kod.
+            Sammantaget anser jag att en aktiv fokus på kodkvalitet och "clean code" är en värdefull investering som kommer att
+            ge avkastning i form av bättre programvara och en effektivare utvecklingsprocess.
+        </p>
 </div>
 {% endblock %}
