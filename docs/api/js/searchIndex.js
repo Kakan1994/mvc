@@ -141,16 +141,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-ApiController.html#method_quote"
         },                {
-            "fqsen": "\\App\\Controller\\ApiController\u003A\u003AgetBooks\u0028\u0029",
-            "name": "getBooks",
-            "summary": "",
-            "url": "classes/App-Controller-ApiController.html#method_getBooks"
-        },                {
-            "fqsen": "\\App\\Controller\\ApiController\u003A\u003AgetBookByIsbn\u0028\u0029",
-            "name": "getBookByIsbn",
-            "summary": "",
-            "url": "classes/App-Controller-ApiController.html#method_getBookByIsbn"
-        },                {
             "fqsen": "\\App\\Controller\\ApiDeckController",
             "name": "ApiDeckController",
             "summary": "",
@@ -261,10 +251,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-HomeController.html#method_lucky"
         },                {
-            "fqsen": "\\App\\Controller\\HomeController\u003A\u003Acard\u0028\u0029",
-            "name": "card",
+            "fqsen": "\\App\\Controller\\HomeController\u003A\u003Ametrics\u0028\u0029",
+            "name": "metrics",
             "summary": "",
-            "url": "classes/App-Controller-HomeController.html#method_card"
+            "url": "classes/App-Controller-HomeController.html#method_metrics"
         },                {
             "fqsen": "\\App\\Game\\Dealer",
             "name": "Dealer",
@@ -336,15 +326,15 @@ Search.appendIndex(
             "summary": "Start\u0020the\u0020game.",
             "url": "classes/App-Game-Game.html#method_startGame"
         },                {
-            "fqsen": "\\App\\Game\\Game\u003A\u003AcalculateScore\u0028\u0029",
-            "name": "calculateScore",
-            "summary": "Calculate\u0020the\u0020score\u0020of\u0020a\u0020hand.",
-            "url": "classes/App-Game-Game.html#method_calculateScore"
-        },                {
             "fqsen": "\\App\\Game\\Game\u003A\u003AgetPlayer\u0028\u0029",
             "name": "getPlayer",
             "summary": "Get\u0020the\u0020player.",
             "url": "classes/App-Game-Game.html#method_getPlayer"
+        },                {
+            "fqsen": "\\App\\Game\\Game\u003A\u003AgetGameScore\u0028\u0029",
+            "name": "getGameScore",
+            "summary": "Get\u0020the\u0020score\u0020of\u0020the\u0020game.",
+            "url": "classes/App-Game-Game.html#method_getGameScore"
         },                {
             "fqsen": "\\App\\Game\\Game\u003A\u003AgetDealer\u0028\u0029",
             "name": "getDealer",
@@ -371,25 +361,10 @@ Search.appendIndex(
             "summary": "Stand\u0020for\u0020the\u0020player.\u0020The\u0020dealer\u0020will\u0020draw\u0020cards\u0020until\u0020it\u0020has\u0020a\u0020score\u0020of\u002017\u0020or\u0020higher.",
             "url": "classes/App-Game-Game.html#method_stand"
         },                {
-            "fqsen": "\\App\\Game\\Game\u003A\u003AgetPlayerScore\u0028\u0029",
-            "name": "getPlayerScore",
-            "summary": "Get\u0020the\u0020score\u0020of\u0020the\u0020player.",
-            "url": "classes/App-Game-Game.html#method_getPlayerScore"
-        },                {
-            "fqsen": "\\App\\Game\\Game\u003A\u003AgetLastPlayerScore\u0028\u0029",
-            "name": "getLastPlayerScore",
-            "summary": "Get\u0020the\u0020score\u0020of\u0020the\u0020player\u0020in\u0020the\u0020last\u0020round.",
-            "url": "classes/App-Game-Game.html#method_getLastPlayerScore"
-        },                {
-            "fqsen": "\\App\\Game\\Game\u003A\u003AgetDealerScore\u0028\u0029",
-            "name": "getDealerScore",
-            "summary": "Get\u0020the\u0020score\u0020of\u0020the\u0020dealer.",
-            "url": "classes/App-Game-Game.html#method_getDealerScore"
-        },                {
-            "fqsen": "\\App\\Game\\Game\u003A\u003AgetLastDealerScore\u0028\u0029",
-            "name": "getLastDealerScore",
-            "summary": "Get\u0020the\u0020score\u0020of\u0020the\u0020dealer\u0020in\u0020the\u0020last\u0020round.",
-            "url": "classes/App-Game-Game.html#method_getLastDealerScore"
+            "fqsen": "\\App\\Game\\Game\u003A\u003AdealerPlay\u0028\u0029",
+            "name": "dealerPlay",
+            "summary": "",
+            "url": "classes/App-Game-Game.html#method_dealerPlay"
         },                {
             "fqsen": "\\App\\Game\\Game\u003A\u003AgetWinner\u0028\u0029",
             "name": "getWinner",
@@ -451,25 +426,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Game-Game.html#property_deck"
         },                {
-            "fqsen": "\\App\\Game\\Game\u003A\u003A\u0024playerScore",
-            "name": "playerScore",
+            "fqsen": "\\App\\Game\\Game\u003A\u003A\u0024gameScore",
+            "name": "gameScore",
             "summary": "",
-            "url": "classes/App-Game-Game.html#property_playerScore"
-        },                {
-            "fqsen": "\\App\\Game\\Game\u003A\u003A\u0024dealerScore",
-            "name": "dealerScore",
-            "summary": "",
-            "url": "classes/App-Game-Game.html#property_dealerScore"
-        },                {
-            "fqsen": "\\App\\Game\\Game\u003A\u003A\u0024lastPlayerScore",
-            "name": "lastPlayerScore",
-            "summary": "",
-            "url": "classes/App-Game-Game.html#property_lastPlayerScore"
-        },                {
-            "fqsen": "\\App\\Game\\Game\u003A\u003A\u0024lastDealerScore",
-            "name": "lastDealerScore",
-            "summary": "",
-            "url": "classes/App-Game-Game.html#property_lastDealerScore"
+            "url": "classes/App-Game-Game.html#property_gameScore"
         },                {
             "fqsen": "\\App\\Game\\Game\u003A\u003A\u0024winner",
             "name": "winner",
@@ -680,6 +640,101 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "",
             "url": "classes/App-Repository-LibraryRepository.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiLibraryController",
+            "name": "ApiLibraryController",
+            "summary": "",
+            "url": "classes/App-Controller-ApiLibraryController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiLibraryController\u003A\u003AgetBooks\u0028\u0029",
+            "name": "getBooks",
+            "summary": "",
+            "url": "classes/App-Controller-ApiLibraryController.html#method_getBooks"
+        },                {
+            "fqsen": "\\App\\Controller\\ApiLibraryController\u003A\u003AgetBookByIsbn\u0028\u0029",
+            "name": "getBookByIsbn",
+            "summary": "",
+            "url": "classes/App-Controller-ApiLibraryController.html#method_getBookByIsbn"
+        },                {
+            "fqsen": "\\App\\Game\\GameScore",
+            "name": "GameScore",
+            "summary": "",
+            "url": "classes/App-Game-GameScore.html"
+        },                {
+            "fqsen": "\\App\\Game\\GameScore\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Game-GameScore.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Game\\GameScore\u003A\u003AgetPlayerScore\u0028\u0029",
+            "name": "getPlayerScore",
+            "summary": "Get\u0020the\u0020score\u0020of\u0020the\u0020player.",
+            "url": "classes/App-Game-GameScore.html#method_getPlayerScore"
+        },                {
+            "fqsen": "\\App\\Game\\GameScore\u003A\u003AsetPlayerScore\u0028\u0029",
+            "name": "setPlayerScore",
+            "summary": "Set\u0020the\u0020score\u0020of\u0020the\u0020player.",
+            "url": "classes/App-Game-GameScore.html#method_setPlayerScore"
+        },                {
+            "fqsen": "\\App\\Game\\GameScore\u003A\u003AgetLastPlayerScore\u0028\u0029",
+            "name": "getLastPlayerScore",
+            "summary": "Get\u0020the\u0020score\u0020of\u0020the\u0020player\u0020in\u0020the\u0020last\u0020round.",
+            "url": "classes/App-Game-GameScore.html#method_getLastPlayerScore"
+        },                {
+            "fqsen": "\\App\\Game\\GameScore\u003A\u003AsetLastPlayerScore\u0028\u0029",
+            "name": "setLastPlayerScore",
+            "summary": "Set\u0020the\u0020score\u0020of\u0020the\u0020player\u0020in\u0020the\u0020last\u0020round.",
+            "url": "classes/App-Game-GameScore.html#method_setLastPlayerScore"
+        },                {
+            "fqsen": "\\App\\Game\\GameScore\u003A\u003AgetDealerScore\u0028\u0029",
+            "name": "getDealerScore",
+            "summary": "Get\u0020the\u0020score\u0020of\u0020the\u0020dealer.",
+            "url": "classes/App-Game-GameScore.html#method_getDealerScore"
+        },                {
+            "fqsen": "\\App\\Game\\GameScore\u003A\u003AsetDealerScore\u0028\u0029",
+            "name": "setDealerScore",
+            "summary": "Set\u0020the\u0020score\u0020of\u0020the\u0020dealer.",
+            "url": "classes/App-Game-GameScore.html#method_setDealerScore"
+        },                {
+            "fqsen": "\\App\\Game\\GameScore\u003A\u003AgetLastDealerScore\u0028\u0029",
+            "name": "getLastDealerScore",
+            "summary": "Get\u0020the\u0020score\u0020of\u0020the\u0020dealer\u0020in\u0020the\u0020last\u0020round.",
+            "url": "classes/App-Game-GameScore.html#method_getLastDealerScore"
+        },                {
+            "fqsen": "\\App\\Game\\GameScore\u003A\u003AsetLastDealerScore\u0028\u0029",
+            "name": "setLastDealerScore",
+            "summary": "Set\u0020the\u0020score\u0020of\u0020the\u0020dealer\u0020in\u0020the\u0020last\u0020round.",
+            "url": "classes/App-Game-GameScore.html#method_setLastDealerScore"
+        },                {
+            "fqsen": "\\App\\Game\\GameScore\u003A\u003AcalculateScore\u0028\u0029",
+            "name": "calculateScore",
+            "summary": "Calculate\u0020the\u0020score\u0020of\u0020a\u0020hand.",
+            "url": "classes/App-Game-GameScore.html#method_calculateScore"
+        },                {
+            "fqsen": "\\App\\Game\\GameScore\u003A\u003AcalcAces\u0028\u0029",
+            "name": "calcAces",
+            "summary": "Calculate\u0020the\u0020score\u0020of\u0020a\u0020hand\u0020with\u0020aces.",
+            "url": "classes/App-Game-GameScore.html#method_calcAces"
+        },                {
+            "fqsen": "\\App\\Game\\GameScore\u003A\u003A\u0024playerScore",
+            "name": "playerScore",
+            "summary": "",
+            "url": "classes/App-Game-GameScore.html#property_playerScore"
+        },                {
+            "fqsen": "\\App\\Game\\GameScore\u003A\u003A\u0024dealerScore",
+            "name": "dealerScore",
+            "summary": "",
+            "url": "classes/App-Game-GameScore.html#property_dealerScore"
+        },                {
+            "fqsen": "\\App\\Game\\GameScore\u003A\u003A\u0024lastPlayerScore",
+            "name": "lastPlayerScore",
+            "summary": "",
+            "url": "classes/App-Game-GameScore.html#property_lastPlayerScore"
+        },                {
+            "fqsen": "\\App\\Game\\GameScore\u003A\u003A\u0024lastDealerScore",
+            "name": "lastDealerScore",
+            "summary": "",
+            "url": "classes/App-Game-GameScore.html#property_lastDealerScore"
         },                {
             "fqsen": "\\",
             "name": "\\",

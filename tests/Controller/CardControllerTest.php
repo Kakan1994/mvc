@@ -53,7 +53,7 @@ class CardControllerTest extends WebTestCase
 
         $form = $crawler->selectButton('Draw')->form();
 
-        $form['form[count]'] = 2;
+        $form['form[count]'] = '2';
 
         $client->submit($form);
 

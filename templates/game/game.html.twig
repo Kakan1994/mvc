@@ -7,24 +7,24 @@
 <h1>Blackjack</h1>
 <div class="last-round">
 <h2>Last round winner: {{ game.winner }}</h2>
-<h2>Player score last round: {{ game.getLastPlayerScore }}</h2>
-<h2>Dealer score last round: {{ game.getLastDealerScore }}</h2>
+<h2>Player score last round: {{ game.getGameScore.getLastPlayerScore }}</h2>
+<h2>Dealer score last round: {{ game.getGameScore.getLastDealerScore }}</h2>
 </div>
 <h2>Cards left in deck: {{ game.getDeck.getCards|length }}</h2>
-<div class="player-info">
-<h2>Player: {{ game.getPlayerScore }}</h2>
-<!-- Display player cards -->
+<div class="dealer-info">
+<h2>Dealer: {{ game.getGameScore.getDealerScore }}</h2>
+<!-- Display dealer cards -->
 <div class="card-row">
-{% for card in game.getPlayer.getHand.getCards %}
+{% for card in game.getDealer.getHand.getCards %}
     <span class="card{% if card.getSuit() in ['♥', '♦'] %} red{% endif %}">{{ card }}</span>
 {% endfor %}
 </div>
 </div>
-<div class="dealer-info">
-<h2>Dealer: {{ game.getDealerScore }}</h2>
-<!-- Display dealer cards -->
+<div class="player-info">
+<h2>Player: {{ game.getGameScore.getPlayerScore }}</h2>
+<!-- Display player cards -->
 <div class="card-row">
-{% for card in game.getDealer.getHand.getCards %}
+{% for card in game.getPlayer.getHand.getCards %}
     <span class="card{% if card.getSuit() in ['♥', '♦'] %} red{% endif %}">{{ card }}</span>
 {% endfor %}
 </div>

@@ -58,11 +58,11 @@ var classes = [
         "totalDataComplexity": 0.5,
         "totalSystemComplexity": 1.5,
         "package": "App\\Repository\\",
-        "pageRank": 0.04,
+        "pageRank": 0.03,
         "afferentCoupling": 2,
         "efferentCoupling": 2,
         "instability": 0.5,
-        "numberOfUnitTests": 1,
+        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -239,7 +239,7 @@ var classes = [
         "totalDataComplexity": 3,
         "totalSystemComplexity": 19,
         "package": "App\\Cards\\",
-        "pageRank": 0.11,
+        "pageRank": 0.13,
         "afferentCoupling": 3,
         "efferentCoupling": 1,
         "instability": 0.25,
@@ -406,7 +406,7 @@ var classes = [
         "totalDataComplexity": 9,
         "totalSystemComplexity": 9,
         "package": "App\\Cards\\",
-        "pageRank": 0.09,
+        "pageRank": 0.07,
         "afferentCoupling": 5,
         "efferentCoupling": 1,
         "instability": 0.17,
@@ -1485,7 +1485,7 @@ var classes = [
         "totalDataComplexity": 10.5,
         "totalSystemComplexity": 82.5,
         "package": "App\\Game\\",
-        "pageRank": 0.03,
+        "pageRank": 0.02,
         "afferentCoupling": 1,
         "efferentCoupling": 3,
         "instability": 0.75,
@@ -1587,11 +1587,128 @@ var classes = [
         "totalDataComplexity": 8,
         "totalSystemComplexity": 36,
         "package": "App\\Game\\",
-        "pageRank": 0.05,
+        "pageRank": 0.04,
         "afferentCoupling": 2,
         "efferentCoupling": 2,
         "instability": 0.5,
         "numberOfUnitTests": 5,
+        "violations": {}
+    },
+    {
+        "name": "App\\Game\\GameScore",
+        "interface": false,
+        "abstract": false,
+        "final": false,
+        "methods": [
+            {
+                "name": "__construct",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getPlayerScore",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setPlayerScore",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getLastPlayerScore",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setLastPlayerScore",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getDealerScore",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setDealerScore",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getLastDealerScore",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setLastDealerScore",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "calculateScore",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "calcAces",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 11,
+        "nbMethods": 3,
+        "nbMethodsPrivate": 0,
+        "nbMethodsPublic": 3,
+        "nbMethodsGetter": 4,
+        "nbMethodsSetters": 4,
+        "wmc": 7,
+        "ccn": 5,
+        "ccnMethodMax": 3,
+        "externals": [
+            "App\\Cards\\CardHand"
+        ],
+        "parents": [],
+        "implements": [],
+        "lcom": 2,
+        "length": 117,
+        "vocabulary": 36,
+        "volume": 604.88,
+        "difficulty": 14.5,
+        "effort": 8770.78,
+        "level": 0.07,
+        "bugs": 0.2,
+        "time": 487,
+        "intelligentContent": 41.72,
+        "number_operators": 30,
+        "number_operands": 87,
+        "number_operators_unique": 9,
+        "number_operands_unique": 27,
+        "cloc": 55,
+        "loc": 126,
+        "lloc": 71,
+        "mi": 82.16,
+        "mIwoC": 39.47,
+        "commentWeight": 42.7,
+        "kanDefect": 0.68,
+        "relativeStructuralComplexity": 9,
+        "relativeDataComplexity": 1.66,
+        "relativeSystemComplexity": 10.66,
+        "totalStructuralComplexity": 99,
+        "totalDataComplexity": 18.25,
+        "totalSystemComplexity": 117.25,
+        "package": "App\\Game\\",
+        "pageRank": 0.02,
+        "afferentCoupling": 1,
+        "efferentCoupling": 1,
+        "instability": 0.5,
+        "numberOfUnitTests": 1,
         "violations": {}
     },
     {
@@ -1615,21 +1732,12 @@ var classes = [
                 "_type": "Hal\\Metric\\FunctionMetric"
             },
             {
-                "name": "calculateScore",
-                "role": null,
-                "public": true,
-                "private": false,
-                "_type": "Hal\\Metric\\FunctionMetric"
-            },
-            {
-                "name": "calcAces",
-                "role": null,
-                "public": true,
-                "private": false,
-                "_type": "Hal\\Metric\\FunctionMetric"
-            },
-            {
                 "name": "getPlayer",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getGameScore",
                 "role": "getter",
                 "_type": "Hal\\Metric\\FunctionMetric"
             },
@@ -1665,23 +1773,10 @@ var classes = [
                 "_type": "Hal\\Metric\\FunctionMetric"
             },
             {
-                "name": "getPlayerScore",
-                "role": "getter",
-                "_type": "Hal\\Metric\\FunctionMetric"
-            },
-            {
-                "name": "getLastPlayerScore",
-                "role": "getter",
-                "_type": "Hal\\Metric\\FunctionMetric"
-            },
-            {
-                "name": "getDealerScore",
-                "role": "getter",
-                "_type": "Hal\\Metric\\FunctionMetric"
-            },
-            {
-                "name": "getLastDealerScore",
-                "role": "getter",
+                "name": "dealerPlay",
+                "role": null,
+                "public": true,
+                "private": false,
                 "_type": "Hal\\Metric\\FunctionMetric"
             },
             {
@@ -1744,21 +1839,22 @@ var classes = [
                 "_type": "Hal\\Metric\\FunctionMetric"
             }
         ],
-        "nbMethodsIncludingGettersSetters": 23,
-        "nbMethods": 14,
+        "nbMethodsIncludingGettersSetters": 19,
+        "nbMethods": 13,
         "nbMethodsPrivate": 0,
-        "nbMethodsPublic": 14,
-        "nbMethodsGetter": 8,
+        "nbMethodsPublic": 13,
+        "nbMethodsGetter": 5,
         "nbMethodsSetters": 1,
-        "wmc": 30,
-        "ccn": 17,
-        "ccnMethodMax": 6,
+        "wmc": 23,
+        "ccn": 11,
+        "ccnMethodMax": 3,
         "externals": [
             "App\\Game\\Player",
             "App\\Game\\Dealer",
             "App\\Cards\\DeckOfCards",
-            "App\\Cards\\CardHand",
+            "App\\Game\\GameScore",
             "App\\Game\\Player",
+            "App\\Game\\GameScore",
             "App\\Game\\Dealer",
             "App\\Cards\\DeckOfCards",
             "App\\Game\\GameException",
@@ -1771,32 +1867,32 @@ var classes = [
         "parents": [],
         "implements": [],
         "lcom": 1,
-        "length": 315,
-        "vocabulary": 55,
-        "volume": 1821.13,
-        "difficulty": 28.63,
-        "effort": 52129.8,
-        "level": 0.03,
-        "bugs": 0.61,
-        "time": 2896,
-        "intelligentContent": 63.62,
-        "number_operators": 86,
-        "number_operands": 229,
-        "number_operators_unique": 11,
-        "number_operands_unique": 44,
-        "cloc": 132,
-        "loc": 332,
-        "lloc": 200,
-        "mi": 66.13,
-        "mIwoC": 24.69,
-        "commentWeight": 41.44,
-        "kanDefect": 1.47,
-        "relativeStructuralComplexity": 289,
-        "relativeDataComplexity": 0.74,
-        "relativeSystemComplexity": 289.74,
-        "totalStructuralComplexity": 6647,
-        "totalDataComplexity": 16.94,
-        "totalSystemComplexity": 6663.94,
+        "length": 194,
+        "vocabulary": 29,
+        "volume": 942.45,
+        "difficulty": 28.57,
+        "effort": 26927.09,
+        "level": 0.04,
+        "bugs": 0.31,
+        "time": 1496,
+        "intelligentContent": 32.99,
+        "number_operators": 44,
+        "number_operands": 150,
+        "number_operators_unique": 8,
+        "number_operands_unique": 21,
+        "cloc": 106,
+        "loc": 265,
+        "lloc": 159,
+        "mi": 71.19,
+        "mIwoC": 29.67,
+        "commentWeight": 41.52,
+        "kanDefect": 0.94,
+        "relativeStructuralComplexity": 576,
+        "relativeDataComplexity": 0.37,
+        "relativeSystemComplexity": 576.37,
+        "totalStructuralComplexity": 10944,
+        "totalDataComplexity": 6.96,
+        "totalSystemComplexity": 10950.96,
         "package": "App\\Game\\",
         "pageRank": 0.02,
         "afferentCoupling": 1,

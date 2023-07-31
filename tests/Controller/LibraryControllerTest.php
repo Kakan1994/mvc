@@ -23,12 +23,11 @@ class LibraryControllerTest extends WebTestCase
     protected function setUpEntityManager(KernelBrowser $client): EntityManagerInterface
     {
         $entityManager = $client->getContainer()->get('doctrine')->getManager();
-        // $this->libraryRepository = $this->entityManager->getRepository(Library::class);
 
         return $entityManager;
     }
 
-    protected function setUpLibraryRepository(KernelBrowser $client): LibraryRepository
+    protected function setUpLibraryRepository(KernelBrowser $client)
     {
         $entityManager = $this->setUpEntityManager($client);
         $libraryRepository = $entityManager->getRepository(Library::class);

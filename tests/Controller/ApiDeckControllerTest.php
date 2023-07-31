@@ -22,8 +22,9 @@ class ApiDeckControllerTest extends WebTestCase
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
         $responseContent = $client->getResponse()->getContent();
-        $responeArray = json_decode($responseContent, true);
+        $this->assertNotFalse($responseContent);
 
+        $responeArray = json_decode($responseContent, true);
         $this->assertCount(52, $responeArray);
     }
 
@@ -35,8 +36,9 @@ class ApiDeckControllerTest extends WebTestCase
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
         $responseContent = $client->getResponse()->getContent();
-        $responeArray = json_decode($responseContent, true);
+        $this->assertNotFalse($responseContent);
 
+        $responeArray = json_decode($responseContent, true);
         $this->assertCount(52, $responeArray);
     }
 
@@ -48,8 +50,10 @@ class ApiDeckControllerTest extends WebTestCase
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
         $responseContent = $client->getResponse()->getContent();
-        $responeArray = json_decode($responseContent, true);
+        $this->assertNotFalse($responseContent);
 
+
+        $responeArray = json_decode($responseContent, true);
         $this->assertCount(2, $responeArray);
         $this->assertCount(5, $responeArray['drawnCards']);
         $this->assertEquals(47, $responeArray['remainingCards']);
@@ -65,8 +69,9 @@ class ApiDeckControllerTest extends WebTestCase
         $this->assertEquals(404, $client->getResponse()->getStatusCode());
 
         $responseContent = $client->getResponse()->getContent();
-        $responseArray = json_decode($responseContent, true);
+        $this->assertNotFalse($responseContent);
 
+        $responseArray = json_decode($responseContent, true);
         $this->assertEquals('No game found', $responseArray['error']); // Assert that we receive the 'No game found' error
     }
 
@@ -94,10 +99,11 @@ class ApiDeckControllerTest extends WebTestCase
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
         $responseContent = $client->getResponse()->getContent();
+        $this->assertNotFalse($responseContent);
+
         $responseArray = json_decode($responseContent, true);
 
         // Add assertions to check the structure of the returned JSON
-        // Example:
         $this->assertIsArray($responseArray['playerCards']);
         $this->assertIsArray($responseArray['dealerCards']);
         $this->assertIsBool($responseArray['dealerHiddenCardRevealed']);

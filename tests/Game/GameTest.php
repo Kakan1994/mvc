@@ -58,15 +58,14 @@ class GameTest extends TestCase
         $game = new Game();
         $game->startGame();
         $game->hit();
-        while ($game->getPlayerScore() > 20)
+        while ($game->getGameScore()->getPlayerScore() > 20)
         {
             $game = new Game();
             $game->startGame();
             $game->hit();
         }
-        
 
-        $this->assertLessThan(21, $game->getPlayerScore());
+        $this->assertLessThan(21, $game->getGameScore()->getPlayerScore());
         $this->assertFalse($game->isGameOver());
         $this->assertGreaterThan(2, $game->getPlayer()->getHand()->getCards());
     }
@@ -79,15 +78,15 @@ class GameTest extends TestCase
         $game = new Game();
         $game->startGame();
 
-        while ($game->getPlayerScore() <= 21) {
+        while ($game->getGameScore()->getPlayerScore() <= 21) {
             $game->hit();
-            if ($game->getPlayerScore() === 21) {
+            if ($game->getGameScore()->getPlayerScore() === 21) {
                 $game = new Game();
                 $game->startGame();
             }
         }
 
-        $this->assertGreaterThan(21, $game->getPlayerScore());
+        $this->assertGreaterThan(21, $game->getGameScore()->getPlayerScore());
         $this->assertTrue($game->isGameOver());
         $this->assertGreaterThan(2, $game->getPlayer()->getHand()->getCards());
     }
@@ -99,19 +98,19 @@ class GameTest extends TestCase
     {
         $game = new Game();
         $game->startGame();
-        while ($game->getPlayerScore() < 21 || $game->getPlayerScore() > 21) {
+        while ($game->getGameScore()->getPlayerScore() < 21 || $game->getGameScore()->getPlayerScore() > 21) {
             $game->hit();
-            if ($game->getPlayerScore() > 21) {
+            if ($game->getGameScore()->getPlayerScore() > 21) {
                 $game = new Game();
                 $game->startGame();
                 $game->hit();
             }
-            if ($game->getPlayerScore() === 21) {
+            if ($game->getGameScore()->getPlayerScore() === 21) {
                 break;
             }
         }
 
-        $this->assertEquals(21, $game->getPlayerScore());
+        $this->assertEquals(21, $game->getGameScore()->getPlayerScore());
         $this->assertGreaterThan(2, $game->getPlayer()->getHand()->getCards());
     }
 
@@ -134,12 +133,12 @@ class GameTest extends TestCase
         $game = new Game();
         $game->startGame();
         $game->stand();
-        while ($game->getDealerScore() <= 21) {
+        while ($game->getGameScore()->getDealerScore() <= 21) {
             $game = new Game();
             $game->startGame();
             $game->stand();
         }
-        $this->assertGreaterThan(21, $game->getDealerScore());
+        $this->assertGreaterThan(21, $game->getGameScore()->getDealerScore());
         $this->assertGreaterThan(2, $game->getDealer()->getHand()->getCards());
     }
 
@@ -161,10 +160,10 @@ class GameTest extends TestCase
     {
         $game = new Game();
         $game->startGame();
-        $exp = $game->getPlayerScore();
+        $exp = $game->getGameScore()->getPlayerScore();
         $game->stand();
         $game->newRound();
-        $res = $game->getLastPlayerScore();
+        $res = $game->getGameScore()->getLastPlayerScore();
         $this->assertEquals($exp, $res);
     }
 
@@ -176,9 +175,9 @@ class GameTest extends TestCase
         $game = new Game();
         $game->startGame();
         $game->stand();
-        $exp = $game->getDealerScore();
+        $exp = $game->getGameScore()->getDealerScore();
         $game->newRound();
-        $res = $game->getLastDealerScore();
+        $res = $game->getGameScore()->getLastDealerScore();
         $this->assertEquals($exp, $res);
     }
 
@@ -214,8 +213,8 @@ class GameTest extends TestCase
         $this->assertCount(2, $game->getPlayer()->getHand()->getCards());
         $this->assertCount(1, $game->getDealer()->getHand()->getCards());
         $this->assertCount(48, $game->getDeck()->getCards());
-        $this->assertEquals(0, $game->getLastPlayerScore());
-        $this->assertEquals(0, $game->getLastDealerScore());
+        $this->assertEquals(0, $game->getGameScore()->getLastPlayerScore());
+        $this->assertEquals(0, $game->getGameScore()->getLastDealerScore());
         $this->assertFalse($game->isGameOver());
     }
 
@@ -261,10 +260,10 @@ class GameTest extends TestCase
             "playerCards" => $game->getPlayer()->getHand()->getCardsAsArray(),
             "dealerCards" => $game->getDealer()->getHand()->getCardsAsArray(),
             "dealerHiddenCardRevealed" => $game->getDealer()->isHiddenCardRevealed(),
-            "playerScore" => $game->getPlayerScore(),
-            "dealerScore" => $game->getDealerScore(),
-            "lastPlayerScore" => $game->getLastPlayerScore(),
-            "lastDealerScore" => $game->getLastDealerScore(),
+            "playerScore" => $game->getGameScore()->getPlayerScore(),
+            "dealerScore" => $game->getGameScore()->getDealerScore(),
+            "lastPlayerScore" => $game->getGameScore()->getLastPlayerScore(),
+            "lastDealerScore" => $game->getGameScore()->getLastDealerScore(),
             "lastWinner" => $game->getWinner()
         ];
         $this->assertEquals($exp, $res);

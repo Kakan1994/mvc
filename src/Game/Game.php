@@ -5,8 +5,6 @@ namespace App\Game;
 use App\Cards\Card;
 use App\Cards\CardHand;
 use App\Cards\DeckOfCards;
-use App\Game\Player;
-use App\Game\Dealer;
 
 /**
  * Class Game
@@ -31,24 +29,9 @@ class Game
     private $deck;
 
     /**
-     * @var int $playerScore   The score of the player.
+     * @var GameScore $gameScore   The score of the game.
      */
-    private $playerScore;
-
-    /**
-     * @var int $dealerScore   The score of the dealer.
-     */
-    private $dealerScore;
-
-    /**
-     * @var int $lastPlayerScore   The score of the player in the last round.
-     */
-    private $lastPlayerScore;
-
-    /**
-     * @var int $lastDealerScore   The score of the dealer in the last round.
-     */
-    private $lastDealerScore;
+    private $gameScore;
 
     /**
      * @var string|null $winner   The winner of the last round.
@@ -68,10 +51,7 @@ class Game
         $this->player = new Player('Player');
         $this->dealer = new Dealer();
         $this->deck = new DeckOfCards();
-        $this->playerScore = 0;
-        $this->dealerScore = 0;
-        $this->lastPlayerScore = 0;
-        $this->lastDealerScore = 0;
+        $this->gameScore = new GameScore();
         $this->setWinner('First round');
         $this->gameOver = false;
     }
@@ -90,55 +70,9 @@ class Game
         $this->dealer->drawHiddenCard($this->deck);
         $this->player->drawCard($this->deck);
         $this->dealer->drawCard($this->deck);
-        $this->playerScore = $this->calculateScore($this->player->getHand());
-        $this->dealerScore = $this->calculateScore($this->dealer->getHand());
+        $this->gameScore->setPlayerScore($this->gameScore->calculateScore($this->player->getHand()));
+        $this->gameScore->setDealerScore($this->gameScore->calculateScore($this->dealer->getHand()));
         $this->gameOver = false;
-    }
-
-    /**
-     * Calculate the score of a hand.
-     * @param CardHand $hand   The hand to calculate the score of.
-     * @return int   The score of the hand.
-     */
-    public function calculateScore(CardHand $hand): int
-    {
-        $scoreValues = [
-            '1' => '1',
-            '2' => '2',
-            '3' => '3',
-            '4' => '4',
-            '5' => '5',
-            '6' => '6',
-            '7' => '7',
-            '8' => '8',
-            '9' => '9',
-            '10' => '10',
-            'J' => '10',
-            'Q' => '10',
-            'K' => '10',
-            'A' => '11',
-        ];
-        $score = 0;
-        $aces = 0;
-        $cards = $hand->getCards();
-        foreach ($cards as $card) {
-            if ($card->getValue() === 'A') {
-                $aces += 1;
-            }
-            $value = $card->getValue();
-            $score += intval($scoreValues[$value]);
-        }
-        $score = $this->calcAces($score, $aces);
-        return $score;
-    }
-
-    public function calcAces(int $score, int $aces): int
-    {
-        while ($aces > 0 && $score > 21) {
-            $score -= 10;
-            $aces -= 1;
-        }
-        return $score;
     }
 
     /**
@@ -148,6 +82,15 @@ class Game
     public function getPlayer(): Player
     {
         return $this->player;
+    }
+
+    /**
+     * Get the score of the game.
+     * @return GameScore   The score of the game.
+     */
+    public function getGameScore(): GameScore
+    {
+        return $this->gameScore;
     }
 
     /**
@@ -177,7 +120,7 @@ class Game
         if ($this->dealer->isHiddenCardRevealed() === false) {
             $this->dealer->revealHiddenCard();
         }
-        $this->dealerScore = $this->calculateScore($this->dealer->getHand());
+        $this->gameScore->setDealerScore($this->gameScore->calculateScore($this->dealer->getHand()));
     }
 
     /**
@@ -188,11 +131,11 @@ class Game
     {
         $this->checkDeck();
         $this->player->drawCard($this->deck);
-        $this->playerScore  = $this->calculateScore($this->player->getHand());
-        if ($this->playerScore  === 21) {
+        $this->gameScore->setPlayerScore($this->gameScore->calculateScore($this->player->getHand()));
+        if ($this->gameScore->getPlayerScore()  === 21) {
             $this->stand();
         }
-        if ($this->playerScore  > 21) {
+        if ($this->gameScore->getPlayerScore()  > 21) {
             $this->setWinner('Dealer');
             $this->gameOver();
         }
@@ -205,60 +148,31 @@ class Game
     public function stand(): void
     {
         $this->dealer->revealHiddenCard();
-        $this->dealerScore = $this->calculateScore($this->dealer->getHand());
-        $this->playerScore  = $this->calculateScore($this->player->getHand());
-        while ($this->dealerScore < 17) {
-            $this->checkDeck();
-            $this->dealer->drawCard($this->deck);
-            $this->dealerScore = $this->calculateScore($this->dealer->getHand());
-        }
-        if ($this->dealerScore > 21) {
+        $this->gameScore->setDealerScore($this->gameScore->calculateScore($this->dealer->getHand()));
+        $this->gameScore->setPlayerScore($this->gameScore->calculateScore($this->player->getHand()));
+
+        $this->dealerPlay();
+
+        if ($this->gameScore->getDealerScore() > 21 || $this->gameScore->getDealerScore() < $this->gameScore->getPlayerScore()) {
             $this->setWinner('Player');
             $this->gameOver();
-        } elseif ($this->dealerScore < $this->playerScore) {
-            $this->setWinner('Player');
-            $this->gameOver();
-        } elseif ($this->dealerScore > $this->playerScore || $this->dealerScore === $this->playerScore) {
-            $this->setWinner('Dealer');
+            return;
         }
+
+        $this->setWinner('Dealer');
         $this->gameOver();
     }
 
-    /**
-     * Get the score of the player.
-     * @return int   The score of the player.
-     */
-    public function getPlayerScore(): int
+    public function dealerPlay(): void
     {
-        return $this->playerScore;
+        while ($this->gameScore->getDealerScore() < 17) {
+            $this->checkDeck();
+            $this->dealer->drawCard($this->deck);
+            $this->gameScore->setDealerScore($this->gameScore->calculateScore($this->dealer->getHand()));
+        }
     }
 
-    /**
-     * Get the score of the player in the last round.
-     * @return int   The score of the player in the last round.
-     */
-    public function getLastPlayerScore(): int
-    {
-        return $this->lastPlayerScore;
-    }
 
-    /**
-     * Get the score of the dealer.
-     * @return int   The score of the dealer.
-     */
-    public function getDealerScore(): int
-    {
-        return $this->dealerScore;
-    }
-
-    /**
-     * Get the score of the dealer in the last round.
-     * @return int   The score of the dealer in the last round.
-     */
-    public function getLastDealerScore(): int
-    {
-        return $this->lastDealerScore;
-    }
 
     /**
      * Get the winner of the last round.
@@ -312,10 +226,10 @@ class Game
         $this->player = new Player('Player');
         $this->dealer = new Dealer();
         $this->deck = new DeckOfCards();
-        $this->playerScore = 0;
-        $this->dealerScore = 0;
-        $this->lastPlayerScore = 0;
-        $this->lastDealerScore = 0;
+        $this->gameScore->setPlayerScore(0);
+        $this->gameScore->setDealerScore(0);
+        $this->gameScore->setLastPlayerScore(0);
+        $this->gameScore->setLastDealerScore(0);
         $this->startGame();
     }
 
@@ -328,10 +242,10 @@ class Game
         $this->gameOver = false;
         $this->player->clearHand();
         $this->dealer->clearHand();
-        $this->lastPlayerScore = $this->playerScore;
-        $this->lastDealerScore = $this->dealerScore;
-        $this->playerScore = 0;
-        $this->dealerScore = 0;
+        $this->gameScore->setLastPlayerScore($this->gameScore->getPlayerScore());
+        $this->gameScore->setLastDealerScore($this->gameScore->getDealerScore());
+        $this->gameScore->setPlayerScore(0);
+        $this->gameScore->setDealerScore(0);
         $this->checkDeck();
         $this->player->drawCard($this->deck);
         $this->checkDeck();
@@ -340,8 +254,8 @@ class Game
         $this->player->drawCard($this->deck);
         $this->checkDeck();
         $this->dealer->drawCard($this->deck);
-        $this->playerScore = $this->calculateScore($this->player->getHand());
-        $this->dealerScore = $this->calculateScore($this->dealer->getHand());
+        $this->gameScore->setPlayerScore($this->gameScore->calculateScore($this->player->getHand()));
+        $this->gameScore->setDealerScore($this->gameScore->calculateScore($this->dealer->getHand()));
     }
 
     /**
@@ -368,28 +282,28 @@ class Game
     }
 
     /**
-    * Serialize the game to JSON.
-    *
-    * @return array Array with keys:
-    *      'playerCards' (array<int, string>),
-    *      'dealerCards' (array<int, string>),
-    *      'dealerHiddenCardRevealed' (bool),
-    *      'playerScore' (int),
-    *      'dealerScore' (int),
-    *      'lastPlayerScore' (int),
-    *      'lastDealerScore' (int),
-    *      'lastWinner' (string|null)
-    */
+     * Serialize the game to JSON.
+     *
+     * @return array<string, array<int, string>|bool|int|string|null> Array with keys:
+     *      'playerCards' (array<int, string>),
+     *      'dealerCards' (array<int, string>),
+     *      'dealerHiddenCardRevealed' (bool),
+     *      'playerScore' (int),
+     *      'dealerScore' (int),
+     *      'lastPlayerScore' (int),
+     *      'lastDealerScore' (int),
+     *      'lastWinner' (string|null)
+     */
     public function jsonSerialize(): array
     {
         return [
             'playerCards' => $this->player->getHand()->getCardsAsArray(),
             'dealerCards' => $this->dealer->getHand()->getCardsAsArray(),
             'dealerHiddenCardRevealed' => $this->dealer->isHiddenCardRevealed(),
-            'playerScore' => $this->playerScore,
-            'dealerScore' => $this->dealerScore,
-            'lastPlayerScore' => $this->lastPlayerScore,
-            'lastDealerScore' => $this->lastDealerScore,
+            'playerScore' => $this->gameScore->getPlayerScore(),
+            'dealerScore' => $this->gameScore->getDealerScore(),
+            'lastPlayerScore' => $this->gameScore->getLastPlayerScore(),
+            'lastDealerScore' => $this->gameScore->getLastDealerScore(),
             'lastWinner' => $this->winner,
         ];
     }

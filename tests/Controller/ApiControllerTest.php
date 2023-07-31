@@ -19,7 +19,10 @@ class ApiControllerTest extends WebTestCase
         $client = static::createClient();
         $client->request('GET', '/api/quote');
         $this->assertResponseIsSuccessful();
-        $this->assertJson($client->getResponse()->getContent());
+        
+        $content = $client->getResponse()->getContent();
+        $this->assertNotFalse($content);
+        $this->assertJson($content);
         $this->assertRouteSame('api_quote');
     }
 }

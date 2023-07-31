@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-07-30 23:11:30        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-07-31 02:26:06        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -60,24 +60,24 @@
         <div class="bloc bloc-number">
             <div class="label">Test suites</div>
             <div class="number">
-                17            </div>
+                18            </div>
         </div>
     </div>
     <div class="column">
         <div class="bloc bloc-number">
             <div class="label">Assertions</div>
             <div class="number">
-                189            </div>
+                196            </div>
         </div>
     </div>
     <div class="column">
         <div class="bloc bloc-number">
             <div class="label">
                 classes never called by tests
-                <small>(52.63 %)</small>
+                <small>(55 %)</small>
             </div>
             <div class="number">
-                10            </div>
+                11            </div>
         </div>
     </div>
 </div>
@@ -103,6 +103,17 @@
                         </thead>
                         <tbody id="contentAreaJunitNeverCalled" class="clusterize-content">
                                                     <tr>
+                                <td><span class="path">App\Repository\LibraryRepository</span></td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0);">
+                                        1                                        </span>
+                                    </td>
+                                                                    <td>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0);">
+                                        0                                        </span>
+                                    </td>
+                                                            </tr>
+                                                        <tr>
                                 <td><span class="path">App\Kernel</span></td>
                                                                     <td>
                                         <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0);">
@@ -127,7 +138,7 @@
                                                         <tr>
                                 <td><span class="path">App\Controller\GameController</span></td>
                                                                     <td>
-                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.38);">
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.6);">
                                         7                                        </span>
                                     </td>
                                                                     <td>
@@ -138,7 +149,7 @@
                                                         <tr>
                                 <td><span class="path">App\Controller\LibraryController</span></td>
                                                                     <td>
-                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.5);">
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.8);">
                                         9                                        </span>
                                     </td>
                                                                     <td>
@@ -149,7 +160,7 @@
                                                         <tr>
                                 <td><span class="path">App\Controller\CardController</span></td>
                                                                     <td>
-                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.19);">
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.3);">
                                         4                                        </span>
                                     </td>
                                                                     <td>
@@ -160,7 +171,7 @@
                                                         <tr>
                                 <td><span class="path">App\Controller\ApiDeckController</span></td>
                                                                     <td>
-                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.06);">
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.1);">
                                         2                                        </span>
                                     </td>
                                                                     <td>
@@ -193,7 +204,7 @@
                                                         <tr>
                                 <td><span class="path">App\Controller\ApiLibraryController</span></td>
                                                                     <td>
-                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.13);">
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.2);">
                                         3                                        </span>
                                     </td>
                                                                     <td>
@@ -320,7 +331,7 @@
                                             -                                        </span>
                                         <span class="path">Symfony\Component\HttpFoundation\Session\Session</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            17                                        </span>
+                                            11                                        </span>
                                         <span class="path">App\Game\Game</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
                                             -                                        </span>
@@ -390,9 +401,6 @@
                                             -                                        </span>
                                         <span class="path">Symfony\Bundle\FrameworkBundle\KernelBrowser</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            1                                        </span>
-                                        <span class="path">App\Repository\LibraryRepository</span>
-                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
                                             -                                        </span>
                                         <span class="path">static</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
@@ -429,13 +437,24 @@
                                                                     </td>
                             </tr>
                                                     <tr>
+                                <td valign="top"><span class="path">App\Game\GameScoreTest</span></td>
+                                <td style="padding-bottom: 1em;">
+                                                                                                                    <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">PHPUnit\Framework\TestCase</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            5                                        </span>
+                                        <span class="path">App\Game\GameScore</span>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
                                 <td valign="top"><span class="path">App\Game\GameTest</span></td>
                                 <td style="padding-bottom: 1em;">
                                                                                                                     <span class="badge" title="Cyclomatic complexity of class">
                                             -                                        </span>
                                         <span class="path">PHPUnit\Framework\TestCase</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
-                                            17                                        </span>
+                                            11                                        </span>
                                         <span class="path">App\Game\Game</span>
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
                                             5                                        </span>
@@ -516,7 +535,7 @@
                             <path d="M0 0h24v24H0z" fill="none">
                             <path d="M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z">
                         </svg>
-                        Violations (4)
+                        Violations (2)
                     </a>
                 </li>
                                     <li>
@@ -725,7 +744,7 @@
 
 
             
-            var json = {"name":"Execution time","children":[{"name":"App\\Cards\\CardHandTest","time":0.029247},{"name":"App\\Cards\\CardTest","time":0.004831},{"name":"App\\Cards\\DeckOfCardsTest","time":0.00831},{"name":"App\\Cards\\JokerCardTest","time":0.002221},{"name":"App\\Controller\\ApiControllerTest","time":1.432746},{"name":"App\\Controller\\ApiDeckControllerTest","time":0.045335},{"name":"App\\Controller\\ApiLibraryControllerTest","time":0.071086},{"name":"App\\Controller\\CardControllerTest","time":0.156873},{"name":"App\\Controller\\GameControllerTest","time":0.147731},{"name":"App\\Controller\\HomeControllerTest","time":0.061735},{"name":"App\\Controller\\LibraryControllerTest","time":0.09859},{"name":"App\\Controller\\LibraryFormControllerTest","time":0.162967},{"name":"App\\Game\\DealerTest","time":0.004992},{"name":"App\\Game\\GameTest","time":0.023535},{"name":"App\\Game\\PlayerTest","time":0.005166},{"name":"App\\Form\\BookTypeTest","time":0.005468},{"name":"App\\Entity\\LibraryTest","time":0.000878}]};
+            var json = {"name":"Execution time","children":[{"name":"App\\Cards\\CardHandTest","time":0.019392},{"name":"App\\Cards\\CardTest","time":0.002349},{"name":"App\\Cards\\DeckOfCardsTest","time":0.005646},{"name":"App\\Cards\\JokerCardTest","time":0.001733},{"name":"App\\Controller\\ApiControllerTest","time":0.073799},{"name":"App\\Controller\\ApiDeckControllerTest","time":0.042912},{"name":"App\\Controller\\ApiLibraryControllerTest","time":0.06405},{"name":"App\\Controller\\CardControllerTest","time":0.141609},{"name":"App\\Controller\\GameControllerTest","time":0.139414},{"name":"App\\Controller\\HomeControllerTest","time":0.059023},{"name":"App\\Controller\\LibraryControllerTest","time":0.097071},{"name":"App\\Controller\\LibraryFormControllerTest","time":0.149049},{"name":"App\\Game\\DealerTest","time":0.004901},{"name":"App\\Game\\GameScoreTest","time":0.000886},{"name":"App\\Game\\GameTest","time":0.025393},{"name":"App\\Game\\PlayerTest","time":0.005431},{"name":"App\\Form\\BookTypeTest","time":0.006627},{"name":"App\\Entity\\LibraryTest","time":0.000899}]};
             root = json;
             var nodes = treemap.nodes(json)
                 .filter(function (d) {
