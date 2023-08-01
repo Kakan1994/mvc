@@ -94,7 +94,9 @@ class CardHands
                 $highCard = $card;
             }
         }
-
+        if ($highCard === null) {
+            return new Card();
+        }
         return $highCard;
     }
 
@@ -120,7 +122,9 @@ class CardHands
                 $highCard = $card;
             }
         }
-
+        if ($highCard === null) {
+            return new Card();
+        }
         return $highCard;
     }
 
