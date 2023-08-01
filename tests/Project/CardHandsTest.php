@@ -366,14 +366,16 @@ class CardHandsTest extends TestCase
         $exp->addCard(new Card('♥', '7'));
         $exp = $exp->getCardsAsArray();
         $this->assertEquals($exp, $res);
-
+    }
+    public function testCheckStraight7ManyStraights2(): void
+    {
         $cardHand = new CardHand();
         $cardHand->addCard(new Card('♥', 'A'));
         $cardHand->addCard(new Card('♥', '2'));
         $cardHand->addCard(new Card('♥', '3'));
         $cardHand->addCard(new Card('♥', '4'));
         $cardHand->addCard(new Card('♥', '5'));
-
+        
         $cardHands = new CardHands();
         $res = $cardHands->checkStraight($cardHand);
         $res = $res->getCardsAsArray();
