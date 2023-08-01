@@ -1,0 +1,33 @@
+{% extends 'base_proj.html.twig' %}
+
+{% block title %}Hello ProjectController!{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1>Welcome to the library!</h1>
+    {% for message in app.flashes('error') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div class="button-group">
+        <button class="btn">
+            <a href="{{ path('app_library_add') }}">Add new book</a>
+        </button>
+        <button class="btn">
+            <a href="{{ path('app_library_books') }}">All books</a>
+        </button>
+    </div>
+    <div class="form-group">
+        <form action="{{ path('app_library_book_redirect') }}" method="post">
+            <div class="input-field">
+                <input type="number" name="bookId" placeholder="Enter book id" required>
+            </div>
+            <div class="submit-button">
+                <input type="submit" value="Go to book">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

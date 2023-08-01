@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <h1>Texas Hold'em</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ path('project') }}">Home</a></li>
+            <li><a href="{{ path('home') }}">Back</a></li>
+        </ul>
+    </nav>
+    <div class="main">
+    {% block body %}{% endblock %}
+    </div>
+    <footer>
+        <p>&copy; {{ 'now'|date('Y') }}. All rights reserved.</p>
+    </footer>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</body>
+</html>

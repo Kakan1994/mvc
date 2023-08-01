@@ -34,6 +34,7 @@ class CardHand
         $this->cards[] = $card;
     }
 
+
     /**
      * Get the cards in the hand.
      *
@@ -58,5 +59,15 @@ class CardHand
         }
 
         return $cards;
+    }
+
+    /**
+     * Checks if the hand is empty.
+     *
+     * @return bool True if the hand is empty, false otherwise.
+     */
+    public function isEmpty(): bool
+    {
+        return empty($this->cards);
     }
 }
