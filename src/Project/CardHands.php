@@ -95,7 +95,7 @@ class CardHands
             }
         }
         if ($highCard === null) {
-            return new Card();
+            return new Card('♥', 'A');
         }
         return $highCard;
     }
@@ -123,7 +123,7 @@ class CardHands
             }
         }
         if ($highCard === null) {
-            return new Card();
+            return new Card('♥', 'K');
         }
         return $highCard;
     }
