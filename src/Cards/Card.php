@@ -88,4 +88,12 @@ class Card
         return html_entity_decode($unicode . ';', ENT_COMPAT, 'UTF-8');
     }
 
+    public function toJson(): string
+    {
+        return json_encode([
+            'suit' => $this->suit,
+            'value' => $this->value
+        ]);
+    }
+
 }

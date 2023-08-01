@@ -44,7 +44,6 @@ class CardHands
         $this->house = new CardHandsFullHouse();
     }
 
-
     /**
      * @param CardHand $hand The hand to check.
      * @return string|int The best hand in the hand.

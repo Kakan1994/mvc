@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-08-01 08:35:24        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-08-01 12:16:18        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -279,14 +279,7 @@
     {
         "name": "\\App\\Project\\CardHands",
         "size": 3000,
-        "relations": [
-            "\\App\\Project\\CardHandsHelper",
-            "\\App\\Project\\CardHandsStraight",
-            "\\App\\Project\\CardHandsFlush",
-            "\\App\\Project\\CardHandsFullHouse",
-            "\\App\\Cards\\CardHand",
-            "\\App\\Cards\\Card"
-        ]
+        "relations": []
     },
     {
         "name": "\\App\\Project\\CardHandsHelper",
@@ -324,12 +317,35 @@
         "relations": []
     },
     {
-        "name": "\\App\\Entity\\Library",
+        "name": "\\App\\Project\\Player",
+        "size": 3000,
+        "relations": [
+            "\\App\\Cards\\CardHand",
+            "\\App\\Cards\\Card"
+        ]
+    },
+    {
+        "name": "\\App\\Project\\ProjectGame",
+        "size": 3000,
+        "relations": [
+            "\\App\\Project\\ListOfPlayers",
+            "\\App\\Cards\\DeckOfCards",
+            "\\App\\Project\\CardHands",
+            "\\App\\Cards\\CardHand"
+        ]
+    },
+    {
+        "name": "\\App\\Project\\ListOfPlayers",
         "size": 3000,
         "relations": []
     },
     {
         "name": "\\App\\Cards\\DeckOfCards",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Entity\\Library",
         "size": 3000,
         "relations": []
     },
