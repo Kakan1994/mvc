@@ -78,7 +78,7 @@ class ProjectGame
     /**
      * Start the game.
      */
-    public function startGame(int $numberOfPlayers): void
+    public function initializeGame(int $numberOfPlayers): void
     {
 
     }
