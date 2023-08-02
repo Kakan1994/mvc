@@ -197,6 +197,12 @@ class ProjectPlayer implements PlayerInterface
         return $this->role;
     }
 
+    public function resetHand(): void
+    {
+        $this->hand = new CardHand();
+        $this->handValue = 0;
+    }
+
     /**
      * Get the players data.
      * 
