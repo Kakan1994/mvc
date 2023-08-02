@@ -122,6 +122,17 @@ class NPCLogic
         return $riskAdjustment;
     }
 
+    public function adjustRiskPotAndBlind(int $pot, int $blind): int
+    {
+        if ($blind/$pot >= 0.1) {
+            return 50;
+        } elseif ($blind/$pot >= 0.3) {
+            return 10;
+        }
+
+        return 0;
+    }
+
     public function adjustHandRiskPoints(float $points): int
     {
         if ($points >= 400) {

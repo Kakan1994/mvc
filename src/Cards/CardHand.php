@@ -62,6 +62,42 @@ class CardHand
     }
 
     /**
+     * Get the cards in the hand as a string.
+     *
+     * @return string The cards in the hand as a string.
+     */
+    public function getCardsAsArrayProj(): array
+    {
+        $cards = [];
+
+        foreach ($this->cards as $card) {
+            $suit = $card->getSuit();
+            $value = $card->getValue();
+            switch ($suit) {
+                case "♣":
+                    $suit = "C";
+                    break;
+                case "♦":
+                    $suit = "D";
+                    break;
+                case "♥":
+                    $suit = "H";
+                    break;
+                case "♠":
+                    $suit = "S";
+                    break;
+                }
+            if ($value == "10") {
+                $value = "T";
+            }
+            $cards[] = $value . $suit;
+        }
+
+        return $cards;
+    }
+
+
+    /**
      * Checks if the hand is empty.
      *
      * @return bool True if the hand is empty, false otherwise.

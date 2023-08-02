@@ -7,24 +7,34 @@
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
 </head>
-<body>
-    <header>
-        <h1>Texas Hold'em</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="{{ path('project') }}">Home</a></li>
-            <li><a href="{{ path('home') }}">Back</a></li>
-        </ul>
-    </nav>
-    <div class="main">
-    {% block body %}{% endblock %}
+<body class="proj-body">
+    <div class="proj-page-container">
+        <header id="proj-header" class="proj-header" style="background-image: url({{ asset('images/proj-header.png') }})">
+            <div class="proj-header-overlay"></div>
+                <p class="proj-header-heading">Texas Hold'em</p>
+            </div>
+        
+            <nav>
+                <ul>
+                    <li><a href="{{ path('project') }}">Home</a></li>
+                    <li><a href="{{ path('home') }}">Back</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="projmain">
+        {% block main %}{% endblock %}
+        </main>
+        <footer class="projfooter">
+            <div class="no-money">
+                <p class="proj-footer-text">Behöver du hjälp för att sluta spela?</p>
+            </div>
+            <div class="footer-addiction">
+                <a href="https://spelberoende.se/" class="proj-footer-text small">Klicka här</a>
+            </div>
+        </footer>
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
     </div>
-    <footer>
-        <p>&copy; {{ 'now'|date('Y') }}. All rights reserved.</p>
-    </footer>
-    {% block javascripts %}
-        {{ encore_entry_script_tags('app') }}
-    {% endblock %}
 </body>
 </html>

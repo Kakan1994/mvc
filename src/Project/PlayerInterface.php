@@ -35,6 +35,8 @@ interface PlayerInterface
 
     public function getPlayerActions(): PlayerActions;
 
+    public function isHuman(): bool;
+
     /**
      * @return array<string, mixed>
      */

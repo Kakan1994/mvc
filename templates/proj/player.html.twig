@@ -1,0 +1,25 @@
+<div class="player-container>
+    <div class="player-head">
+        <p class="underline">{{ player.name }}</p>
+        <p class="small">${{ player.chips }}</p>
+    </div>
+    {% if player.role is same as "dealer" %}
+        <div class="dealer-chip-container">
+                <img
+                    class="dealer-chip"
+                    src="{{ asset('images/proj/dealer.png') }}"
+                    width="50"
+                >
+        </div>
+    {% endif %}
+    <div class="proj-card-container">
+        {% for card in player.getString %}
+            <img class="hand-card" src="{{ asset('images/proj/cards/' ~ card. ~ '.png') }}">
+        {% endfor %}
+    </div>
+</div>
+<div class="player-bet-container">
+    <div class="bet-size-container">
+        <p class="smaller">${{ player.bets }}</p>
+    </div>
+</div>

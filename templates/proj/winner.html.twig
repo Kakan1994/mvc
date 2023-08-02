@@ -1,0 +1,42 @@
+{% extends "proj_base.html.twig" %}
+
+{% block title %}MVC Project{% endblock %}
+
+{% block main %}
+<div class="outer-container-flop">
+    <div class="proj-container-flop">
+    </div>
+    {$ for player in queuePlayers %}
+        {$ if player.isHuman %}
+            {$ include 'proj/player_winner.html.twig' %}
+        {$ else %}
+            {$ include 'proj/npc_winner.html.twig' %}
+        {$ endif %}
+    {$ endfor %}
+    <div class="proj-container-table">
+        <div class="table-cards">
+            {% for card in tableCards %}
+                <img class="community-card" src="{{ asset('images/proj/cards/' ~ card. ~ '.png') }}">
+            {% endfor %}
+        </div>
+    </div>
+    <div class="winner-container">
+        <div class="winner-heading">
+            <h3 class="winner-h3">Winner</h3>
+        </div>
+        <div class="winner-text">
+            <p class="p-para"><em>{{ winner }}</em> wins ${{ pot }},</p>
+        </div>
+        <div class="winner-hand">
+            <p class="p-para">with a {{ winnerHand }}</p>
+        </div>
+        <br>
+        {% for card in winnerCards %}
+            <img class="winner-card" src="{{ asset('images/proj/cards/' ~ card. ~ '.png') }}">
+        {% endfor %}
+    </div>
+    <a href="{{ restartUrl }}" class="p-button the-link a-link">
+        Next hand
+    </a>
+</div>
+{% endblock %}

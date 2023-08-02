@@ -12,6 +12,8 @@ class NPCMatt extends NPCLogic implements PlayerInterface
     protected int $bets = 0;
     protected CardHand $hand;
     protected PlayerActions $playerActions;
+    protected int $handValue = 0;
+    private bool $isHuman = false;
 
     /**
      * NPC constructor.
@@ -35,6 +37,15 @@ class NPCMatt extends NPCLogic implements PlayerInterface
     public function getName(): string
     {
         return $this->name;
+    }
+
+    public function isHuman(): bool
+    {
+        if ($this->isHuman) {
+            return true;
+        }
+
+        return false;
     }
 
     /**
@@ -155,6 +166,28 @@ class NPCMatt extends NPCLogic implements PlayerInterface
     public function getPlayerActions(): PlayerActions
     {
         return $this->playerActions;
+    }
+
+    /**
+     * Get the players hand value.
+     * 
+     * @return int The players hand value.
+     */
+    public function getHandValue(): int
+    {
+        return $this->handValue;
+    }
+
+    /**
+     * Set the players hand value.
+     * 
+     * @param int $handValue The hand value to set.
+     * 
+     * @return void
+     */
+    public function setHandValue(int $handValue): void
+    {
+        $this->handValue = $handValue;
     }
 
     /**

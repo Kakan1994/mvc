@@ -13,7 +13,7 @@ class ProjectController extends AbstractController
      */
     public function projIndex(): Response
     {
-        return $this->render('project/index.html.twig');
+        return $this->render('proj/index.html.twig');
     }
 
 }

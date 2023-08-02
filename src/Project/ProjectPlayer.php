@@ -24,6 +24,7 @@ class ProjectPlayer implements PlayerInterface
     protected CardHand $hand;
     protected int $handValue = 0;
     protected PlayerActions $playerActions;
+    private bool $isHuman = true;
 
     /**
      * Player constructor.
@@ -178,6 +179,20 @@ class ProjectPlayer implements PlayerInterface
     public function getHandValue(): int
     {
         return $this->handValue;
+    }
+
+    public function getString(): array
+    {
+        return $this->hand->getCardsAsArrayProj();
+    }
+
+    public function isHuman(): bool
+    {
+        if ($this->isHuman) {
+            return true;
+        }
+
+        return false;
     }
 
     /**
