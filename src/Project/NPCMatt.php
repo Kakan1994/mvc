@@ -101,6 +101,9 @@ class NPCMatt extends NPCLogic implements PlayerInterface
      */
     public function decreaseChips(int $money): void
     {
+        if ($money > $this->chips) {
+            $money = $this->chips;
+        }
         $this->chips -= $money;
     }
 
@@ -123,6 +126,9 @@ class NPCMatt extends NPCLogic implements PlayerInterface
      */
     public function addToBets(int $betAmount): void
     {
+        if ($betAmount > $this->chips) {
+            $betAmount = $this->chips;
+        }
         $this->bets += $betAmount;
     }
 
@@ -203,7 +209,8 @@ class NPCMatt extends NPCLogic implements PlayerInterface
             "chips" => $this->chips,
             "bets" => $this->bets,
             "hand" => $this->hand->getCards(),
-            "playerActions" => $this->playerActions->getPlayerActions(),
+            "playerActions" => $this->playerActions->getLatestAction(),
+            "isHuman" => $this->isHuman
         ];
     }
 

@@ -9,7 +9,7 @@ class GameLogic
         $folded = 0;
 
         foreach ($players as $player) {
-            if ($player->hasFolded()) {
+            if ($player->getPlayerActions()->hasFolded()) {
                 $folded++;
             }
         }
@@ -50,7 +50,7 @@ class GameLogic
         $folded = 0;
 
         foreach ($players as $player) {
-            if ($player->hasFolded()) {
+            if ($player->getPlayerActions()->hasFolded()) {
                 $folded++;
             }
         }

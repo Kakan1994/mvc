@@ -1,21 +1,21 @@
-{% extends "proj_base.html.twig" %}
+{% extends "base_proj.html.twig" %}
 
 {% block title %}MVC Project{% endblock %}
 
 {% block main %}
-    <div class="outer-container-preflop>
-        <div class="proj-container-preflop>
+    <div class="outer-container-preflop">
+        <div class="proj-container-preflop">
         </div>
-        {$ for player in queuePlayers %}
-            {$ if player.isHuman %}
-                {$ include 'proj/player.html.twig' %}
-            {$ else %}
-                {$ include 'proj/npc.html.twig' %}
-            {$ endif %}
-        {$ endfor %}
-        <div class="proj-container-pot>
+        {% for player in playerQueue %}
+            {% if player.isHuman %}
+                {% include 'proj/player.html.twig' %}
+            {% else %}
+                {% include 'proj/npc.html.twig' %}
+            {% endif %}
+        {% endfor %}
+        <div class="proj-container-pot">
             <p class="proj-pot">Pot: $0</p>
         </div>
-        {$ include 'proj/controls.html.twig' %}
+        {% include 'proj/controls.html.twig' %}
     </div>
 {% endblock %}

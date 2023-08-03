@@ -4,15 +4,15 @@
 
 {% block main %}
 <div class="outer-container-flop">
-    <div class="proj-container-flop>
+    <div class="proj-container-flop">
     </div>
-    {$ for player in queuePlayers %}
-        {$ if player.isHuman %}
-            {$ include 'proj/player.html.twig' %}
-        {$ else %}
-            {$ include 'proj/npc.html.twig' %}
-        {$ endif %}
-    {$ endfor %}
+    {% for player in queuePlayers %}
+        {% if player.isHuman %}
+            {% include 'proj/player.html.twig' %}
+        {% else %}
+            {% include 'proj/npc.html.twig' %}
+        {% endif %}
+    {% endfor %}
     <div class="proj-container-table">
         <div class="table-cards">
             {% for card in tableCards %}

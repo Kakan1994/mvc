@@ -93,6 +93,9 @@ class ProjectPlayer implements PlayerInterface
      */
     public function decreaseChips(int $money): void
     {
+        if ($money > $this->chips) {
+            $money = $this->chips;
+        }
         $this->chips -= $money;
     }
 
@@ -115,6 +118,9 @@ class ProjectPlayer implements PlayerInterface
      */
     public function addToBets(int $betAmount): void
     {
+        if ($betAmount > $this->chips) {
+            $betAmount = $this->chips;
+        }
         $this->bets += $betAmount;
     }
 
@@ -232,8 +238,9 @@ class ProjectPlayer implements PlayerInterface
             "folded" => $this->playerActions->hasFolded(),
             "bets" => $this->bets,
             "totalBets" => $this->totalBets,
-            "hand" => $this->hand->getHand(),
-            "playerActions" => $this->playerActions->getPlayerActions(),
+            "hand" => $this->getHand(),
+            "playerActions" => $this->playerActions->getLatestAction(),
+            "isHuman" => $this->isHuman,
         ];
     }
 

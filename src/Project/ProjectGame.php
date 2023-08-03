@@ -17,24 +17,27 @@ class ProjectGame
 
     private GameLogic $gameLogic;
 
+    private GameData $gameData;
+
     private GameQueue $gameQueue;
 
     private GameState $gameState;
 
-    public function __construct()
+    public function __construct(DeckOfCards $deck, CardHands $cardHands, GameLogic $gameLogic, GameData $gameData, GameQueue $gameQueue, GameState $gameState)
     {
-        $this->deck = new DeckOfCards();
-        $this->cardHands = new CardHands();
-        $this->gameLogic = new GameLogic();
-        $this->gameQueue = new GameQueue();
-        $this->gameState = new GameState();
+        $this->deck = $deck;
+        $this->cardHands = $cardHands;
+        $this->gameLogic = $gameLogic;
+        $this->gameData = $gameData;
+        $this->gameQueue = $gameQueue;
+        $this->gameState = $gameState;
     }
 
     public function setQueAndRoles(): array
     {
         $this->gameQueue->setRolesBeforeStart();
 
-        return $this->gameQueue->getQueue();
+        return $this->gameQueue->getQue();
     }
 
     public function takeBlinds(): int
@@ -43,9 +46,9 @@ class ProjectGame
         $bigBlind = $this->gameState->getBigBlind();
 
         $this->gameQueue->getSmallBlindPlayer()->addToBets($smallBlind);
-        $this->gameQueue->getSmallBlindPlayer()->decreseChips($smallBlind);
+        $this->gameQueue->getSmallBlindPlayer()->decreaseChips($smallBlind);
         $this->gameQueue->getBigBlindPlayer()->addToBets($bigBlind);
-        $this->gameQueue->getBigBlindPlayer()->decreseChips($bigBlind);
+        $this->gameQueue->getBigBlindPlayer()->decreaseChips($bigBlind);
 
         $totPot = $smallBlind + $bigBlind;
         $this->gameState->addToPot($totPot);
@@ -58,23 +61,23 @@ class ProjectGame
         $this->deck = new DeckOfCards();
         $this->deck->shuffle();
 
-        $players = $this->gameQueue->getQueue();
+        $players = $this->gameQueue->getQue();
         for ($i = 0; $i < 2; $i++) {
             foreach ($players as $player) {
                 $card = $this->deck->draw();
-                $this->player->getHand()->addCard($card);
+                $player->getHand()->addCard($card[0]);
             }
         }
 
-        return $this->gameQueue->getQueue();
+        return $this->gameQueue->getQue();
     }
 
     public function getQue(): array
     {
-        return $this->gameQueue->getQueue();
+        return $this->gameQueue->getQue();
     }
 
-    public function getPossibleActions(PlayerInterface $player): array
+    public function getPossibleActions(PlayerInterface $player): int
     {
         $players = $this->getQue();
 
@@ -108,16 +111,21 @@ class ProjectGame
 
     public function roundOver(): bool
     {
-        $players = $this->gameQueue->getQueue();
+        $players = $this->gameQueue->getQue();
 
         return $this->gameLogic->isRoundOver($players);
     }
 
     public function getHighestBet(): int
     {
-        $players = $this->gameQueue->getQueue();
+        $players = $this->gameQueue->getQue();
 
         return $this->gameLogic->getHighestBet($players);
+    }
+
+    public function getPLayerQue(): array
+    {
+        return $this->gameQueue->getQue();
     }
 
     public function getPot(): int
@@ -144,14 +152,14 @@ class ProjectGame
 
     public function checkNextStage(): bool
     {
-        $players = $this->gameQueue->getQueue();
+        $players = $this->gameQueue->getQue();
 
         return $this->gameLogic->checkNextStage($players);
     }
 
     public function setNextStage(): array
     {
-        $players = $this->gameQueue->getQueue();
+        $players = $this->gameQueue->getQue();
 
         foreach ($players as $player) {
             $player->getPlayerActions()->resetActions();
@@ -167,7 +175,7 @@ class ProjectGame
         $this->deck = new DeckOfCards();
         $this->deck->shuffle();
 
-        $players = $this->gameQueue->getQueue();
+        $players = $this->gameQueue->getQue();
 
         $winner = $this->gameLogic->getWinner($players);
 
@@ -201,7 +209,7 @@ class ProjectGame
         $this->deck = new DeckOfCards();
         $this->deck->shuffle();
 
-        $players = $this->gameQueue->getQueue();
+        $players = $this->gameQueue->getQue();
 
         $winners = $this->getWinnersTie();
         $pot = $this->getPot();
@@ -235,7 +243,7 @@ class ProjectGame
 
     public function getWinner(): PlayerInterface
     {
-        $players = $this->gameQueue->getQueue();
+        $players = $this->gameQueue->getQue();
 
         return $this->gameLogic->getWinner($players);
     }
@@ -279,7 +287,7 @@ class ProjectGame
 
     public function isWinnerByFold(): bool
     {
-        $players = $this->gameQueue->getQueue();
+        $players = $this->gameQueue->getQue();
 
         return $this->gameLogic->isWinnerByFold($players);
     }
@@ -288,7 +296,7 @@ class ProjectGame
     {
         $tableCards = $this->gameState->getTableCards();
 
-        $players = $this->gameQueue->getQueue();
+        $players = $this->gameQueue->getQue();
 
         foreach ($players as $player) {
             if (!$player->getPlayerActions()->hasFolded()) {
@@ -327,7 +335,7 @@ class ProjectGame
     {
         $human = "";
 
-        $players = $this->gameQueue->getQueue();
+        $players = $this->gameQueue->getQue();
 
         foreach ($players as $player) {
             if ($player->getName() !== "Matt" && $player->getName() !== "Steve") {
@@ -340,14 +348,14 @@ class ProjectGame
 
     public function isTied(): bool
     {
-        $players = $this->gameQueue->getQueue();
+        $players = $this->gameQueue->getQue();
 
         return $this->gameLogic->isTied($players);
     }
 
     public function getWinnersTie(): array
     {
-        $players = $this->gameQueue->getQueue();
+        $players = $this->gameQueue->getQue();
 
         return $this->gameLogic->getTiedWinners($players);
     }
