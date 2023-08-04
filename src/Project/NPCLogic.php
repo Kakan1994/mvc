@@ -210,7 +210,7 @@ class NPCLogic
     public function setMattCalls(PlayerInterface $player, int $callSize, ?int $minRaise = null): array
     {
         $player->getPlayerActions()->addToRoundActions("call");
-        return ["call", ""];
+        return ["call", $callSize];
     }
 
     public function wrapperMattRaises(NPCLogic $object, PlayerInterface $player, int $minRaise, int $callSize): array

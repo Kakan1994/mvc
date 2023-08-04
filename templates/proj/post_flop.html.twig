@@ -4,7 +4,7 @@
 
 {% block main %}
 <div class="outer-container-flop">
-    <div class="proj-container-flop">
+    <div class="p-container-flop">
     </div>
     {% for player in playerQueue %}
         {% if player.isHuman %}
@@ -13,14 +13,14 @@
             {% include 'proj/npc.html.twig' %}
         {% endif %}
     {% endfor %}
-    <div class="proj-container-table">
+    <div class="p-container-table">
         <div class="table-cards">
             {% for card in tableCards %}
-                <img class="community-card" src="{{ asset('images/proj/cards/' ~ card ~ '.png') }}">
+                <img class="table-card" src="{{ asset('images/proj/cards/' ~ card ~ '.png') }}">
             {% endfor %}
         </div>
     </div>
-    <div class="proj-pot-container">
+    <div class="p-pot-container">
         <p class="pot-size">Pott: ${{ pot }}</p>
     </div>
     {% include 'proj/controls.html.twig' %}

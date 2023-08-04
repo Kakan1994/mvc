@@ -63,13 +63,7 @@ class ProjectPreFlopController extends AbstractController
         $pot = $game->getPot();
 
         $callAmount = $highestBet - $player->getBets();
-        $raiseAmount = $game->getBigBlind();
-        error_log("Call Amount: " . $callAmount);
-        error_log("Raise Amount: " . $raiseAmount);
-        error_log("Player: " . $playerQueueData[0]['role']);
-        error_log("Player: " . $playerQueueData[1]['role']);
-        error_log("Player: " . $playerQueueData[2]['role']);
-
+        $raiseAmount = $callAmount + $game->getBigBlind();
         $session->set('game', $game);
 
         return $this->render('proj/pre_flop.html.twig', [

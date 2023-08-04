@@ -297,6 +297,7 @@ class NPCMatt extends NPCLogic implements PlayerInterface
     public function setAndReturnMattMove(int $actions, int $highestBet, int $bigBlind): array
     {
         $callAmount = $highestBet - $this->getBets();
+        error_log("Highest bet: " . $highestBet);
         $raiseAmount = $highestBet + $bigBlind - $this->getBets();
 
         return $this->setMattAction($actions, $callAmount, $raiseAmount);

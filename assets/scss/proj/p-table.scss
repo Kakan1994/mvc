@@ -1,0 +1,15 @@
+.p-container-table {
+    grid-column: 3 / 8;
+    grid-row: 6 / 8;
+    align-self: center;
+}
+
+.table-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.table-card {
+    width: 70px;
+}
