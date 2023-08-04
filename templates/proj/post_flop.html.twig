@@ -1,4 +1,4 @@
-{% extends "proj_base.html.twig" %}
+{% extends "base_proj.html.twig" %}
 
 {% block title %}MVC Project{% endblock %}
 
@@ -6,7 +6,7 @@
 <div class="outer-container-flop">
     <div class="proj-container-flop">
     </div>
-    {% for player in queuePlayers %}
+    {% for player in playerQueue %}
         {% if player.isHuman %}
             {% include 'proj/player.html.twig' %}
         {% else %}
@@ -16,13 +16,13 @@
     <div class="proj-container-table">
         <div class="table-cards">
             {% for card in tableCards %}
-                <img class="community-card" src="{{ asset('images/proj/cards/' ~ card. ~ '.png') }}">
+                <img class="community-card" src="{{ asset('images/proj/cards/' ~ card ~ '.png') }}">
             {% endfor %}
         </div>
     </div>
     <div class="proj-pot-container">
         <p class="pot-size">Pott: ${{ pot }}</p>
     </div>
-    {% include 'proj/proj-action-buttons.html.twig' %}
+    {% include 'proj/controls.html.twig' %}
 </div>
 {% endblock %}

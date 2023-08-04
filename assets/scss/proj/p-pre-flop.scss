@@ -1,0 +1,16 @@
+.outer-container-preflop {
+    display: grid;
+    grid-template-columns: repeat(12, 8.34%);
+    grid-template-rows: repeat(2, 50px) repeat(8, 8.5%) repeat(2, 50px);
+    width: 100%;
+    height: 69vh;
+}
+
+.p-container-preflop {
+    grid-column: 1/13;
+    grid-row: 3/11;
+    border-radius: 60px;
+    box-shadow: $p-box-shadow;
+    background-color: $p-primary-green;
+    border: $p-border-header-footer;
+}

@@ -188,15 +188,44 @@ class PreFlop
         return $this->rankingsArray;
     }
 
-    public function getHandByCards(string $cards)
+    public function getHandByCardsAndType(string $cards, string $type)
     {
         foreach ($this->rankingsArray as $key => $value) {
-            if ($value->cards === $cards) {
-                return $value;
+            if ($value->cards === $cards && $value->type === $type) {
+                return $value->ranks;
             }
         }
     }
-    
+
+    public function turnCardsIntoStringArray(array $cards): array
+    {
+        $cardArray = [];
+
+        foreach ($cards as $card) {
+            $value = $card->getValue();
+            if ($value === "10") {
+                $value = "T";
+            }
+            $suit = $card->getSuit();
+            switch ($suit) {
+                case "♥":
+                    $suit = "H";
+                    break;
+                case "♠":
+                    $suit = "S";
+                    break;
+                case "♦":
+                    $suit = "D";
+                    break;
+                case "♣":
+                    $suit = "C";
+                    break;
+            }
+            $cardArray[] = $value . $suit;
+        }
+
+        return $cardArray;
+    }
 
 }
 

@@ -27,7 +27,7 @@ class GameLogic
 
         foreach ($players as $player) {
             if ($player->getBets() > $highestBet) {
-                $highestBet = $player->getBet();
+                $highestBet = $player->getBets();
             }
         }
 
@@ -113,14 +113,14 @@ class GameLogic
         return $winner;
     }
 
-    public function getWinnnerByHand(array $players): PlayerInterface
+    public function getWinnerByHand(array $players): PlayerInterface
     {
         $count = count($players);
 
         $winner = $players[0];
 
         for ($i = 1; $i < $count; $i++) {
-            if ($players[$i]->getHand()->getHandValue() > $winner->getHand()->getHandValue()) {
+            if ($players[$i]->getHandValue() > $winner->getHandValue()) {
                 $winner = $players[$i];
             }
         }

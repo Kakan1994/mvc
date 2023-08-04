@@ -11,9 +11,14 @@ class NPCMatt extends NPCLogic implements PlayerInterface
     protected int $chips;
     protected int $bets = 0;
     protected CardHand $hand;
+    protected CardHand $best5CardHand;
+    protected array $best5CardHandArray = [];
     protected PlayerActions $playerActions;
     protected int $handValue = 0;
     private bool $isHuman = false;
+    private CardHands $cardHands;
+    private PreFlop $preFlop;
+    private string $bestHandName = "";
 
     /**
      * NPC constructor.
@@ -26,7 +31,10 @@ class NPCMatt extends NPCLogic implements PlayerInterface
         $this->name = $name;
         $this->chips = $initialChips;
         $this->hand = new CardHand();
+        $this->best5CardHand = new CardHand();
         $this->playerActions = new PlayerActions();
+        $this->cardHands = new CardHands();
+        $this->preFlop = new PreFlop();
     }
 
     /**
@@ -197,6 +205,78 @@ class NPCMatt extends NPCLogic implements PlayerInterface
     }
 
     /**
+     * Set the players best 5 card hand.
+     * 
+     * @param CardHand $hand The hand to set.
+     * 
+     * @return void
+     */
+    public function setBest5CardHand(CardHand $hand): void
+    {
+        $bestHandId = $this->cardHands->checkBestHand($hand);
+
+        switch ($bestHandId)
+        {
+            case 9:
+                $this->bestHandName = "Straight Flush";
+                $this->best5CardHand = $this->cardHands->checkStraightFlush($hand);
+                break;
+            case 8:
+                $this->bestHandName = "Four of a Kind";
+                $this->best5CardHand = $this->cardHands->checkFourOfAKind($hand);
+                break;
+            case 7:
+                $this->bestHandName = "Full House";
+                $this->best5CardHand = $this->cardHands->checkFullHouse($hand);
+                break;
+            case 6:
+                $this->bestHandName = "Flush";
+                $this->best5CardHand = $this->cardHands->checkFlush($hand);
+                break;
+            case 5:
+                $this->bestHandName = "Straight";
+                $this->best5CardHand = $this->cardHands->checkStraight($hand);
+                break;
+            case 4:
+                $this->bestHandName = "Three of a Kind";
+                $this->best5CardHand = $this->cardHands->checkThreeOfAKind($hand);
+                break;
+            case 3:
+                $this->bestHandName = "Two Pair";
+                $this->best5CardHand = $this->cardHands->checkTwoPair($hand);
+                break;
+            case 2:
+                $this->bestHandName = "Pair";
+                $this->best5CardHand = $this->cardHands->checkPair($hand);
+                break;
+            default:
+                $this->bestHandName = "High Card";
+                $this->best5CardHand->addCard($this->cardHands->checkHighCardAceHigh($hand));
+                break;
+        }
+    }
+
+    public function setBest5CardHandArray(): array
+    {
+        $this->best5CardHandArray = $this->preFlop->turnCardsIntoStringArray($this->best5CardHand);
+    }
+
+    /**
+     * Get the players best 5 card hand.
+     * 
+     * @return array The players best 5 card hand.
+     */
+    public function getBest5CardHandArray(): array
+    {
+        return $this->best5CardHandArray;
+    }
+
+    public function getBestHandName(): string
+    {
+        return $this->bestHandName;
+    }
+
+    /**
      * Get the NPC's data.
      *
      * @return array<string, mixed> The NPC's data.
@@ -212,6 +292,21 @@ class NPCMatt extends NPCLogic implements PlayerInterface
             "playerActions" => $this->playerActions->getLatestAction(),
             "isHuman" => $this->isHuman
         ];
+    }
+
+    public function setAndReturnMattMove(int $actions, int $highestBet, int $bigBlind): array
+    {
+        $callAmount = $highestBet - $this->getBets();
+        $raiseAmount = $highestBet + $bigBlind - $this->getBets();
+
+        return $this->setMattAction($actions, $callAmount, $raiseAmount);
+    }
+
+    public function setMattAction(int $actions, int $callAmount, int $raiseAmount): array
+    {
+        $actionData = parent::getAndSetMattAction($this, $actions, $callAmount, $raiseAmount);
+
+        return $actionData;
     }
 
 }

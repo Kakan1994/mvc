@@ -1,0 +1,85 @@
+.matt-container {
+    grid-column: 2 / 5;
+    grid-row: 1 / 4;
+    display: grid;
+    grid-template-columns: repeat(9, auto);
+    grid-template-rows: repeat(4, auto);
+    gap: 10px;
+    align-items: center;
+    justify-self: center;
+}
+
+.matt-head {
+    grid-column: 3 / 10;
+    grid-row: 1 / 3;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: $p-secondary-black;
+    color: #fff;
+    border: $p-border-header-footer;
+    padding: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+
+    p {
+        font-size: $base-font-size * 1.3;
+        margin: 0;
+        width: 100%;
+        align-self: center;
+        justify-self: center;
+        font-family: $p-ff-headings;
+    }
+
+    .smaller {
+        font-size: $base-font-size * 0.8;
+        font-family: $p-ff-paragraph;
+    }
+
+    .underline {
+        text-decoration: underline;
+    }
+}
+
+.matt-bet-container {
+    grid-column: 2 / 5;
+    grid-row: 5 / 6;
+    position: relative;
+    width: 100%;
+    color: $p-accent-gold; 
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    height: 100%;
+    padding-top: 40px;
+
+    .bet-size-container {
+        width: 30%;
+        height: 100%;
+    }
+
+    .smaller {
+        font-size: $base-font-size * 0.8;
+        margin: 0;
+    }
+}
+
+.dealer-chip-matt-container {
+    grid-column: 1 / 3;
+    grid-row: 3 / 5;
+    justify-self: center;
+}
+
+.p-card-matt-container {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    grid-column: 3 / 10;
+    grid-row: 3 / 5;
+    justify-self: center;
+}

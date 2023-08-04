@@ -15,7 +15,7 @@ class ProjectPreFlopController extends AbstractController
      */
     public function projPreFlop(SessionInterface $session): Response
     {
-        $session->set('route-forward', 'proj_flop_init');
+        $session->set('route-forward', 'proj_start_flop');
         $session->set('route-back', 'proj_pre_flop');
 
         $game = $session->get('game');
@@ -37,6 +37,8 @@ class ProjectPreFlopController extends AbstractController
         if ($playersTurn->getPlayerActions()->hasFolded()) {
             $game->dequePlayer();
             $game->enquePlayer($playersTurn);
+
+            return $this->redirectToRoute('proj_pre_flop');
         }
 
         if ($playersTurn->getName() == "Matt") {
@@ -60,16 +62,21 @@ class ProjectPreFlopController extends AbstractController
         $highestBet = $game->getHighestBet();
         $pot = $game->getPot();
 
-        $callSize = $highestBet - $player->getBets();
-        $minRaise = $game->getBigBlind();
+        $callAmount = $highestBet - $player->getBets();
+        $raiseAmount = $game->getBigBlind();
+        error_log("Call Amount: " . $callAmount);
+        error_log("Raise Amount: " . $raiseAmount);
+        error_log("Player: " . $playerQueueData[0]['role']);
+        error_log("Player: " . $playerQueueData[1]['role']);
+        error_log("Player: " . $playerQueueData[2]['role']);
 
         $session->set('game', $game);
 
         return $this->render('proj/pre_flop.html.twig', [
             'playerQueue' => $playerQueueData,
             'actions' => $possibleActions,
-            'call' => $callSize,
-            'minRaise' => $minRaise,
+            'call' => $callAmount,
+            'raiseAmount' => $raiseAmount,
             'pot' => $pot,
             'callUrl' => $this->generateUrl('proj_player_call'),
             'raiseUrl' => $this->generateUrl('proj_player_raise'),

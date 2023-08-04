@@ -3,14 +3,14 @@
 {% block title %}MVC Project{% endblock %}
 
 {% block main %}
-    <div class="proj-container-buyin">
+    <div class="p-container-buyin">
         <div class="p-form-container">
             <div class="p-form-header-container">
                 <h1 class="p-form-header">Welcome</h1>
             </div>
             <form class="p-form" action="{{ path('proj_create_players') }}" method="post">
                 <label class="p-form-label" for="name"> Your name: </label>
-                <input class="p-form-input" type="text" required="required" id="name" name="name" placeholder="Your name">
+                <input class="p-form-input" type="text" required="required" id="name" name="name">
                 <label class="p-form-label" for="buyin"> Your buyin: </label>
                 <input class="p-form-input" type="number" required="required" id="buyin" name="buyin" min="100" step="100">
                 <input class="p-form-button" type="submit" value="Start Game">

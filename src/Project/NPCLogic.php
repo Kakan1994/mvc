@@ -35,6 +35,7 @@ class NPCLogic
     {
         $cardValue = "";
 
+
         foreach ($cards as $card) {
             if ($card->getValue() === "10") {
                 $cardValue .= "T";
@@ -42,7 +43,53 @@ class NPCLogic
             }
             $cardValue .= $card->getValue();
         }
+        $cardValue = $this->sortCards($cardValue);
 
+        return $cardValue;
+    }
+
+    /**
+     * Sorts the cards in descending order.
+     *
+     * @param string $cardValue The cards to sort.
+     *
+     * @return string The sorted cards.
+     */
+    public function sortCards(string $cardValue): string
+    {
+        $cards = str_split($cardValue);
+        $count = count($cards);
+        for ($i = 0; $i < $count; $i++) {
+            if ($cards[$i] === "T") {
+                $cards[$i] = "10";
+            }elseif ($cards[$i] === "A") {
+                $cards[$i] = "14";
+            }elseif ($cards[$i] === "K") {
+                $cards[$i] = "13";
+            }elseif ($cards[$i] === "Q") {
+                $cards[$i] = "12";
+            }elseif ($cards[$i] === "J") {
+                $cards[$i] = "11";
+            }
+        }
+        rsort($cards);
+
+        for ($i = 0; $i < $count; $i++) {
+            if ($cards[$i] === "10") {
+                $cards[$i] = "T";
+            }elseif ($cards[$i] === "14") {
+                $cards[$i] = "A";
+            }elseif ($cards[$i] === "13") {
+                $cards[$i] = "K";
+            }elseif ($cards[$i] === "12") {
+                $cards[$i] = "Q";
+            }elseif ($cards[$i] === "11") {
+                $cards[$i] = "J";
+            }
+        }
+        
+        $cardValue = implode("", $cards);
+        
         return $cardValue;
     }
 

@@ -96,7 +96,7 @@ class NPCSteve extends NPCMatt implements PlayerInterface
         return $actionRes;
     }
 
-    public function setSteveAction(int $riskLevel, int $actions): string
+    public function setSteveActionPost(int $riskLevel, int $actions): string
     {
         $action = "";
 

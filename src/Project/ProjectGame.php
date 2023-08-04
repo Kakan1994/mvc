@@ -23,6 +23,8 @@ class ProjectGame
 
     private GameState $gameState;
 
+    private PreFlop $preFlop;
+
     public function __construct(DeckOfCards $deck, CardHands $cardHands, GameLogic $gameLogic, GameData $gameData, GameQueue $gameQueue, GameState $gameState)
     {
         $this->deck = $deck;
@@ -31,6 +33,7 @@ class ProjectGame
         $this->gameData = $gameData;
         $this->gameQueue = $gameQueue;
         $this->gameState = $gameState;
+        $this->preFlop = new PreFlop();
     }
 
     public function setQueAndRoles(): array
@@ -162,7 +165,7 @@ class ProjectGame
         $players = $this->gameQueue->getQue();
 
         foreach ($players as $player) {
-            $player->getPlayerActions()->resetActions();
+            $player->getPlayerActions()->clearRoundActions();
         }
 
         $this->gameQueue->shiftPlayers();
@@ -250,11 +253,11 @@ class ProjectGame
 
     public function setFlop(): array
     {
-        $card = $this->deck->draw();
-        $this->gameState->addTrashCard($card);
+        $card= $this->deck->draw();
+        $this->gameState->addTrashCard($card[0]);
         for ($i = 0; $i < 3; $i++) {
             $card = $this->deck->draw();
-            $this->gameState->addTableCard($card);
+            $this->gameState->addTableCard($card[0]);
         }
 
         return $this->getTableCards();
@@ -263,9 +266,9 @@ class ProjectGame
     public function setTurn(): array
     {
         $card = $this->deck->draw();
-        $this->gameState->addTrashCard($card);
+        $this->gameState->addTrashCard($card[0]);
         $card = $this->deck->draw();
-        $this->gameState->addTableCard($card);
+        $this->gameState->addTableCard($card[0]);
 
         return $this->getTableCards();
     }
@@ -273,16 +276,17 @@ class ProjectGame
     public function setRiver(): array
     {
         $card = $this->deck->draw();
-        $this->gameState->addTrashCard($card);
+        $this->gameState->addTrashCard($card[0]);
         $card = $this->deck->draw();
-        $this->gameState->addTableCard($card);
+        $this->gameState->addTableCard($card[0]);
 
         return $this->getTableCards();
     }
 
     public function getTableCards(): array
     {
-        return $this->gameState->getTableCardsAsString();
+        $arrayCards = $this->gameState->getTableCardsAsString();
+        return $this->preFlop->turnCardsIntoStringArray($arrayCards);
     }
 
     public function isWinnerByFold(): bool
@@ -308,11 +312,11 @@ class ProjectGame
                 foreach ($tableCards as $card) {
                     $allCards->addCard($card);
                 }
-                $bestHand = $this->cardHands->getBestHand($allCards);
+                $bestHand = $this->cardHands->checkBestHand($allCards);
                 $bestHand = $bestHand*100;
                 $highCard = $this->cardHands->checkHighCardAceHigh($allCards);
                 $highCardValue = $highCard->getValue();
-                $bestHand = $bestHand + $highCardValue;
+                $bestHand = $bestHand + intval($highCardValue);
                 $player->setHandValue($bestHand);
             }
         }
@@ -362,7 +366,12 @@ class ProjectGame
 
     public function setGameData(): GameData
     {
-        //PLACEHOLDER
+        $this->gameData->setPlayers($this->getQue());
+        $this->gameData->setGameStage($this->gameState->getNumOfTableCards());
+        $this->gameData->setPot($this->getPot());
+        $this->gameData->setTableCards($this->getTableCards());
+
+        return $this->gameData;
     }
 
     

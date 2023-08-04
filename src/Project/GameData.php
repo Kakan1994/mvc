@@ -12,11 +12,11 @@ class GameData
 
     private int $pot;
 
-    private CardHand $tableCards;
+    private array $tableCards;
 
     private PlayerInterface $roundWinner;
 
-    private CardHand $winnerHand;
+    private array $winnerHand;
 
     public function getPlayers(): array
     {
@@ -70,7 +70,7 @@ class GameData
         return $this->tableCards;
     }
 
-    public function setTableCards(CardHand $tableCards): void
+    public function setTableCards(array $tableCards): void
     {
         $this->tableCards = $tableCards;
     }
@@ -90,7 +90,7 @@ class GameData
         return $this->winnerHand;
     }
 
-    public function setWinnerHand(CardHand $winnerHand): void
+    public function setWinnerHand(array $winnerHand): void
     {
         $this->winnerHand = $winnerHand;
     }

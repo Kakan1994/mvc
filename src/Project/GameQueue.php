@@ -29,9 +29,9 @@ class GameQueue
         $this->EnquePlayer($this->smallBlindPlayer);
         $this->EnquePlayer($this->bigBlindPlayer);
 
-        $this->dealerPlayer->setRole("Dealer");
-        $this->smallBlindPlayer->setRole("Small Blind");
-        $this->bigBlindPlayer->setRole("Big Blind");
+        $this->dealerPlayer->setRole("dealer");
+        $this->smallBlindPlayer->setRole("small blind");
+        $this->bigBlindPlayer->setRole("big blind");
 
         return $this->players;
     }
@@ -100,6 +100,8 @@ class GameQueue
         $this->enquePlayer($this->smallBlindPlayer);
         $this->enquePlayer($this->bigBlindPlayer);
         $this->enquePlayer($this->dealerPlayer);
+
+        return $this->players;
     }
 
     public function getSmallBlindPlayer(): PlayerInterface

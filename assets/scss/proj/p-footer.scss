@@ -1,0 +1,29 @@
+.p-footer {
+    background-color: $p-primary-red;
+    bottom: 0;
+    height: 120px;
+    border-top: $p-border-header-footer;
+    filter: grayscale(20%);
+}
+
+.footer {
+    padding: $magic-number;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.p-footer-text {
+    flex-wrap: nowrap;
+    font-size: 22px;
+    color: $p-accent-gold;
+    text-align: center;
+    font-family: $p-ff-header-heading;
+    letter-spacing: 2px;
+}
+
+.footer-addiction,
+.no-money {
+    width: 100%;
+    text-align: center;
+}

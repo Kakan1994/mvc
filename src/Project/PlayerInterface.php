@@ -37,6 +37,10 @@ interface PlayerInterface
 
     public function isHuman(): bool;
 
+    public function setBest5CardHand(CardHand $hand): void;
+
+    public function getBest5CardHandArray(): array;
+
     /**
      * @return array<string, mixed>
      */

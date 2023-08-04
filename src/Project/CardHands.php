@@ -252,7 +252,7 @@ class CardHands
      * @return array The higest 3 of a kind in the hand
      * @return Card The highest card in the hand.
      */
-    public function checkStraight(CardHand $hand): CardHand|array|Card
+    public function checkStraight(CardHand $hand): CardHand
     {
         if (count($hand->getCards()) < 5) {
             return $this->checkThreeOfAKind($hand);

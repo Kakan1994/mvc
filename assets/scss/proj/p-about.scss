@@ -1,0 +1,36 @@
+.p-body{
+    background-color: $p-primary-black;
+}
+
+.p-container-about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $magic-number;
+    height: 60vh;
+    border-radius: $p-container-border-radius;
+    border: $p-border-header-footer;
+    background-color: $p-primary-green;
+}
+
+.About-p{
+    width: 50rem;
+
+    p{
+        color: $p-primary-white;
+        font-family: $p-ff-paragraph;
+    }
+
+    a{
+        color: $p-accent-gold;
+        text-decoration: none;
+    }
+}
+
+.h-about-p{
+    color: $p-primary-white;
+    font-family: $p-ff-headings;
+    font-size: $base-font-size * 1.5;
+    margin: 0;
+    color: $p-accent-gold;
+}

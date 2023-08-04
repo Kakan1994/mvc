@@ -22,9 +22,14 @@ class ProjectPlayer implements PlayerInterface
     private int $bets = 0;
     private int $totalBets = 0;
     protected CardHand $hand;
+    protected CardHand $best5CardHand;
+    protected array $best5CardHandArray = [];
     protected int $handValue = 0;
     protected PlayerActions $playerActions;
     private bool $isHuman = true;
+    private CardHands $cardHands;
+    private PreFlop $preFlop;
+    private string $bestHandName = "";
 
     /**
      * Player constructor.
@@ -37,7 +42,10 @@ class ProjectPlayer implements PlayerInterface
         $this->name = $name;
         $this->chips = $initialChips;
         $this->hand = new CardHand();
+        $this->best5CardHand = new CardHand();
         $this->playerActions = new PlayerActions();
+        $this->cardHands = new CardHands();
+        $this->preFlop = new PreFlop();
     }
 
     /**
@@ -212,6 +220,79 @@ class ProjectPlayer implements PlayerInterface
     {
         $this->handValue = $handValue;
     }
+
+    /**
+     * Set the players best 5 card hand.
+     * 
+     * @param CardHand $hand The hand to set.
+     * 
+     * @return void
+     */
+    public function setBest5CardHand(CardHand $hand): void
+    {
+        $bestHandId = $this->cardHands->checkBestHand($hand);
+
+        switch ($bestHandId)
+        {
+            case 9:
+                $this->bestHandName = "Straight Flush";
+                $this->best5CardHand = $this->cardHands->checkStraightFlush($hand);
+                break;
+            case 8:
+                $this->bestHandName = "Four of a Kind";
+                $this->best5CardHand = $this->cardHands->checkFourOfAKind($hand);
+                break;
+            case 7:
+                $this->bestHandName = "Full House";
+                $this->best5CardHand = $this->cardHands->checkFullHouse($hand);
+                break;
+            case 6:
+                $this->bestHandName = "Flush";
+                $this->best5CardHand = $this->cardHands->checkFlush($hand);
+                break;
+            case 5:
+                $this->bestHandName = "Straight";
+                $this->best5CardHand = $this->cardHands->checkStraight($hand);
+                break;
+            case 4:
+                $this->bestHandName = "Three of a Kind";
+                $this->best5CardHand = $this->cardHands->checkThreeOfAKind($hand);
+                break;
+            case 3:
+                $this->bestHandName = "Two Pair";
+                $this->best5CardHand = $this->cardHands->checkTwoPair($hand);
+                break;
+            case 2:
+                $this->bestHandName = "Pair";
+                $this->best5CardHand = $this->cardHands->checkPair($hand);
+                break;
+            default:
+                $this->bestHandName = "High Card";
+                $this->best5CardHand->addCard($this->cardHands->checkHighCardAceHigh($hand));
+                break;
+        }
+    }
+
+    public function setBest5CardHandArray(): array
+    {
+        $this->best5CardHandArray = $this->preFlop->turnCardsIntoStringArray($this->best5CardHand);
+    }
+
+    /**
+     * Get the players best 5 card hand.
+     * 
+     * @return array The players best 5 card hand.
+     */
+    public function getBest5CardHandArray(): array
+    {
+        return $this->best5CardHandArray;
+    }
+
+    public function getBestHandName(): string
+    {
+        return $this->bestHandName;
+    }
+    
 
     public function getRole(): string
     {

@@ -12,9 +12,9 @@
                 >
         </div>
     {% endif %}
-    <div class="proj-card-{{ player.name|lower }}-container">
+    <div class="p-card-{{ player.name|lower }}-container">
         {% for card in player.hand %}
-            <img class="hand-card" src="{{ asset('images/proj/X.png') }}">
+            <img class="hand-card" src="{{ asset('images/proj/cards/X.png') }}">
         {% endfor %}
     </div>
 </div>

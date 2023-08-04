@@ -1,0 +1,40 @@
+.p-button {
+    font-family: $p-ff-paragraph;
+    font-size: $base-font-size * 0.8;
+    padding: 0.4rem 1rem;
+    text-align: center;
+    border-radius: 0.2rem;
+    line-height: $base-line-height;
+    width: fit-content;
+    border: 1px solid #333;
+    background-image: linear-gradient(#fff, darken(#fff, 30%));
+    margin-top: $magic-number;
+}
+
+.p-button.call {
+    font-family: $p-ff-tables;
+    background-image: linear-gradient(#266e3d, darken(#abe69e, 10%));
+    filter: grayscale(20%);
+}
+
+.p-button.raise {
+    font-family: $p-ff-tables;
+    background-image: linear-gradient(#6e5c26, darken(#e6cf9e, 20%));
+    filter: grayscale(20%);
+    color: #000;
+    text-decoration: none;
+}
+
+.p-button.check {
+    font-family: $p-ff-tables;
+    background-image: linear-gradient(#39648f, darken(#9ebee6, 20%));
+    filter: grayscale(20%);
+}
+
+.p-button.fold {
+    font-family: $p-ff-tables;
+    background-image: linear-gradient(#6e2626, darken(#e6a69e, 10%));
+    filter: grayscale(20%);
+    color: #000;
+    text-decoration: none;
+}

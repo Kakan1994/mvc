@@ -1,0 +1,43 @@
+.p-body {
+    max-width: $p-max-w;
+    background-color: #000;
+    margin: 0 auto;
+    box-sizing: border-box;
+    color: $p-primary-white;
+    display: flex;
+    flex-direction: column;
+    line-height: $base-line-height;
+}
+
+html {
+    font-size: 100%;
+}
+
+.pmain {
+    max-width: $p-max-w;
+    padding: $magic-number;
+    background-color: #28383d;
+    box-shadow: none !important;
+    min-height: 66vh;
+    flex: 1;
+    border-top: $p-border-header-footer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.p-page-container {
+    min-height: 100vh;
+    max-width: 75rem;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.p-para {
+    font-size: $base-font-size;
+    font-family: $p-ff-paragraph;
+    margin-bottom: $magic-number * 0.3;
+    color: $p-primary-white;
+}

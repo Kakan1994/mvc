@@ -1,12 +1,9 @@
 <div class="controls-form-container">
     {% if actions == 3 %}
         <form class="controls-form call" action="" method="">
-            <div class="proj-call action">
-                <button
-                    class="p-button call"
-                    onClick="this.form.action='{{ callUrl }}';this.form.method='post';"
-                >
-                Call ({{ call }})
+            <div class="p-call action">
+                <button class="p-button call" onClick="this.form.action='{{ callUrl }}';this.form.method='post';">
+                    Call ({{ call }})
                 </button>
             </div>
             <div class="input-container">
@@ -21,12 +18,12 @@
             </div>
         </form>
         <form class="controls-form raise" action="" method="">
-            <div class="proj-raise controls">
+            <div class="p-raise controls">
                 <button
                     class="p-button raise"
                     onClick="this.form.action='{{ raiseUrl }}';this.form.method='post';"
                 >
-                Raise ({{ minRaise }})
+                Raise ({{ raiseAmount }})
                 </button>
             </div>
             <div class="input-container">
@@ -35,14 +32,14 @@
                     type="number"
                     style="display:none;"
                     required="required"
-                    value="{{ minRaise + call }}"
+                    value="{{ raiseAmount + call }}"
                     name="raise-amount"
                     id="raise-amount"
                 >
             </div>
         </form>
         <form class="controls-form fold" action="" method="">
-            <div class="proj-fold controls">
+            <div class="p-fold controls">
                 <button
                     class="p-button fold"
                     onClick="this.form.action='{{ foldUrl }}';this.form.method='post';"
@@ -50,29 +47,19 @@
                 Fold
                 </button>
             </div>
-                >
-            </div>
         </form>
     {% elseif actions == 2 %}
         <form class="controls-form check" action="" method="">
-            <div class="proj-check controls">
-                <button
-                    class="p-button check"
-                    onClick="this.form.action='{{ checkUrl }}';this.form.method='post';"
-                >
-                Check
+            <div class="p-check controls">
+                <button class="p-button check" onClick="this.form.action='{{ checkUrl }}';this.form.method='post';">
+                    Check
                 </button>
-            </div>
-                >
             </div>
         </form>
         <form class="controls-form raise" action="" method="">
-            <div class="proj-raise controls">
-                <button
-                    class="p-button raise"
-                    onClick="this.form.action='{{ raiseUrl }}';this.form.method='post';"
-                >
-                Raise ({{ minRaise }})
+            <div class="p-raise controls">
+                <button class="p-button raise" onClick="this.form.action='{{ raiseUrl }}';this.form.method='post';">
+                    Raise ({{ raiseAmount }})
                 </button>
             </div>
             <div class="input-container">
@@ -81,11 +68,9 @@
                     type="number"
                     style="display:none;"
                     required="required"
-                    value="{{ minRaise + call }}"
+                    value="{{ raiseAmount + call }}"
                     name="raise-amount"
                     id="raise-amount"
-                >
-            </div>
                 >
             </div>
         </form>

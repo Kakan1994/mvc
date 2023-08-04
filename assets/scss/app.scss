@@ -6,3 +6,29 @@
 @import 'game';
 @import 'library';
 @import 'metrics';
+
+//Project
+
+@import 'proj/p-variables';
+@import 'proj/p-base';
+@import 'proj/p-about';
+@import 'proj/p-header';
+@import 'proj/p-footer';
+@import 'proj/p-buyin';
+@import 'proj/p-pre-flop';
+@import 'proj/p-player';
+@import 'proj/p-cards';
+@import 'proj/p-matt';
+@import 'proj/p-steve';
+@import 'proj/p-button';
+@import 'proj/p-action';
+@import 'proj/p-pot';
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');

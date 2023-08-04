@@ -3,6 +3,7 @@
 namespace App\Project;
 
 use App\Cards\CardHand;
+use App\Cards\Card;
 
 class GameState
 {
@@ -20,16 +21,17 @@ class GameState
 
     public function __construct()
     {
-        $this->TableCards = new CardHand();
+        $this->tableCards = new CardHand();
+        $this->trashCards = new CardHand();
         $this->round = 0;
         $this->pot = 0;
-        $this->smallBlind = 0;
-        $this->bigBlind = 0;
+        $this->smallBlind = 10;
+        $this->bigBlind = 20;
     }
 
     public function getTableCards(): CardHand
     {
-        return $this->TableCards;
+        return $this->tableCards;
     }
 
     public function getTableCardsAsString(): array
@@ -40,6 +42,11 @@ class GameState
             $cards[] = $card;
         }
         return $cards;
+    }
+
+    public function getNumOfTableCards(): int
+    {
+        return count($this->tableCards->getCards());
     }
 
     public function getRound(): int
@@ -64,12 +71,12 @@ class GameState
 
     public function addTableCard(Card $card): void
     {
-        $this->tableCards->addCards($card);
+        $this->tableCards->addCard($card);
     }
 
     public function addTrashCard(Card $card): void
     {
-        $this->trashCards->addCards($card);
+        $this->trashCards->addCard($card);
     }
 
     public function setRound(int $round): void

@@ -4,7 +4,7 @@
 
 {% block main %}
     <div class="outer-container-preflop">
-        <div class="proj-container-preflop">
+        <div class="p-container-preflop">
         </div>
         {% for player in playerQueue %}
             {% if player.isHuman %}
@@ -13,8 +13,8 @@
                 {% include 'proj/npc.html.twig' %}
             {% endif %}
         {% endfor %}
-        <div class="proj-container-pot">
-            <p class="proj-pot">Pot: $0</p>
+        <div class="p-container-pot">
+            <p class="p-pot">Pot: $0</p>
         </div>
         {% include 'proj/controls.html.twig' %}
     </div>

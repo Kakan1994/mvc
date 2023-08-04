@@ -1,0 +1,17 @@
+.controls-form-container {
+    grid-column: 7 / 11;
+    grid-row: 11 / 13;
+    justify-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.p-input.call {
+    border: none !important;
+}
+
+.p-input.raise {
+    width: 100%;
+    font-size: smaller;
+}

@@ -5,7 +5,7 @@
     </div>
     <div class="proj-card-{{ player.name|lower }}-container">
         {% for card in player.hand %}
-            <img class="hand-card" src="{{ asset('images/proj/cards/' ~ card. ~ '.png') }}">
+            <img class="hand-card" src="{{ asset('images/proj/cards/' ~ card ~ '.png') }}">
         {% endfor %}
     </div>
 </div>

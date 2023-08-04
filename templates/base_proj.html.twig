@@ -7,29 +7,37 @@
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
 </head>
-<body class="proj-body">
-    <div class="proj-page-container">
-        <header id="proj-header" class="proj-header" style="background-image: url({{ asset('images/proj-header.png') }})">
-            <div class="proj-header-overlay"></div>
-                <p class="proj-header-heading">Texas Hold'em</p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="{{ path('home') }}">Back to main page for course</a></li>
-                    <li><a href="{{ path('project') }}">Home</a></li>
-                    <li><a href="{{ path('proj_clear_session') }}">Clear Session</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main class="projmain">
+<body class="p-body">
+    <div class="p-page-container">
+        <div class="p-header-wrapper">
+            <header id="p-header" class="p-header" style="background-image: url({{ asset('images/proj-header.png') }})">
+                <div class="p-header-overlay"></div>
+                </div>
+                <div class="p-nav-container">
+                    <div class="p-grid-home">
+                        <a href="{{ path('home') }}">
+                            <img src="{{ asset('images/proj/home.png') }}" alt="home icon" width="40">
+                        </a>
+                    </div>
+                    <div class="p-grid-nav">
+                        <nav id="nav" class="p-nav">
+                            <ul>
+                                <li><a href="{{ path('project') }}">Home</a></li>
+                                <li><a href="{{ path('proj_clear_session') }}">Clear Session</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+            </header>
+        </div>
+        <main class="pmain">
         {% block main %}{% endblock %}
         </main>
-        <footer class="projfooter">
+        <footer class="p-footer">
             <div class="no-money">
-                <p class="proj-footer-text">Behöver du hjälp för att sluta spela?</p>
+                <p class="p-footer-text">Behöver du hjälp för att sluta spela?</p>
             </div>
             <div class="footer-addiction">
-                <a href="https://spelberoende.se/" class="proj-footer-text small">Klicka här</a>
+                <a href="https://spelberoende.se/" class="p-footer-text small">Klicka här</a>
             </div>
         </footer>
         {% block javascripts %}

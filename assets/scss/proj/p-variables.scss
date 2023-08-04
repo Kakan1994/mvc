@@ -1,0 +1,36 @@
+//Colors
+$p-primary-red: #D91E18;
+$p-primary-black: #000000;
+$p-primary-white: antiquewhite;
+$p-secondary-red: #9b111e;
+$p-secondary-black: #333333;
+$p-tertiary-red: #FF3B30;
+$p-accent-gold: #e6cf9e;
+$p-primary-green: #007733;
+
+// Font families
+$p-ff-header-heading: 'Oswald', sans-serif;
+$p-ff-headings: 'Bebas Neue', sans-serif;
+$p-ff-paragraph: 'Roboto', sans-serif;
+$p-ff-navbar: 'Open Sans', sans-serif;
+$p-ff-tables: 'Playfair Display', serif;
+
+
+// Borders
+$p-border-header-footer: 2px solid $p-accent-gold;
+$p-border-page-container: 3px solid $p-secondary-black;
+$p-border-messages: 2px solid $p-tertiary-red;
+$p-border-player-info: 1px solid $p-secondary-red;
+$p-border-form-div: 3px solid $p-secondary-black;
+$p-container-border-radius: 20px;
+$p-box-shadow: 5px 10px 8px 4px #000000;
+
+// Font sizes
+$p-fs-h1: $base-font-size * 3; //BYT
+$p-fs-h2: $base-font-size * 2; //BYT
+$p-fs-h3: $base-font-size * 1.35; //BYT
+
+// Widths and heights
+$p-max-w: 750rem;
+$p-form-w: 20rem;
+
