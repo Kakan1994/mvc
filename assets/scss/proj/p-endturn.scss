@@ -1,0 +1,44 @@
+@keyframes rainBorder {
+    0%   {border: 2px solid #ef3550;}
+    12.5%  {border: 2px solid #f48fb1;}
+    25%  {border: 2px solid #7e57c2;}
+    37.5%  {border: 2px solid #2196f3;}
+    50%  {border: 2px solid #26c6da;}
+    62.5%  {border: 2px solid #43a047;}
+    75%  {border: 2px solid #eeff41;}
+    87.5%  {border: 2px solid #f9a825;}
+    100% {border: 2px solid #ff5722;}
+}
+
+.winner-container {
+    grid-column: 9 / 12;
+    grid-row: 4 / 9;
+    width: 81%;
+    padding: ($magic-number * 0.79);
+    background-color: $p-primary-red;
+    border-radius: 10px;
+    animation: rainBorder 4s linear infinite;
+    text-align: center;
+}
+
+.winner-card {
+    width: 40px;
+}
+
+.a-link {
+    align-self: center;
+    text-decoration: none;
+    color: #000;
+}
+
+.winner-h3 {
+    margin: 0;
+    font-size: $base-font-size * 1.4;
+    font-family: $p-ff-paragraph;
+}
+
+.winner-hand {
+    p {
+        margin-bottom: 0;
+    }
+}

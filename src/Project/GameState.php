@@ -11,8 +11,6 @@ class GameState
 
     private CardHand $trashCards;
 
-    private int $round;
-
     private int $pot;
 
     private int $smallBlind;
@@ -23,7 +21,6 @@ class GameState
     {
         $this->tableCards = new CardHand();
         $this->trashCards = new CardHand();
-        $this->round = 0;
         $this->pot = 0;
         $this->smallBlind = 10;
         $this->bigBlind = 20;
@@ -32,6 +29,11 @@ class GameState
     public function getTableCards(): CardHand
     {
         return $this->tableCards;
+    }
+
+    public function getTrashCards(): CardHand
+    {
+        return $this->trashCards;
     }
 
     public function getTableCardsAsString(): array
@@ -47,11 +49,6 @@ class GameState
     public function getNumOfTableCards(): int
     {
         return count($this->tableCards->getCards());
-    }
-
-    public function getRound(): int
-    {
-        return $this->round;
     }
 
     public function getPot(): int
@@ -79,11 +76,6 @@ class GameState
         $this->trashCards->addCard($card);
     }
 
-    public function setRound(int $round): void
-    {
-        $this->round = $round;
-    }
-
     public function setPot(int $pot): void
     {
         $this->pot = $pot;
@@ -94,9 +86,9 @@ class GameState
         $this->smallBlind = $smallBlind;
     }
 
-    public function setBigBlind(): void
+    public function setBigBlind(int $bigBlind): void
     {
-        $this->bigBlind = 2*$this->smallBlind;
+        $this->bigBlind = $bigBlind;
     }
 
     public function resetTableCards(): void

@@ -243,7 +243,7 @@ class NPCMatt extends NPCLogic implements PlayerInterface
                 break;
             case 3:
                 $this->bestHandName = "Two Pair";
-                $this->best5CardHand = $this->cardHands->checkTwoPair($hand);
+                $this->best5CardHand = $this->cardHands->check2Pair($hand);
                 break;
             case 2:
                 $this->bestHandName = "Pair";
@@ -256,9 +256,9 @@ class NPCMatt extends NPCLogic implements PlayerInterface
         }
     }
 
-    public function setBest5CardHandArray(): array
+    public function setBest5CardHandArray(): void
     {
-        $this->best5CardHandArray = $this->preFlop->turnCardsIntoStringArray($this->best5CardHand);
+        $this->best5CardHandArray = $this->preFlop->turnCardsIntoStringArray($this->best5CardHand->getCards());
     }
 
     /**
@@ -288,7 +288,7 @@ class NPCMatt extends NPCLogic implements PlayerInterface
             "role" => $this->role,
             "chips" => $this->chips,
             "bets" => $this->bets,
-            "hand" => $this->hand->getCards(),
+            "hand" => $this->getHand(),
             "playerActions" => $this->playerActions->getLatestAction(),
             "isHuman" => $this->isHuman
         ];
@@ -297,7 +297,6 @@ class NPCMatt extends NPCLogic implements PlayerInterface
     public function setAndReturnMattMove(int $actions, int $highestBet, int $bigBlind): array
     {
         $callAmount = $highestBet - $this->getBets();
-        error_log("Highest bet: " . $highestBet);
         $raiseAmount = $highestBet + $bigBlind - $this->getBets();
 
         return $this->setMattAction($actions, $callAmount, $raiseAmount);

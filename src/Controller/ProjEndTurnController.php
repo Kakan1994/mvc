@@ -28,14 +28,20 @@ class ProjEndTurnController extends AbstractController
 
         foreach ($playerQueue as $player) {
             $playerQueueData[] = $player->getPlayerData();
+            error_log(var_dump("player"));
+            error_log(var_dump($player));
             $allBets += $player->getBets();
         }
 
         $pot = $game->getPot();
         $winner = $game->getWinner();
+        error_log("winner");
+        error_log(var_dump($winner));
 
         $winnerName = $winner->getName();
         $winnerHand = $winner->getBestHandName();
+        error_log("winnerHand");
+        error_log($winnerHand);
         $winnerCards = $winner->getBest5CardHandArray();
 
         $gameData = $game->setGameData();

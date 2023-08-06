@@ -3,7 +3,7 @@
         <p class="underline">{{ player.name }}</p>
         <p class="small">${{ player.chips }}</p>
     </div>
-    <div class="proj-card-container">
+    <div class="p-card-container">
         {% for card in player.hand.getCardsAsArrayProj %}
             <img class="hand-card" src="{{ asset('images/proj/cards/' ~ card ~ '.png') }}">
         {% endfor %}

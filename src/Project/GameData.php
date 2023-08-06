@@ -65,7 +65,7 @@ class GameData
         $this->pot = $pot;
     }
 
-    public function getTableCards(): CardHand
+    public function getTableCards(): array
     {
         return $this->tableCards;
     }
@@ -85,7 +85,7 @@ class GameData
         $this->roundWinner = $roundWinner;
     }
 
-    public function getWinnerHand(): CardHand
+    public function getWinnerHand(): array
     {
         return $this->winnerHand;
     }

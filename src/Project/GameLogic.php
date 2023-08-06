@@ -13,8 +13,7 @@ class GameLogic
                 $folded++;
             }
         }
-
-        if ($folded === count($players) - 1) {
+        if ($folded >= count($players) - 1) {
             return true;
         }
 
@@ -137,7 +136,7 @@ class GameLogic
                 continue;
             }
 
-            array_push($handValues, $player->getHand()->getHandValue());
+            array_push($handValues, $player->getHandValue());
         }
 
         $uniqueHandValues = array_unique($handValues);

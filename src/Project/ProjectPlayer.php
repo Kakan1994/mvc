@@ -117,6 +117,11 @@ class ProjectPlayer implements PlayerInterface
         return $this->bets;
     }
 
+    public function setBets(int $bets): void
+    {
+        $this->bets = $bets;
+    }
+
     /**
      * Add to the players bets.
      * 
