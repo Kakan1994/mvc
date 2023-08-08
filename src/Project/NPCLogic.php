@@ -171,9 +171,9 @@ class NPCLogic
 
     public function adjustRiskPotAndBlind(int $pot, int $blind): int
     {
-        if ($blind/$pot >= 0.1) {
+        if ($blind/$pot <= 0.1) {
             return 50;
-        } elseif ($blind/$pot >= 0.3) {
+        } elseif ($blind/$pot <= 0.3) {
             return 10;
         }
 
@@ -204,7 +204,7 @@ class NPCLogic
 
     public function wrapperMattCalls(NPCLogic $object, PlayerInterface $player, int $callSize, ?int $minRaise = null): array
     {
-        return $object->setMattCalls($player, $minRaise, $callSize);
+        return $object->setMattCalls($player, $callSize, $minRaise);
     }
 
     public function setMattCalls(PlayerInterface $player, int $callSize, ?int $minRaise = null): array
@@ -224,12 +224,12 @@ class NPCLogic
         return ["raise", $minRaise];
     }
 
-    public function wrapperMattFolds(NPCLogic $object, PlayerInterface $player, int $minRaise, int $callSize): array
+    public function wrapperMattFolds(NPCLogic $object, PlayerInterface $player, ?int $minRaise = null, ?int $callSize = null): array
     {
         return $object->setMattFolds($player, $minRaise, $callSize);
     }
 
-    public function setMattFolds(PlayerInterface $player, int $minRaise, int $callSize): array
+    public function setMattFolds(PlayerInterface $player, ?int $minRaise = null, ?int $callSize = null): array
     {
         $player->getPlayerActions()->setHasFolded();
         $player->setHand(new CardHand);

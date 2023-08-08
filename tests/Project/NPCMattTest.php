@@ -487,9 +487,58 @@ class NPCMattTest extends TestCase
                 "bets" => 0,
                 "hand" => new CardHand(),
                 "playerActions" => "",
-                "isHuman" => false
+                "isHuman" => false,
+                'handValue' => 0,
             ],
             $matt->getPlayerData()
+        );
+    }
+
+    /**
+     * Test resetBets
+     */
+    public function testResetBets(): void
+    {
+        $matt = new NPCMatt("Matt", 1000);
+
+        $matt->addToBets(100);
+
+        $this->assertEquals(
+            100,
+            $matt->getBets()
+        );
+
+        $matt->resetBets();
+
+        $this->assertEquals(
+            0,
+            $matt->getBets()
+        );
+    }
+
+    /**
+     * Test resetHand
+     */
+    public function testResetHand(): void
+    {
+        $matt = new NPCMatt("Matt", 1000);
+
+        $card1 = new Card("♣", "2");
+        $card2 = new Card("♠", "K");
+
+        $matt->getHand()->addCard($card1);
+        $matt->getHand()->addCard($card2);
+
+        $this->assertEquals(
+            2,
+            count($matt->getHand()->getCards())
+        );
+
+        $matt->resetHand();
+
+        $this->assertEquals(
+            0,
+            count($matt->getHand()->getCards())
         );
     }
 

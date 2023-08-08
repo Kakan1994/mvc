@@ -323,14 +323,14 @@ class NPCSteveTest extends TestCase
         $steve->setSteveRisk($human, "pre", 100, 20);
 
         $this->assertEquals(
-            50,
+            10,
             $steve->getRiskLevel()
         );
 
         $steve->setSteveRisk($human, "post", 100, 20);
 
         $this->assertEquals(
-            100,
+            20,
             $steve->getRiskLevel()
         );
     }

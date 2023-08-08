@@ -15,4 +15,35 @@ class PreFlopTest extends TestCase{
             $preFlop
         );
     }
+
+    /**
+     * Test getRankingsArray() method.
+     */
+    public function testGetRankingsArray(): void
+    {
+        $preFlop = new PreFlop();
+
+        $this->assertIsArray(
+            $preFlop->getRankingsArray()
+        );
+    }
+
+    /**
+     * Test getHandByCardsAndType() method.
+     */
+    public function testGetHandByCardsAndType(): void
+    {
+        $preFlop = new PreFlop();
+
+        $res= $preFlop->getHandByCardsAndType(
+            "AK",
+            "s"
+        );
+        $exp = 4;
+        $this->assertEquals(
+            $exp,
+            $res
+        );
+        
+    }
 }
