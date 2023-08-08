@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Project\ProjectGame;
 use App\Project\NPCMatt;
+use App\Cards\CardHand;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -17,6 +18,11 @@ class MattTurnController extends AbstractController
     public function projMattTurn(SessionInterface $session): Response
     {
         $game = $session->get('game');
+
+        // error_log("Matt's cards");
+        // foreach ($game->getFirstPlayer()->getHand()->getCards() as $card) {
+        //     error_log(($card));
+        // }
 
         if ($game->roundOver()) {
             return $this->redirectToRoute('proj_round_over');
@@ -39,15 +45,10 @@ class MattTurnController extends AbstractController
         $actions = $game->getPossibleActions($playersTurn);
         $bet = $game->getHighestBet();
         $blind = $game->getBigBlind();
-        error_log("Matt's bet: " . $bet);
-        error_log("Matt's blind: " . $blind);
-        error_log("Matt's actions: " . $actions);
 
         $actionData = $playersTurn->setAndReturnMattMove($actions, $bet, $blind);
-        error_log("Matt's action: " . $actionData[0] . " " . $actionData[1]);
 
         if ($actionData[0] === "call" || $actionData[0] === "raise") {
-            error_log("Matt's bet: " . $actionData[1]);
             $game->addToPot($actionData[1]);
             
             $playersTurn->addToBets($actionData[1]);
@@ -56,6 +57,27 @@ class MattTurnController extends AbstractController
 
         $action = ucfirst($actionData[0]);
         $amount = $actionData[1];
+        
+        $allCards = new cardHand();
+        
+        $playerCards = $playersTurn->getHand()->getCards();
+        if (!empty($playerCards)) {
+            foreach ($playerCards as $card) {
+                // error_log("card: " . $card);
+                $allCards->addCard($card);
+            }
+        }
+        
+        $tableCards = $game->getGameState()->getTableCards()->getCards();
+
+        if (!empty($tableCards)) {
+            foreach ($tableCards as $card) {
+                // error_log("card: " . $card);
+                $allCards->addCard($card);
+            }
+        }
+
+        $playersTurn->setBest5CardHand($allCards);
 
         $game->dequePlayer();
         $game->enquePlayer($playersTurn);

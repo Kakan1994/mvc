@@ -39,6 +39,7 @@ class NPCSteve extends NPCMatt implements PlayerInterface
     {
         $this->playerActions->setHasFolded();
         $this->setHand(new CardHand());
+        $this->resetBest5CardHand();
         $this->clearPlayerBets();
         $this->getPlayerActions()->addToRoundActions("fold");
 

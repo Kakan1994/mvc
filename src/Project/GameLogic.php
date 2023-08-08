@@ -118,7 +118,11 @@ class GameLogic
 
         $winner = $players[0];
 
+
         for ($i = 1; $i < $count; $i++) {
+            if ($players[$i]->getPlayerActions()->hasFolded()) {
+                continue;
+            }
             if ($players[$i]->getHandValue() > $winner->getHandValue()) {
                 $winner = $players[$i];
             }
@@ -139,13 +143,18 @@ class GameLogic
             array_push($handValues, $player->getHandValue());
         }
 
+        error_log("handValues: " . implode(", ", $handValues));
+
         $uniqueHandValues = array_unique($handValues);
 
-        if (count($uniqueHandValues) === 1) {
-            return true;
+        error_log("handValues: " . implode(", ", $uniqueHandValues));
+
+        if (count($uniqueHandValues) !== 1) {
+
+            return false;
         }
 
-        return false;
+        return true;
     }
 
     public function getTiedWinners(array $players): array

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Project\ProjectGame;
 use App\Project\PreFlop;
+use App\Cards\CardHand;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -16,7 +17,7 @@ class ProjEndTurnController extends AbstractController
      */
     public function projEndTurn(SessionInterface $session): Response
     {
-        $session->set('route-forward', 'proj_change_stage');
+        $session->set('route-forward', 'proj_round_over');
         $session->set('route-back', 'proj_end_turn');
 
         $game = $session->get('game');
@@ -27,21 +28,33 @@ class ProjEndTurnController extends AbstractController
         $allBets = 0;
 
         foreach ($playerQueue as $player) {
+            $allCards = new cardHand();
+
+            $playerCards = $player->getHand()->getCards();
+            if (!empty($playerCards)) {
+                foreach ($playerCards as $card) {
+                    $allCards->addCard($card);
+                }
+            }
+            $tableCards = $game->getGameState()->getTableCards()->getCards();
+
+            if (!empty($tableCards)) {
+                foreach ($tableCards as $card) {
+                    $allCards->addCard($card);
+                }
+            }        
+            $player->setBest5CardHand($allCards);
+            $player->setBest5CardHandArray();
+
             $playerQueueData[] = $player->getPlayerData();
-            error_log(var_dump("player"));
-            error_log(var_dump($player));
             $allBets += $player->getBets();
         }
 
         $pot = $game->getPot();
         $winner = $game->getWinner();
-        error_log("winner");
-        error_log(var_dump($winner));
 
         $winnerName = $winner->getName();
         $winnerHand = $winner->getBestHandName();
-        error_log("winnerHand");
-        error_log($winnerHand);
         $winnerCards = $winner->getBest5CardHandArray();
 
         $gameData = $game->setGameData();
@@ -61,5 +74,73 @@ class ProjEndTurnController extends AbstractController
             'winnerHand' => $winnerHand,
             'winnerCards' => $winnerCards,
         ]);
+    }
+
+    /**
+     * @Route("/proj/tie", name="proj_tie")
+     */
+    public function projTie(SessionInterface $session): Response
+    {
+        $session->set('route-forward', 'proj_tied_round_over');
+        $session->set('route-back', 'proj_tie');
+
+        $game = $session->get('game');
+
+        $playerQueue = $game->getPLayerQue();
+
+        $playerQueueData = [];
+        $allBets = 0;
+
+        foreach ($playerQueue as $player) {
+            $allCards = new cardHand();
+
+            $playerCards = $player->getHand()->getCards();
+            if (!empty($playerCards)) {
+                foreach ($playerCards as $card) {
+                    $allCards->addCard($card);
+                }
+            }
+            $tableCards = $game->getGameState()->getTableCards()->getCards();
+
+            if (!empty($tableCards)) {
+                foreach ($tableCards as $card) {
+                    $allCards->addCard($card);
+                }
+            }        
+            $player->setBest5CardHand($allCards);
+            $player->setBest5CardHandArray();
+
+            $playerQueueData[] = $player->getPlayerData();
+            $allBets += $player->getBets();
+        }
+
+        $pot = $game->getPot();
+        
+        $winners = $game->getWinnersTie();
+
+        $bestHand = $winners[0]->getBestHandName();
+
+        $winnerNames = "";
+
+        foreach ($winners as $winner) {
+            $winnerNames .= $winner->getName() . ", ";
+        }
+
+        $session->set('game', $game);
+        $tableCards = $session->get('tableCards');
+
+        return $this->render('proj/winner_tie.html.twig', [
+            'playerQueue' => $playerQueueData,
+            'pot' => $pot,
+            'tableCards' => $tableCards,
+            'restartUrl' => $this->generateUrl('proj_change_stage'),
+            'winner' => $winnerNames,
+            'bestHand' => $bestHand,
+        ]);
+
+
+
+
+
     }
 }

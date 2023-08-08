@@ -233,6 +233,7 @@ class NPCLogic
     {
         $player->getPlayerActions()->setHasFolded();
         $player->setHand(new CardHand);
+        $player->resetBest5CardHand();
         $player->clearPlayerBets();
         $player->getPlayerActions()->addToRoundActions("fold");
 

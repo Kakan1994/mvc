@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Project\ProjectGame;
 use App\Project\NPCSteve;
 use App\Project\PreFlop;
+use App\Cards\CardHand;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -38,17 +39,13 @@ class SteveTurnController extends AbstractController
         }
 
         $playerCards = $playersTurn->getHand()->getCards();
-        error_log("Steve's cards: " . $playerCards[0] . " " . $playerCards[1]);
-        error_log(var_dump($playersTurn->getHand()));
         
         $type = $playersTurn->getStartingCardType($playerCards);
-        error_log("Steve's cards type: " . $type);
         $cards = $playersTurn->getStartingCardValue($playerCards);
         
 
         $preFlop = new PreFlop();
         $cardsRank = $preFlop->getHandByCardsAndType($cards, $type);
-        error_log("Steve's cards rank: " . $cardsRank);
 
 
         $riskLevel = $playersTurn->adjustCardRiskRank($cardsRank);
@@ -79,6 +76,34 @@ class SteveTurnController extends AbstractController
 
         $action = ucfirst($actionData[0]);
         $amount = $actionData[1];
+
+        $allCards = new cardHand();
+
+        $playerCards = $playersTurn->getHand()->getCards();
+
+        if (!empty($playerCards)) {
+            foreach ($playerCards as $card) {
+                // error_log("card: " . $card);
+                $allCards->addCard($card);
+            }
+        }
+
+        $tableCards = $game->getGameState()->getTableCards()->getCards();
+
+        if (!empty($tableCards)) {
+            foreach ($tableCards as $card) {
+                $allCards->addCard($card);
+            }
+        }
+
+        $playersTurn->setBest5CardHand($allCards);
+        $playersTurn->setBest5CardHandArray();
+
+        // error_log("Steve's best hand: ");
+        // foreach ($playersTurn->getBest5CardHandArray() as $card) {
+        //     error_log($card);
+        // }
+        // error_log("Steve's best hand name: " . $playersTurn->getBestHandName());
 
         $game->dequePlayer();
         $game->enquePlayer($playersTurn);

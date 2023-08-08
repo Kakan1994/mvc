@@ -13,7 +13,7 @@
         </div>
     {% endif %}
     <div class="p-card-{{ player.name|lower }}-container">
-        {% for card in player.hand %}
+        {% for card in player.hand.getCardsAsArrayProj %}
             <img class="hand-card" src="{{ asset('images/proj/cards/X.png') }}">
         {% endfor %}
     </div>

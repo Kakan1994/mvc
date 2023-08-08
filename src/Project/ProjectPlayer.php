@@ -122,6 +122,11 @@ class ProjectPlayer implements PlayerInterface
         $this->bets = $bets;
     }
 
+    public function resetBets(): void
+    {
+        $this->bets = 0;
+    }
+
     /**
      * Add to the players bets.
      * 
@@ -265,7 +270,7 @@ class ProjectPlayer implements PlayerInterface
                 break;
             case 3:
                 $this->bestHandName = "Two Pair";
-                $this->best5CardHand = $this->cardHands->checkTwoPair($hand);
+                $this->best5CardHand = $this->cardHands->check2Pair($hand);
                 break;
             case 2:
                 $this->bestHandName = "Pair";
@@ -278,9 +283,16 @@ class ProjectPlayer implements PlayerInterface
         }
     }
 
-    public function setBest5CardHandArray(): array
+    public function setBest5CardHandArray(): void
     {
-        $this->best5CardHandArray = $this->preFlop->turnCardsIntoStringArray($this->best5CardHand);
+        $this->best5CardHandArray = $this->preFlop->turnCardsIntoStringArray($this->best5CardHand->getCards());
+    }
+
+    public function resetBest5CardHand(): void
+    {
+        $this->best5CardHand = new CardHand();
+        $this->best5CardHandArray = [];
+        $this->bestHandName = "";
     }
 
     /**
@@ -308,6 +320,7 @@ class ProjectPlayer implements PlayerInterface
     {
         $this->hand = new CardHand();
         $this->handValue = 0;
+        $this->resetBest5CardHand();
     }
 
     /**
@@ -327,6 +340,7 @@ class ProjectPlayer implements PlayerInterface
             "hand" => $this->getHand(),
             "playerActions" => $this->playerActions->getLatestAction(),
             "isHuman" => $this->isHuman,
+            "handValue" => $this->handValue,
         ];
     }
 

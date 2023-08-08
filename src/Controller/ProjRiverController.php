@@ -16,7 +16,7 @@ class ProjRiverController extends AbstractController
      */
     public function projRiver(SessionInterface $session): Response
     {
-        $session->set('route-forward', 'proj_end_turn');
+        $session->set('route-forward', 'proj_start_end_turn');
         $session->set('route-back', 'proj_river');
 
         $game = $session->get('game');

@@ -23,7 +23,7 @@ class PlayerFoldController extends AbstractController
 
         $player->clearPlayerBets();
         $player->resetHand();
-        $player->getPlayerAction()->setHasFolded();
+        $player->getPlayerActions()->setHasFolded();
 
         $game->enquePlayer($player);
 

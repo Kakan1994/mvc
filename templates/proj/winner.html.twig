@@ -30,10 +30,6 @@
         <div class="winner-hand">
             <p class="p-para">with a {{ winnerHand }}</p>
         </div>
-        <br>
-        {% for card in winnerCards %}
-            <img class="winner-card" src="{{ asset('images/proj/cards/' ~ card ~ '.png') }}">
-        {% endfor %}
     </div>
     <a href="{{ restartUrl }}" class="p-button the-link a-link">
         Next hand

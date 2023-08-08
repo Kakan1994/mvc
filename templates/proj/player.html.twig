@@ -2,6 +2,9 @@
     <div class="player-head">
         <p class="underline">{{ player.name }}</p>
         <p class="smaller">${{ player.chips }}</p>
+        {% if player.handValue is not same as 0 %}
+            <p class="smaller"> {{ player.handValue }}</p>
+        {% endif %}
     </div>
     {% if player.role is same as "dealer" %}
         <div class="dealer-chip-container">

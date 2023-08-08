@@ -125,6 +125,11 @@ class NPCMatt extends NPCLogic implements PlayerInterface
         return $this->bets;
     }
 
+    public function resetBets(): void
+    {
+        $this->bets = 0;
+    }
+
     /**
      * Add to the amount of chips the NPC has bet.
      *
@@ -213,47 +218,64 @@ class NPCMatt extends NPCLogic implements PlayerInterface
      */
     public function setBest5CardHand(CardHand $hand): void
     {
-        $bestHandId = $this->cardHands->checkBestHand($hand);
+        if (!empty($hand->getCards())) {
+            $bestHandId = $this->cardHands->checkBestHand($hand);
 
-        switch ($bestHandId)
-        {
-            case 9:
-                $this->bestHandName = "Straight Flush";
-                $this->best5CardHand = $this->cardHands->checkStraightFlush($hand);
-                break;
-            case 8:
-                $this->bestHandName = "Four of a Kind";
-                $this->best5CardHand = $this->cardHands->checkFourOfAKind($hand);
-                break;
-            case 7:
-                $this->bestHandName = "Full House";
-                $this->best5CardHand = $this->cardHands->checkFullHouse($hand);
-                break;
-            case 6:
-                $this->bestHandName = "Flush";
-                $this->best5CardHand = $this->cardHands->checkFlush($hand);
-                break;
-            case 5:
-                $this->bestHandName = "Straight";
-                $this->best5CardHand = $this->cardHands->checkStraight($hand);
-                break;
-            case 4:
-                $this->bestHandName = "Three of a Kind";
-                $this->best5CardHand = $this->cardHands->checkThreeOfAKind($hand);
-                break;
-            case 3:
-                $this->bestHandName = "Two Pair";
-                $this->best5CardHand = $this->cardHands->check2Pair($hand);
-                break;
-            case 2:
-                $this->bestHandName = "Pair";
-                $this->best5CardHand = $this->cardHands->checkPair($hand);
-                break;
-            default:
-                $this->bestHandName = "High Card";
-                $this->best5CardHand->addCard($this->cardHands->checkHighCardAceHigh($hand));
-                break;
+            switch ($bestHandId)
+            {
+                case 9:
+                    $this->bestHandName = "Straight Flush";
+                    $this->best5CardHand = $this->cardHands->checkStraightFlush($hand);
+                    break;
+                case 8:
+                    $this->bestHandName = "Four of a Kind";
+                    $this->best5CardHand = $this->cardHands->checkFourOfAKind($hand);
+                    break;
+                case 7:
+                    $this->bestHandName = "Full House";
+                    $this->best5CardHand = $this->cardHands->checkFullHouse($hand);
+                    break;
+                case 6:
+                    $this->bestHandName = "Flush";
+                    $this->best5CardHand = $this->cardHands->checkFlush($hand);
+                    break;
+                case 5:
+                    $this->bestHandName = "Straight";
+                    $this->best5CardHand = $this->cardHands->checkStraight($hand);
+                    break;
+                case 4:
+                    $this->bestHandName = "Three of a Kind";
+                    $this->best5CardHand = $this->cardHands->checkThreeOfAKind($hand);
+                    break;
+                case 3:
+                    $this->bestHandName = "Two Pair";
+                    $this->best5CardHand = $this->cardHands->check2Pair($hand);
+                    break;
+                case 2:
+                    $this->bestHandName = "Pair";
+                    $this->best5CardHand = $this->cardHands->checkPair($hand);
+                    break;
+                default:
+                    $this->bestHandName = "High Card";
+                    $this->best5CardHand = new CardHand();
+                    $this->best5CardHand->addCard($this->cardHands->checkHighCardAceHigh($hand));
+                    break;
+            }
         }
+    }
+
+    public function resetBest5CardHand(): void
+    {
+        $this->best5CardHand = new CardHand();
+        $this->best5CardHandArray = [];
+        $this->bestHandName = "";
+    }
+
+    public function resetHand(): void
+    {
+        $this->hand = new CardHand();
+        $this->handValue = 0;
+        $this->resetBest5CardHand();
     }
 
     public function setBest5CardHandArray(): void
@@ -290,7 +312,8 @@ class NPCMatt extends NPCLogic implements PlayerInterface
             "bets" => $this->bets,
             "hand" => $this->getHand(),
             "playerActions" => $this->playerActions->getLatestAction(),
-            "isHuman" => $this->isHuman
+            "isHuman" => $this->isHuman,
+            "handValue" => $this->handValue,
         ];
     }
 

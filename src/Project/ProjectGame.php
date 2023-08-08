@@ -59,6 +59,11 @@ class ProjectGame
         return $this->gameState->getPot();
     }
 
+    public function getGameState(): GameState
+    {
+        return $this->gameState;
+    }
+
     public function dealCards(): array
     {
         $this->deck = new DeckOfCards();
@@ -184,11 +189,11 @@ class ProjectGame
 
         $pot = $this->gameState->getPot();
 
-        $winner->addToChips($pot);
+        $winner->increaseChips($pot);
 
         foreach ($players as $player) {
             $player->resetBets();
-            $player->getPlayerActions()->resetActions();
+            $player->getPlayerActions()->clearRoundActions();
             $player->resetHand();
             if ($player->getPlayerActions()->hasFolded()) {
                 $player->getPlayerActions()->setHasFolded();
@@ -221,11 +226,11 @@ class ProjectGame
         $splitPot = $pot / $count;
 
         foreach ($winners as $winner) {
-            $winner->addToChips($splitPot);
+            $winner->increaseChips($splitPot);
         }
         foreach ($players as $player) {
             $player->resetBets();
-            $player->getPlayerActions()->resetActions();
+            $player->getPlayerActions()->clearRoundActions();
             $player->resetHand();
             if ($player->getPlayerActions()->hasFolded()) {
                 $player->getPlayerActions()->setHasFolded();
@@ -298,7 +303,7 @@ class ProjectGame
 
     public function getAndSetBestHands(): string
     {
-        $tableCards = $this->gameState->getTableCards();
+        $tableCards = $this->gameState->getTableCards()->getCards();
 
         $players = $this->gameQueue->getQue();
 
@@ -314,8 +319,61 @@ class ProjectGame
                 }
                 $bestHand = $this->cardHands->checkBestHand($allCards);
                 $bestHand = $bestHand*100;
-                $highCard = $this->cardHands->checkHighCardAceHigh($allCards);
+                switch ($bestHand){
+                    case 900:
+                        $bestHandAfterCheck = $this->cardHands->checkStraightFlush($allCards);
+                        $highCard = $this->cardHands->checkHighCardAceHigh($bestHandAfterCheck);
+                        break;
+                    case 800:
+                        $bestHandAfterCheck = $this->cardHands->checkFourOfAKind($allCards);
+                        $highCard = $this->cardHands->checkHighCardAceHigh($bestHandAfterCheck);
+                        break;
+                    case 700:
+                        $bestHandAfterCheck = $this->cardHands->checkFullHouse($allCards);
+                        $highCard = $this->cardHands->checkHighCardAceHigh($bestHandAfterCheck);
+                        break;
+                    case 600:
+                        $bestHandAfterCheck = $this->cardHands->checkFlush($allCards);
+                        $highCard = $this->cardHands->checkHighCardAceHigh($bestHandAfterCheck);
+                        break;
+                    case 500:
+                        $bestHandAfterCheck = $this->cardHands->checkStraight($allCards);
+                        $highCard = $this->cardHands->checkHighCardAceHigh($bestHandAfterCheck);
+                        break;
+                    case 400:
+                        $bestHandAfterCheck = $this->cardHands->checkThreeOfAKind($allCards);
+                        $highCard = $this->cardHands->checkHighCardAceHigh($bestHandAfterCheck);
+                        break;
+                    case 300:
+                        $bestHandAfterCheck = $this->cardHands->check2Pair($allCards);
+                        $highCard = $this->cardHands->checkHighCardAceHigh($bestHandAfterCheck);
+                        break;
+                    case 200:
+                        $bestHandAfterCheck = $this->cardHands->checkPair($allCards);
+                        $highCard = $this->cardHands->checkHighCardAceHigh($bestHandAfterCheck);
+                        break;
+                    default:
+                        $highCard = $this->cardHands->checkHighCardAceHigh($allCards);
+                        break;
+                }
                 $highCardValue = $highCard->getValue();
+                switch ($highCardValue) {
+                    case "A":
+                        $highCardValue = "14";
+                        break;
+                    case "K":
+                        $highCardValue = "13";
+                        break;
+                    case "Q":
+                        $highCardValue = "12";
+                        break;
+                    case "J":
+                        $highCardValue = "11";
+                        break;
+                    default:
+                        break;
+                }
+
                 $bestHand = $bestHand + intval($highCardValue);
                 $player->setHandValue($bestHand);
             }

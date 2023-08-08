@@ -1,22 +1,22 @@
-{% extends "proj_base.html.twig" %}
+{% extends "base_proj.html.twig" %}
 
 {% block title %}MVC Project{% endblock %}
 
 {% block main %}
 <div class="outer-container-flop">
-    <div class="proj-container-flop">
+    <div class="p-container-flop">
     </div>
-    {% for player in queuePlayers %}
+    {% for player in playerQueue %}
         {% if player.isHuman %}
             {% include 'proj/player_winner.html.twig' %}
         {% else %}
             {% include 'proj/npc_winner.html.twig' %}
         {% endif %}
     {% endfor %}
-    <div class="proj-container-table">
+    <div class="p-container-table">
         <div class="table-cards">
             {% for card in tableCards %}
-                <img class="community-card" src="{{ asset('images/proj/cards/' ~ card. ~ '.png') }}">
+                <img class="table-card" src="{{ asset('images/proj/cards/' ~ card ~ '.png') }}">
             {% endfor %}
         </div>
     </div>
@@ -25,7 +25,7 @@
             <p class="p-para"><em>{{ winner }}</em> splits ${{ pot }},</p>
         </div>
         <div class="winner-hand">
-            <p class="p-para">with a {{ winnerHand }}</p>
+            <p class="p-para">with a {{ bestHand }}</p>
         </div>
     </div>
     <a href="{{ restartUrl }}" class="p-button the-link a-link">

@@ -2,6 +2,7 @@
     <div class="{{ player.name|lower }}-head">
         <p class="underline">{{ player.name }}</p>
         <p class="smaller"> ${{ player.chips }}</p>
+        <p class="smaller"> {{ player.handValue }}</p>
     </div>
     <div class="p-card-{{ player.name|lower }}-container">
         {% for card in player.hand.getCardsAsArrayProj %}
