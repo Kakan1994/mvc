@@ -39,9 +39,9 @@ class NPCSteve extends NPCMatt implements PlayerInterface
 
     /**
      * Change the risk level of the NPC.
-     * 
+     *
      * @param int $amount The amount to change the risk level by.
-     * 
+     *
      * @return void
      */
     public function changeRiskLevel(int $amount): void
@@ -51,7 +51,7 @@ class NPCSteve extends NPCMatt implements PlayerInterface
 
     /**
      * Reset the risk level of the NPC.
-     * 
+     *
      * @return void
      */
     public function clearRiskLevel(): void
@@ -61,7 +61,7 @@ class NPCSteve extends NPCMatt implements PlayerInterface
 
     /**
      * Steve folds
-     * 
+     *
      * @return array
      */
     public function setSteveFold(): array
@@ -77,7 +77,7 @@ class NPCSteve extends NPCMatt implements PlayerInterface
 
     /**
      * Steve checks
-     * 
+     *
      * @return array
      */
     public function setSteveCheck(): array
@@ -89,9 +89,9 @@ class NPCSteve extends NPCMatt implements PlayerInterface
 
     /**
      * Steve calls
-     * 
+     *
      * @param int $amount The amount to call.
-     * 
+     *
      * @return array
      */
     public function setSteveCall(int $amount): array
@@ -105,9 +105,9 @@ class NPCSteve extends NPCMatt implements PlayerInterface
 
     /**
      * Steve raises
-     * 
+     *
      * @param int $amount The amount to raise.
-     * 
+     *
      * @return array
      */
     public function setSteveRaise(int $amount): array
@@ -121,11 +121,11 @@ class NPCSteve extends NPCMatt implements PlayerInterface
 
     /**
      * Set steve's action and get return data
-     * 
+     *
      * @param string $action The action to set.
      * @param int $highBet The highest bet.
      * @param int $bigBlind The big blind.
-     * 
+     *
      * @return array
      */
     public function setSteveActionAndReturnData(string $action, int $highBet, int $bigBlind): array
@@ -156,18 +156,18 @@ class NPCSteve extends NPCMatt implements PlayerInterface
 
     /**
      * Set steve's action post-flop
-     * 
+     *
      * @param int $riskLevel The risk level of the NPC.
      * @param int $actions The amount of actions the npc can take.
-     * 
+     *
      * @return string
      */
     public function setSteveActionPost(int $riskLevel, int $actions): string
     {
         $action = "";
 
-        if ($actions === 2){
-            switch (true){
+        if ($actions === 2) {
+            switch (true) {
                 case $riskLevel < 60:
                     $action = "check";
                     break;
@@ -178,7 +178,7 @@ class NPCSteve extends NPCMatt implements PlayerInterface
             return $action;
         }
 
-        switch (true){
+        switch (true) {
             case $riskLevel < 40:
                 $action = "fold";
                 break;
@@ -195,18 +195,18 @@ class NPCSteve extends NPCMatt implements PlayerInterface
 
     /**
      * Set steve's action pre-flop
-     * 
+     *
      * @param int $riskLevel The risk level of the NPC.
      * @param int $actions The amount of actions the npc can take.
-     * 
+     *
      * @return string
      */
     public function setSteveActionPre(int $riskLevel, int $actions): string
     {
         $action = "";
 
-        if ($actions === 2){
-            switch (true){
+        if ($actions === 2) {
+            switch (true) {
                 case $riskLevel < 50:
                     $action = "check";
                     break;
@@ -216,8 +216,8 @@ class NPCSteve extends NPCMatt implements PlayerInterface
             }
             return $action;
         }
-        
-        switch (true){
+
+        switch (true) {
             case $riskLevel < 30:
                 $action = "fold";
                 break;
@@ -234,12 +234,12 @@ class NPCSteve extends NPCMatt implements PlayerInterface
 
     /**
      * Set steve's risk level
-     * 
+     *
      * @param PlayerInterface $human The human player.
      * @param string $stage The stage of the game.
      * @param int $pot The pot.
      * @param int $blind The big blind.
-     * 
+     *
      * @return int
      */
     public function setSteveRisk(PlayerInterface $human, string $stage, int $pot, int $blind): int
@@ -254,12 +254,11 @@ class NPCSteve extends NPCMatt implements PlayerInterface
         $this->changeRiskLevel($potRisk);
         $this->changeRiskLevel($moveRisk);
 
-        if ($stage === "pre");
-        {
+        if ($stage === "pre") {
             return $this->getRiskLevel();
         }
 
-        $pointRisk =  $this->adjustRiskHandValue($handValue);
+        $pointRisk =  $this->adjustHandRiskPoints($handValue);
 
         $this->changeRiskLevel($pointRisk);
 

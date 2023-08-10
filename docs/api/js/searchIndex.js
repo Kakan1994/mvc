@@ -986,21 +986,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-SteveTurnController.html#method_projSteveTurn"
         },                {
-            "fqsen": "\\App\\Project\\CalculateValue",
-            "name": "CalculateValue",
-            "summary": "",
-            "url": "classes/App-Project-CalculateValue.html"
-        },                {
-            "fqsen": "\\App\\Project\\CalculateValue\u003A\u003AVALUE_POINTS",
-            "name": "VALUE_POINTS",
-            "summary": "",
-            "url": "classes/App-Project-CalculateValue.html#constant_VALUE_POINTS"
-        },                {
-            "fqsen": "\\App\\Project\\CalculateValue\u003A\u003AHAND_POINTS",
-            "name": "HAND_POINTS",
-            "summary": "",
-            "url": "classes/App-Project-CalculateValue.html#constant_HAND_POINTS"
-        },                {
             "fqsen": "\\App\\Project\\CardHands",
             "name": "CardHands",
             "summary": "Class\u0020CardHands",
@@ -1113,7 +1098,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\CardHandsFullHouse\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "CardHandsFullHouse\u0020constructor.",
             "url": "classes/App-Project-CardHandsFullHouse.html#method___construct"
         },                {
             "fqsen": "\\App\\Project\\CardHandsFullHouse\u003A\u003AcreateCardHand\u0028\u0029",
@@ -1123,32 +1108,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\CardHandsFullHouse\u003A\u003AcompareCardsBySuit\u0028\u0029",
             "name": "compareCardsBySuit",
-            "summary": "",
+            "summary": "Compares\u0020two\u0020cards\u0020by\u0020face\u0020value.",
             "url": "classes/App-Project-CardHandsFullHouse.html#method_compareCardsBySuit"
         },                {
             "fqsen": "\\App\\Project\\CardHandsFullHouse\u003A\u003AfilterFullHouseCards\u0028\u0029",
             "name": "filterFullHouseCards",
-            "summary": "",
+            "summary": "Filter\u0020the\u0020full\u0020house\u0020cards.",
             "url": "classes/App-Project-CardHandsFullHouse.html#method_filterFullHouseCards"
         },                {
             "fqsen": "\\App\\Project\\CardHandsFullHouse\u003A\u003AgetCardValues\u0028\u0029",
             "name": "getCardValues",
-            "summary": "",
+            "summary": "Converts\u0020the\u0020face\u0020values\u0020to\u0020numeric\u0020values.\u0020For\u0020example,\u0020\u0022A\u0022\u0020to\u002014.",
             "url": "classes/App-Project-CardHandsFullHouse.html#method_getCardValues"
         },                {
             "fqsen": "\\App\\Project\\CardHandsFullHouse\u003A\u003AfindThreeOrMoreAndPairs\u0028\u0029",
             "name": "findThreeOrMoreAndPairs",
-            "summary": "",
+            "summary": "Finds\u0020if\u0020the\u0020cards\u0020sent\u0020in\u0020is\u0020three\u0020or\u0020more\u0020or\u0020pair.",
             "url": "classes/App-Project-CardHandsFullHouse.html#method_findThreeOrMoreAndPairs"
         },                {
             "fqsen": "\\App\\Project\\CardHandsFullHouse\u003A\u003AfindDifferentPair\u0028\u0029",
             "name": "findDifferentPair",
-            "summary": "",
+            "summary": "Find\u0020pairs\u0020that\u0027s\u0020not\u0020the\u0020chosen\u0020three.",
             "url": "classes/App-Project-CardHandsFullHouse.html#method_findDifferentPair"
         },                {
             "fqsen": "\\App\\Project\\CardHandsFullHouse\u003A\u003AgatherFullHouseCards\u0028\u0029",
             "name": "gatherFullHouseCards",
-            "summary": "",
+            "summary": "Find\u0020the\u0020full\u0020house\u0020cards.",
             "url": "classes/App-Project-CardHandsFullHouse.html#method_gatherFullHouseCards"
         },                {
             "fqsen": "\\App\\Project\\CardHandsFullHouse\u003A\u003A\u0024helper",
@@ -1203,7 +1188,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\CardHandsHelper\u003A\u003AgetCardNumericValuesAceLow\u0028\u0029",
             "name": "getCardNumericValuesAceLow",
-            "summary": "",
+            "summary": "Get\u0020the\u0020numeric\u0020values\u0020of\u0020cards\u0020in\u0020a\u0020hand\u0020with\u0020ace\u0020low.",
             "url": "classes/App-Project-CardHandsHelper.html#method_getCardNumericValuesAceLow"
         },                {
             "fqsen": "\\App\\Project\\CardHandsHelper\u003A\u003AnumericValuesToFace\u0028\u0029",
@@ -1238,67 +1223,67 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\GameData",
             "name": "GameData",
-            "summary": "",
+            "summary": "Class\u0020GameData",
             "url": "classes/App-Project-GameData.html"
         },                {
             "fqsen": "\\App\\Project\\GameData\u003A\u003AgetPlayers\u0028\u0029",
             "name": "getPlayers",
-            "summary": "",
+            "summary": "Get\u0020the\u0020players.",
             "url": "classes/App-Project-GameData.html#method_getPlayers"
         },                {
             "fqsen": "\\App\\Project\\GameData\u003A\u003AsetPlayers\u0028\u0029",
             "name": "setPlayers",
-            "summary": "",
+            "summary": "Set\u0020the\u0020players.",
             "url": "classes/App-Project-GameData.html#method_setPlayers"
         },                {
             "fqsen": "\\App\\Project\\GameData\u003A\u003AgetGameStage\u0028\u0029",
             "name": "getGameStage",
-            "summary": "",
+            "summary": "Get\u0020the\u0020game\u0020stage.",
             "url": "classes/App-Project-GameData.html#method_getGameStage"
         },                {
             "fqsen": "\\App\\Project\\GameData\u003A\u003AsetGameStage\u0028\u0029",
             "name": "setGameStage",
-            "summary": "",
+            "summary": "Set\u0020the\u0020game\u0020stage.",
             "url": "classes/App-Project-GameData.html#method_setGameStage"
         },                {
             "fqsen": "\\App\\Project\\GameData\u003A\u003AgetPot\u0028\u0029",
             "name": "getPot",
-            "summary": "",
+            "summary": "Get\u0020the\u0020pot.",
             "url": "classes/App-Project-GameData.html#method_getPot"
         },                {
             "fqsen": "\\App\\Project\\GameData\u003A\u003AsetPot\u0028\u0029",
             "name": "setPot",
-            "summary": "",
+            "summary": "Set\u0020the\u0020pot.",
             "url": "classes/App-Project-GameData.html#method_setPot"
         },                {
             "fqsen": "\\App\\Project\\GameData\u003A\u003AgetTableCards\u0028\u0029",
             "name": "getTableCards",
-            "summary": "",
+            "summary": "Get\u0020the\u0020cards\u0020on\u0020the\u0020table.",
             "url": "classes/App-Project-GameData.html#method_getTableCards"
         },                {
             "fqsen": "\\App\\Project\\GameData\u003A\u003AsetTableCards\u0028\u0029",
             "name": "setTableCards",
-            "summary": "",
+            "summary": "Set\u0020the\u0020cards\u0020on\u0020the\u0020table.",
             "url": "classes/App-Project-GameData.html#method_setTableCards"
         },                {
             "fqsen": "\\App\\Project\\GameData\u003A\u003AgetRoundWinner\u0028\u0029",
             "name": "getRoundWinner",
-            "summary": "",
+            "summary": "Get\u0020the\u0020winner\u0020of\u0020the\u0020round.",
             "url": "classes/App-Project-GameData.html#method_getRoundWinner"
         },                {
             "fqsen": "\\App\\Project\\GameData\u003A\u003AsetRoundWinner\u0028\u0029",
             "name": "setRoundWinner",
-            "summary": "",
+            "summary": "Set\u0020the\u0020winner\u0020of\u0020the\u0020round.",
             "url": "classes/App-Project-GameData.html#method_setRoundWinner"
         },                {
             "fqsen": "\\App\\Project\\GameData\u003A\u003AgetWinnerHand\u0028\u0029",
             "name": "getWinnerHand",
-            "summary": "",
+            "summary": "Get\u0020the\u0020winning\u0020hand.",
             "url": "classes/App-Project-GameData.html#method_getWinnerHand"
         },                {
             "fqsen": "\\App\\Project\\GameData\u003A\u003AsetWinnerHand\u0028\u0029",
             "name": "setWinnerHand",
-            "summary": "",
+            "summary": "Set\u0020the\u0020winning\u0020hand.",
             "url": "classes/App-Project-GameData.html#method_setWinnerHand"
         },                {
             "fqsen": "\\App\\Project\\GameData\u003A\u003A\u0024players",
@@ -1333,117 +1318,117 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\GameLogic",
             "name": "GameLogic",
-            "summary": "",
+            "summary": "Class\u0020GameLogic",
             "url": "classes/App-Project-GameLogic.html"
         },                {
             "fqsen": "\\App\\Project\\GameLogic\u003A\u003AisRoundOver\u0028\u0029",
             "name": "isRoundOver",
-            "summary": "",
+            "summary": "Check\u0020if\u0020the\u0020round\u0020is\u0020over.",
             "url": "classes/App-Project-GameLogic.html#method_isRoundOver"
         },                {
             "fqsen": "\\App\\Project\\GameLogic\u003A\u003AgetHighestBet\u0028\u0029",
             "name": "getHighestBet",
-            "summary": "",
+            "summary": "Gets\u0020the\u0020highest\u0020bet.",
             "url": "classes/App-Project-GameLogic.html#method_getHighestBet"
         },                {
             "fqsen": "\\App\\Project\\GameLogic\u003A\u003AisPlayerReady\u0028\u0029",
             "name": "isPlayerReady",
-            "summary": "",
+            "summary": "Check\u0020if\u0020the\u0020player\u0020is\u0020ready.",
             "url": "classes/App-Project-GameLogic.html#method_isPlayerReady"
         },                {
             "fqsen": "\\App\\Project\\GameLogic\u003A\u003AgetNumberOfFoldedPlayers\u0028\u0029",
             "name": "getNumberOfFoldedPlayers",
-            "summary": "",
+            "summary": "Gets\u0020the\u0020number\u0020of\u0020folded\u0020players.",
             "url": "classes/App-Project-GameLogic.html#method_getNumberOfFoldedPlayers"
         },                {
             "fqsen": "\\App\\Project\\GameLogic\u003A\u003AcheckNextStage\u0028\u0029",
             "name": "checkNextStage",
-            "summary": "",
+            "summary": "Check\u0020if\u0020the\u0020next\u0020stage\u0020is\u0020ready.",
             "url": "classes/App-Project-GameLogic.html#method_checkNextStage"
         },                {
             "fqsen": "\\App\\Project\\GameLogic\u003A\u003AgetWinner\u0028\u0029",
             "name": "getWinner",
-            "summary": "",
+            "summary": "Get\u0020the\u0020winner.",
             "url": "classes/App-Project-GameLogic.html#method_getWinner"
         },                {
             "fqsen": "\\App\\Project\\GameLogic\u003A\u003AisWinnerByFold\u0028\u0029",
             "name": "isWinnerByFold",
-            "summary": "",
+            "summary": "Check\u0020if\u0020the\u0020winner\u0020is\u0020by\u0020fold.",
             "url": "classes/App-Project-GameLogic.html#method_isWinnerByFold"
         },                {
             "fqsen": "\\App\\Project\\GameLogic\u003A\u003AgetWinnerByFold\u0028\u0029",
             "name": "getWinnerByFold",
-            "summary": "",
+            "summary": "Get\u0020the\u0020winner\u0020by\u0020fold.",
             "url": "classes/App-Project-GameLogic.html#method_getWinnerByFold"
         },                {
             "fqsen": "\\App\\Project\\GameLogic\u003A\u003AgetWinnerByHand\u0028\u0029",
             "name": "getWinnerByHand",
-            "summary": "",
+            "summary": "Get\u0020the\u0020winner\u0020by\u0020hand.",
             "url": "classes/App-Project-GameLogic.html#method_getWinnerByHand"
         },                {
             "fqsen": "\\App\\Project\\GameLogic\u003A\u003AisTied\u0028\u0029",
             "name": "isTied",
-            "summary": "",
+            "summary": "Check\u0020if\u0020the\u0020game\u0020is\u0020tied.",
             "url": "classes/App-Project-GameLogic.html#method_isTied"
         },                {
             "fqsen": "\\App\\Project\\GameLogic\u003A\u003AgetTiedWinners\u0028\u0029",
             "name": "getTiedWinners",
-            "summary": "",
+            "summary": "Get\u0020the\u0020tied\u0020winners.",
             "url": "classes/App-Project-GameLogic.html#method_getTiedWinners"
         },                {
             "fqsen": "\\App\\Project\\GameQueue",
             "name": "GameQueue",
-            "summary": "",
+            "summary": "Class\u0020GameQueue",
             "url": "classes/App-Project-GameQueue.html"
         },                {
             "fqsen": "\\App\\Project\\GameQueue\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor.",
             "url": "classes/App-Project-GameQueue.html#method___construct"
         },                {
             "fqsen": "\\App\\Project\\GameQueue\u003A\u003AsetRolesBeforeStart\u0028\u0029",
             "name": "setRolesBeforeStart",
-            "summary": "",
+            "summary": "Set\u0020the\u0020roles\u0020before\u0020the\u0020start\u0020of\u0020the\u0020game.",
             "url": "classes/App-Project-GameQueue.html#method_setRolesBeforeStart"
         },                {
             "fqsen": "\\App\\Project\\GameQueue\u003A\u003AdequePlayer\u0028\u0029",
             "name": "dequePlayer",
-            "summary": "",
+            "summary": "Remove\u0020the\u0020first\u0020player\u0020from\u0020the\u0020queue.",
             "url": "classes/App-Project-GameQueue.html#method_dequePlayer"
         },                {
             "fqsen": "\\App\\Project\\GameQueue\u003A\u003AenquePlayer\u0028\u0029",
             "name": "enquePlayer",
-            "summary": "",
+            "summary": "Add\u0020a\u0020player\u0020to\u0020the\u0020queue.",
             "url": "classes/App-Project-GameQueue.html#method_enquePlayer"
         },                {
             "fqsen": "\\App\\Project\\GameQueue\u003A\u003Apeek\u0028\u0029",
             "name": "peek",
-            "summary": "",
+            "summary": "Get\u0020the\u0020first\u0020player\u0020in\u0020the\u0020queue.",
             "url": "classes/App-Project-GameQueue.html#method_peek"
         },                {
             "fqsen": "\\App\\Project\\GameQueue\u003A\u003AgetQue\u0028\u0029",
             "name": "getQue",
-            "summary": "",
+            "summary": "Get\u0020the\u0020players\u0020in\u0020the\u0020queue.",
             "url": "classes/App-Project-GameQueue.html#method_getQue"
         },                {
             "fqsen": "\\App\\Project\\GameQueue\u003A\u003AsetQueBeforeStart\u0028\u0029",
             "name": "setQueBeforeStart",
-            "summary": "",
+            "summary": "Set\u0020the\u0020queue\u0020before\u0020the\u0020start\u0020of\u0020the\u0020game.",
             "url": "classes/App-Project-GameQueue.html#method_setQueBeforeStart"
         },                {
             "fqsen": "\\App\\Project\\GameQueue\u003A\u003AshiftPlayers\u0028\u0029",
             "name": "shiftPlayers",
-            "summary": "",
+            "summary": "Shift\u0020the\u0020players\u0020in\u0020the\u0020queue.",
             "url": "classes/App-Project-GameQueue.html#method_shiftPlayers"
         },                {
             "fqsen": "\\App\\Project\\GameQueue\u003A\u003AgetSmallBlindPlayer\u0028\u0029",
             "name": "getSmallBlindPlayer",
-            "summary": "",
+            "summary": "Get\u0020the\u0020player\u0020who\u0020is\u0020the\u0020small\u0020blind.",
             "url": "classes/App-Project-GameQueue.html#method_getSmallBlindPlayer"
         },                {
             "fqsen": "\\App\\Project\\GameQueue\u003A\u003AgetBigBlindPlayer\u0028\u0029",
             "name": "getBigBlindPlayer",
-            "summary": "",
+            "summary": "Get\u0020the\u0020player\u0020who\u0020is\u0020the\u0020big\u0020blind.",
             "url": "classes/App-Project-GameQueue.html#method_getBigBlindPlayer"
         },                {
             "fqsen": "\\App\\Project\\GameQueue\u003A\u003A\u0024players",
@@ -1468,87 +1453,87 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\GameState",
             "name": "GameState",
-            "summary": "",
+            "summary": "Class\u0020GameState",
             "url": "classes/App-Project-GameState.html"
         },                {
             "fqsen": "\\App\\Project\\GameState\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor.",
             "url": "classes/App-Project-GameState.html#method___construct"
         },                {
             "fqsen": "\\App\\Project\\GameState\u003A\u003AgetTableCards\u0028\u0029",
             "name": "getTableCards",
-            "summary": "",
+            "summary": "Get\u0020the\u0020table\u0020cards.",
             "url": "classes/App-Project-GameState.html#method_getTableCards"
         },                {
             "fqsen": "\\App\\Project\\GameState\u003A\u003AgetTrashCards\u0028\u0029",
             "name": "getTrashCards",
-            "summary": "",
+            "summary": "Get\u0020the\u0020trash\u0020cards.",
             "url": "classes/App-Project-GameState.html#method_getTrashCards"
         },                {
             "fqsen": "\\App\\Project\\GameState\u003A\u003AgetTableCardsAsString\u0028\u0029",
             "name": "getTableCardsAsString",
-            "summary": "",
+            "summary": "Get\u0020the\u0020table\u0020cards\u0020as\u0020a\u0020string.",
             "url": "classes/App-Project-GameState.html#method_getTableCardsAsString"
         },                {
             "fqsen": "\\App\\Project\\GameState\u003A\u003AgetNumOfTableCards\u0028\u0029",
             "name": "getNumOfTableCards",
-            "summary": "",
+            "summary": "Get\u0020the\u0020number\u0020of\u0020table\u0020cards.",
             "url": "classes/App-Project-GameState.html#method_getNumOfTableCards"
         },                {
             "fqsen": "\\App\\Project\\GameState\u003A\u003AgetPot\u0028\u0029",
             "name": "getPot",
-            "summary": "",
+            "summary": "Get\u0020the\u0020pot.",
             "url": "classes/App-Project-GameState.html#method_getPot"
         },                {
             "fqsen": "\\App\\Project\\GameState\u003A\u003AgetSmallBlind\u0028\u0029",
             "name": "getSmallBlind",
-            "summary": "",
+            "summary": "Get\u0020the\u0020small\u0020blind.",
             "url": "classes/App-Project-GameState.html#method_getSmallBlind"
         },                {
             "fqsen": "\\App\\Project\\GameState\u003A\u003AgetBigBlind\u0028\u0029",
             "name": "getBigBlind",
-            "summary": "",
+            "summary": "Get\u0020the\u0020big\u0020blind.",
             "url": "classes/App-Project-GameState.html#method_getBigBlind"
         },                {
             "fqsen": "\\App\\Project\\GameState\u003A\u003AaddTableCard\u0028\u0029",
             "name": "addTableCard",
-            "summary": "",
+            "summary": "Add\u0020a\u0020card\u0020to\u0020the\u0020table.",
             "url": "classes/App-Project-GameState.html#method_addTableCard"
         },                {
             "fqsen": "\\App\\Project\\GameState\u003A\u003AaddTrashCard\u0028\u0029",
             "name": "addTrashCard",
-            "summary": "",
+            "summary": "Add\u0020a\u0020card\u0020to\u0020the\u0020trash.",
             "url": "classes/App-Project-GameState.html#method_addTrashCard"
         },                {
             "fqsen": "\\App\\Project\\GameState\u003A\u003AsetPot\u0028\u0029",
             "name": "setPot",
-            "summary": "",
+            "summary": "Set\u0020the\u0020pot.",
             "url": "classes/App-Project-GameState.html#method_setPot"
         },                {
             "fqsen": "\\App\\Project\\GameState\u003A\u003AsetSmallBlind\u0028\u0029",
             "name": "setSmallBlind",
-            "summary": "",
+            "summary": "Set\u0020the\u0020small\u0020blind.",
             "url": "classes/App-Project-GameState.html#method_setSmallBlind"
         },                {
             "fqsen": "\\App\\Project\\GameState\u003A\u003AsetBigBlind\u0028\u0029",
             "name": "setBigBlind",
-            "summary": "",
+            "summary": "Set\u0020the\u0020big\u0020blind.",
             "url": "classes/App-Project-GameState.html#method_setBigBlind"
         },                {
             "fqsen": "\\App\\Project\\GameState\u003A\u003AresetTableCards\u0028\u0029",
             "name": "resetTableCards",
-            "summary": "",
+            "summary": "Reset\u0020the\u0020table\u0020cards.",
             "url": "classes/App-Project-GameState.html#method_resetTableCards"
         },                {
             "fqsen": "\\App\\Project\\GameState\u003A\u003AaddToPot\u0028\u0029",
             "name": "addToPot",
-            "summary": "",
+            "summary": "Add\u0020to\u0020the\u0020pot",
             "url": "classes/App-Project-GameState.html#method_addToPot"
         },                {
             "fqsen": "\\App\\Project\\GameState\u003A\u003AresetPot\u0028\u0029",
             "name": "resetPot",
-            "summary": "",
+            "summary": "Reset\u0020the\u0020pot.",
             "url": "classes/App-Project-GameState.html#method_resetPot"
         },                {
             "fqsen": "\\App\\Project\\GameState\u003A\u003A\u0024tableCards",
@@ -1578,7 +1563,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\NPCLogic",
             "name": "NPCLogic",
-            "summary": "",
+            "summary": "Class\u0020NPCLogic",
             "url": "classes/App-Project-NPCLogic.html"
         },                {
             "fqsen": "\\App\\Project\\NPCLogic\u003A\u003AisRunningLowOnChips\u0028\u0029",
@@ -1588,7 +1573,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\NPCLogic\u003A\u003AgetStartingCardValue\u0028\u0029",
             "name": "getStartingCardValue",
-            "summary": "Gets\u0020starting\u0020card\u0020ranks\u0020as\u0020concatenated\u0020string.",
+            "summary": "Gets\u0020starting\u0020card\u0020values\u0020as\u0020concatenated\u0020string.",
             "url": "classes/App-Project-NPCLogic.html#method_getStartingCardValue"
         },                {
             "fqsen": "\\App\\Project\\NPCLogic\u003A\u003AsortCards\u0028\u0029",
@@ -1598,92 +1583,92 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\NPCLogic\u003A\u003AgetStartingCardType\u0028\u0029",
             "name": "getStartingCardType",
-            "summary": "",
+            "summary": "Gets\u0020starting\u0020card\u0020type.",
             "url": "classes/App-Project-NPCLogic.html#method_getStartingCardType"
         },                {
             "fqsen": "\\App\\Project\\NPCLogic\u003A\u003AadjustCardRiskRank\u0028\u0029",
             "name": "adjustCardRiskRank",
-            "summary": "",
+            "summary": "Adjusts\u0020the\u0020risk\u0020based\u0020on\u0020the\u0020starting\u0020cards\u0020rank.",
             "url": "classes/App-Project-NPCLogic.html#method_adjustCardRiskRank"
         },                {
             "fqsen": "\\App\\Project\\NPCLogic\u003A\u003AhasPlayerRaised\u0028\u0029",
             "name": "hasPlayerRaised",
-            "summary": "",
+            "summary": "Checks\u0020if\u0020the\u0020player\u0020has\u0020raised.",
             "url": "classes/App-Project-NPCLogic.html#method_hasPlayerRaised"
         },                {
             "fqsen": "\\App\\Project\\NPCLogic\u003A\u003AhasPlayerCalled\u0028\u0029",
             "name": "hasPlayerCalled",
-            "summary": "",
+            "summary": "Checks\u0020if\u0020the\u0020player\u0020has\u0020called.",
             "url": "classes/App-Project-NPCLogic.html#method_hasPlayerCalled"
         },                {
             "fqsen": "\\App\\Project\\NPCLogic\u003A\u003AhasPlayerChecked\u0028\u0029",
             "name": "hasPlayerChecked",
-            "summary": "",
+            "summary": "Checks\u0020if\u0020the\u0020player\u0020has\u0020checked.",
             "url": "classes/App-Project-NPCLogic.html#method_hasPlayerChecked"
         },                {
             "fqsen": "\\App\\Project\\NPCLogic\u003A\u003AadjustRiskPlayerActions\u0028\u0029",
             "name": "adjustRiskPlayerActions",
-            "summary": "",
+            "summary": "Adjusts\u0020the\u0020risk\u0020based\u0020on\u0020the\u0020players\u0020actions.",
             "url": "classes/App-Project-NPCLogic.html#method_adjustRiskPlayerActions"
         },                {
             "fqsen": "\\App\\Project\\NPCLogic\u003A\u003AadjustRiskPotAndBlind\u0028\u0029",
             "name": "adjustRiskPotAndBlind",
-            "summary": "",
+            "summary": "Adjusts\u0020the\u0020risk\u0020based\u0020on\u0020the\u0020pot\u0020and\u0020blind\u0020size.",
             "url": "classes/App-Project-NPCLogic.html#method_adjustRiskPotAndBlind"
         },                {
             "fqsen": "\\App\\Project\\NPCLogic\u003A\u003AadjustHandRiskPoints\u0028\u0029",
             "name": "adjustHandRiskPoints",
-            "summary": "",
+            "summary": "Adjusts\u0020the\u0020risk\u0020based\u0020on\u0020the\u0020hand\u0020risk\u0020points.",
             "url": "classes/App-Project-NPCLogic.html#method_adjustHandRiskPoints"
         },                {
             "fqsen": "\\App\\Project\\NPCLogic\u003A\u003AwrapperMattChecks\u0028\u0029",
             "name": "wrapperMattChecks",
-            "summary": "",
+            "summary": "Wrapper\u0020for\u0020the\u0020Matt\u0020checks\u0020method.",
             "url": "classes/App-Project-NPCLogic.html#method_wrapperMattChecks"
         },                {
             "fqsen": "\\App\\Project\\NPCLogic\u003A\u003AsetMattChecks\u0028\u0029",
             "name": "setMattChecks",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020Matt\u0020checks.",
             "url": "classes/App-Project-NPCLogic.html#method_setMattChecks"
         },                {
             "fqsen": "\\App\\Project\\NPCLogic\u003A\u003AwrapperMattCalls\u0028\u0029",
             "name": "wrapperMattCalls",
-            "summary": "",
+            "summary": "Wrapper\u0020for\u0020the\u0020Matt\u0020calls\u0020method.",
             "url": "classes/App-Project-NPCLogic.html#method_wrapperMattCalls"
         },                {
             "fqsen": "\\App\\Project\\NPCLogic\u003A\u003AsetMattCalls\u0028\u0029",
             "name": "setMattCalls",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020Matt\u0020calls.",
             "url": "classes/App-Project-NPCLogic.html#method_setMattCalls"
         },                {
             "fqsen": "\\App\\Project\\NPCLogic\u003A\u003AwrapperMattRaises\u0028\u0029",
             "name": "wrapperMattRaises",
-            "summary": "",
+            "summary": "Wrapper\u0020for\u0020the\u0020Matt\u0020raises\u0020method.",
             "url": "classes/App-Project-NPCLogic.html#method_wrapperMattRaises"
         },                {
             "fqsen": "\\App\\Project\\NPCLogic\u003A\u003AsetMattRaises\u0028\u0029",
             "name": "setMattRaises",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020Matt\u0020raises.",
             "url": "classes/App-Project-NPCLogic.html#method_setMattRaises"
         },                {
             "fqsen": "\\App\\Project\\NPCLogic\u003A\u003AwrapperMattFolds\u0028\u0029",
             "name": "wrapperMattFolds",
-            "summary": "",
+            "summary": "Wrapper\u0020for\u0020the\u0020Matt\u0020folds\u0020method.",
             "url": "classes/App-Project-NPCLogic.html#method_wrapperMattFolds"
         },                {
             "fqsen": "\\App\\Project\\NPCLogic\u003A\u003AsetMattFolds\u0028\u0029",
             "name": "setMattFolds",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020Matt\u0020folds.",
             "url": "classes/App-Project-NPCLogic.html#method_setMattFolds"
         },                {
             "fqsen": "\\App\\Project\\NPCLogic\u003A\u003AgetAndSetMattAction\u0028\u0029",
             "name": "getAndSetMattAction",
-            "summary": "",
+            "summary": "Set\u0020the\u0020Matt\u0020actions.",
             "url": "classes/App-Project-NPCLogic.html#method_getAndSetMattAction"
         },                {
             "fqsen": "\\App\\Project\\NPCMatt",
             "name": "NPCMatt",
-            "summary": "",
+            "summary": "Class\u0020NPCMatt",
             "url": "classes/App-Project-NPCMatt.html"
         },                {
             "fqsen": "\\App\\Project\\NPCMatt\u003A\u003A__construct\u0028\u0029",
@@ -1733,7 +1718,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\NPCMatt\u003A\u003AresetBets\u0028\u0029",
             "name": "resetBets",
-            "summary": "",
+            "summary": "Reset\u0020the\u0020amount\u0020of\u0020chips\u0020the\u0020NPC\u0020has\u0020bet.",
             "url": "classes/App-Project-NPCMatt.html#method_resetBets"
         },                {
             "fqsen": "\\App\\Project\\NPCMatt\u003A\u003AaddToBets\u0028\u0029",
@@ -1778,17 +1763,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\NPCMatt\u003A\u003AresetBest5CardHand\u0028\u0029",
             "name": "resetBest5CardHand",
-            "summary": "",
+            "summary": "Rest\u0020the\u0020players\u0020best\u00205\u0020card\u0020hand.",
             "url": "classes/App-Project-NPCMatt.html#method_resetBest5CardHand"
         },                {
             "fqsen": "\\App\\Project\\NPCMatt\u003A\u003AresetHand\u0028\u0029",
             "name": "resetHand",
-            "summary": "",
+            "summary": "Reset\u0020the\u0020players\u0020hand.",
             "url": "classes/App-Project-NPCMatt.html#method_resetHand"
         },                {
             "fqsen": "\\App\\Project\\NPCMatt\u003A\u003AsetBest5CardHandArray\u0028\u0029",
             "name": "setBest5CardHandArray",
-            "summary": "",
+            "summary": "Get\u0020the\u0020players\u0020best\u00205\u0020card\u0020hand\u0020and\u0020set\u0020it\u0020as\u0020array.",
             "url": "classes/App-Project-NPCMatt.html#method_setBest5CardHandArray"
         },                {
             "fqsen": "\\App\\Project\\NPCMatt\u003A\u003AgetBest5CardHandArray\u0028\u0029",
@@ -1798,7 +1783,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\NPCMatt\u003A\u003AgetBestHandName\u0028\u0029",
             "name": "getBestHandName",
-            "summary": "",
+            "summary": "Get\u0020the\u0020players\u0020best\u0020hand\u0020name.",
             "url": "classes/App-Project-NPCMatt.html#method_getBestHandName"
         },                {
             "fqsen": "\\App\\Project\\NPCMatt\u003A\u003AgetPlayerData\u0028\u0029",
@@ -1808,12 +1793,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\NPCMatt\u003A\u003AsetAndReturnMattMove\u0028\u0029",
             "name": "setAndReturnMattMove",
-            "summary": "",
+            "summary": "Set\u0020and\u0020return\u0020the\u0020NPC\u0027s\u0020move.",
             "url": "classes/App-Project-NPCMatt.html#method_setAndReturnMattMove"
         },                {
             "fqsen": "\\App\\Project\\NPCMatt\u003A\u003AsetMattAction\u0028\u0029",
             "name": "setMattAction",
-            "summary": "",
+            "summary": "Set\u0020the\u0020NPC\u0027s\u0020action.",
             "url": "classes/App-Project-NPCMatt.html#method_setMattAction"
         },                {
             "fqsen": "\\App\\Project\\NPCMatt\u003A\u003A\u0024name",
@@ -1878,7 +1863,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\NPCSteve",
             "name": "NPCSteve",
-            "summary": "",
+            "summary": "Class\u0020NPCSteve",
             "url": "classes/App-Project-NPCSteve.html"
         },                {
             "fqsen": "\\App\\Project\\NPCSteve\u003A\u003A__construct\u0028\u0029",
@@ -1888,57 +1873,57 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\NPCSteve\u003A\u003AgetRiskLevel\u0028\u0029",
             "name": "getRiskLevel",
-            "summary": "",
+            "summary": "Returns\u0020the\u0020risk\u0020level\u0020of\u0020the\u0020NPC.",
             "url": "classes/App-Project-NPCSteve.html#method_getRiskLevel"
         },                {
             "fqsen": "\\App\\Project\\NPCSteve\u003A\u003AchangeRiskLevel\u0028\u0029",
             "name": "changeRiskLevel",
-            "summary": "",
+            "summary": "Change\u0020the\u0020risk\u0020level\u0020of\u0020the\u0020NPC.",
             "url": "classes/App-Project-NPCSteve.html#method_changeRiskLevel"
         },                {
             "fqsen": "\\App\\Project\\NPCSteve\u003A\u003AclearRiskLevel\u0028\u0029",
             "name": "clearRiskLevel",
-            "summary": "",
+            "summary": "Reset\u0020the\u0020risk\u0020level\u0020of\u0020the\u0020NPC.",
             "url": "classes/App-Project-NPCSteve.html#method_clearRiskLevel"
         },                {
             "fqsen": "\\App\\Project\\NPCSteve\u003A\u003AsetSteveFold\u0028\u0029",
             "name": "setSteveFold",
-            "summary": "",
+            "summary": "Steve\u0020folds",
             "url": "classes/App-Project-NPCSteve.html#method_setSteveFold"
         },                {
             "fqsen": "\\App\\Project\\NPCSteve\u003A\u003AsetSteveCheck\u0028\u0029",
             "name": "setSteveCheck",
-            "summary": "",
+            "summary": "Steve\u0020checks",
             "url": "classes/App-Project-NPCSteve.html#method_setSteveCheck"
         },                {
             "fqsen": "\\App\\Project\\NPCSteve\u003A\u003AsetSteveCall\u0028\u0029",
             "name": "setSteveCall",
-            "summary": "",
+            "summary": "Steve\u0020calls",
             "url": "classes/App-Project-NPCSteve.html#method_setSteveCall"
         },                {
             "fqsen": "\\App\\Project\\NPCSteve\u003A\u003AsetSteveRaise\u0028\u0029",
             "name": "setSteveRaise",
-            "summary": "",
+            "summary": "Steve\u0020raises",
             "url": "classes/App-Project-NPCSteve.html#method_setSteveRaise"
         },                {
             "fqsen": "\\App\\Project\\NPCSteve\u003A\u003AsetSteveActionAndReturnData\u0028\u0029",
             "name": "setSteveActionAndReturnData",
-            "summary": "",
+            "summary": "Set\u0020steve\u0027s\u0020action\u0020and\u0020get\u0020return\u0020data",
             "url": "classes/App-Project-NPCSteve.html#method_setSteveActionAndReturnData"
         },                {
             "fqsen": "\\App\\Project\\NPCSteve\u003A\u003AsetSteveActionPost\u0028\u0029",
             "name": "setSteveActionPost",
-            "summary": "",
+            "summary": "Set\u0020steve\u0027s\u0020action\u0020post\u002Dflop",
             "url": "classes/App-Project-NPCSteve.html#method_setSteveActionPost"
         },                {
             "fqsen": "\\App\\Project\\NPCSteve\u003A\u003AsetSteveActionPre\u0028\u0029",
             "name": "setSteveActionPre",
-            "summary": "",
+            "summary": "Set\u0020steve\u0027s\u0020action\u0020pre\u002Dflop",
             "url": "classes/App-Project-NPCSteve.html#method_setSteveActionPre"
         },                {
             "fqsen": "\\App\\Project\\NPCSteve\u003A\u003AsetSteveRisk\u0028\u0029",
             "name": "setSteveRisk",
-            "summary": "",
+            "summary": "Set\u0020steve\u0027s\u0020risk\u0020level",
             "url": "classes/App-Project-NPCSteve.html#method_setSteveRisk"
         },                {
             "fqsen": "\\App\\Project\\NPCSteve\u003A\u003A\u0024riskLevel",
@@ -1948,7 +1933,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\PlayerActions",
             "name": "PlayerActions",
-            "summary": "",
+            "summary": "Class\u0020PlayerActions",
             "url": "classes/App-Project-PlayerActions.html"
         },                {
             "fqsen": "\\App\\Project\\PlayerActions\u003A\u003AaddToRoundActions\u0028\u0029",
@@ -1968,7 +1953,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\PlayerActions\u003A\u003AclearRoundActions\u0028\u0029",
             "name": "clearRoundActions",
-            "summary": "",
+            "summary": "Clear\u0020the\u0020round\u0020actions.",
             "url": "classes/App-Project-PlayerActions.html#method_clearRoundActions"
         },                {
             "fqsen": "\\App\\Project\\PlayerActions\u003A\u003AsetHasFolded\u0028\u0029",
@@ -1983,7 +1968,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\PlayerActions\u003A\u003AgetNumberOfActions\u0028\u0029",
             "name": "getNumberOfActions",
-            "summary": "",
+            "summary": "Returns\u0020the\u0020number\u0020of\u0020actions\u0020the\u0020player\u0020has\u0020taken.",
             "url": "classes/App-Project-PlayerActions.html#method_getNumberOfActions"
         },                {
             "fqsen": "\\App\\Project\\PlayerActions\u003A\u003A\u0024roundActions",
@@ -2061,6 +2046,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Project-PlayerInterface.html#method_isHuman"
         },                {
+            "fqsen": "\\App\\Project\\PlayerInterface\u003A\u003AresetBest5CardHand\u0028\u0029",
+            "name": "resetBest5CardHand",
+            "summary": "",
+            "url": "classes/App-Project-PlayerInterface.html#method_resetBest5CardHand"
+        },                {
             "fqsen": "\\App\\Project\\PlayerInterface\u003A\u003AsetBest5CardHand\u0028\u0029",
             "name": "setBest5CardHand",
             "summary": "",
@@ -2083,22 +2073,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\PreFlop\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "PreFlop\u0020constructor.",
             "url": "classes/App-Project-PreFlop.html#method___construct"
         },                {
             "fqsen": "\\App\\Project\\PreFlop\u003A\u003AgetRankingsArray\u0028\u0029",
             "name": "getRankingsArray",
-            "summary": "",
+            "summary": "Get\u0020the\u0020rankings\u0020as\u0020array",
             "url": "classes/App-Project-PreFlop.html#method_getRankingsArray"
         },                {
             "fqsen": "\\App\\Project\\PreFlop\u003A\u003AgetHandByCardsAndType\u0028\u0029",
             "name": "getHandByCardsAndType",
-            "summary": "",
+            "summary": "Get\u0020the\u0020ranks\u0020of\u0020a\u0020hand\u0020by\u0020cards\u0020and\u0020type",
             "url": "classes/App-Project-PreFlop.html#method_getHandByCardsAndType"
         },                {
             "fqsen": "\\App\\Project\\PreFlop\u003A\u003AturnCardsIntoStringArray\u0028\u0029",
             "name": "turnCardsIntoStringArray",
-            "summary": "",
+            "summary": "Covert\u0020cards\u0020from\u0020object\u0020to\u0020string\u0020array",
             "url": "classes/App-Project-PreFlop.html#method_turnCardsIntoStringArray"
         },                {
             "fqsen": "\\App\\Project\\PreFlop\u003A\u003A\u0024rankings",
@@ -2118,162 +2108,162 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Game\u0020constructor.",
             "url": "classes/App-Project-ProjectGame.html#method___construct"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AsetQueAndRoles\u0028\u0029",
             "name": "setQueAndRoles",
-            "summary": "",
+            "summary": "Set\u0020player\u0020roles\u0020and\u0020add\u0020them\u0020to\u0020the\u0020game\u0020queue.",
             "url": "classes/App-Project-ProjectGame.html#method_setQueAndRoles"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AtakeBlinds\u0028\u0029",
             "name": "takeBlinds",
-            "summary": "",
+            "summary": "Take\u0020the\u0020blinds\u0020from\u0020the\u0020players.",
             "url": "classes/App-Project-ProjectGame.html#method_takeBlinds"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AgetGameState\u0028\u0029",
             "name": "getGameState",
-            "summary": "",
+            "summary": "Get\u0020GameState.",
             "url": "classes/App-Project-ProjectGame.html#method_getGameState"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AdealCards\u0028\u0029",
             "name": "dealCards",
-            "summary": "",
+            "summary": "Deal\u0020cards\u0020to\u0020the\u0020players.",
             "url": "classes/App-Project-ProjectGame.html#method_dealCards"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AgetQue\u0028\u0029",
             "name": "getQue",
-            "summary": "",
+            "summary": "Get\u0020players\u0020from\u0020the\u0020game\u0020queue.",
             "url": "classes/App-Project-ProjectGame.html#method_getQue"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AgetPossibleActions\u0028\u0029",
             "name": "getPossibleActions",
-            "summary": "",
+            "summary": "Get\u0020the\u0020players\u0020possible\u0020actions.",
             "url": "classes/App-Project-ProjectGame.html#method_getPossibleActions"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AdequePlayer\u0028\u0029",
             "name": "dequePlayer",
-            "summary": "",
+            "summary": "Deque\u0020a\u0020player\u0020from\u0020the\u0020game\u0020queue.",
             "url": "classes/App-Project-ProjectGame.html#method_dequePlayer"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AenquePlayer\u0028\u0029",
             "name": "enquePlayer",
-            "summary": "",
+            "summary": "Enque\u0020a\u0020player\u0020to\u0020the\u0020game\u0020queue.",
             "url": "classes/App-Project-ProjectGame.html#method_enquePlayer"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AgetFirstPlayer\u0028\u0029",
             "name": "getFirstPlayer",
-            "summary": "",
+            "summary": "Get\u0020the\u0020first\u0020player\u0020from\u0020the\u0020game\u0020queue.",
             "url": "classes/App-Project-ProjectGame.html#method_getFirstPlayer"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AroundOver\u0028\u0029",
             "name": "roundOver",
-            "summary": "",
+            "summary": "Check\u0020if\u0020the\u0020round\u0020is\u0020over.",
             "url": "classes/App-Project-ProjectGame.html#method_roundOver"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AgetHighestBet\u0028\u0029",
             "name": "getHighestBet",
-            "summary": "",
+            "summary": "Get\u0020the\u0020highest\u0020bet.",
             "url": "classes/App-Project-ProjectGame.html#method_getHighestBet"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AgetPot\u0028\u0029",
             "name": "getPot",
-            "summary": "",
+            "summary": "Get\u0020the\u0020rounds\u0020pot.",
             "url": "classes/App-Project-ProjectGame.html#method_getPot"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AaddToPot\u0028\u0029",
             "name": "addToPot",
-            "summary": "",
+            "summary": "Add\u0020to\u0020the\u0020pot.",
             "url": "classes/App-Project-ProjectGame.html#method_addToPot"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AgetBigBlind\u0028\u0029",
             "name": "getBigBlind",
-            "summary": "",
+            "summary": "Get\u0020the\u0020big\u0020blind.",
             "url": "classes/App-Project-ProjectGame.html#method_getBigBlind"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AgetSmallBlind\u0028\u0029",
             "name": "getSmallBlind",
-            "summary": "",
+            "summary": "Get\u0020the\u0020small\u0020blind.",
             "url": "classes/App-Project-ProjectGame.html#method_getSmallBlind"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AcheckNextStage\u0028\u0029",
             "name": "checkNextStage",
-            "summary": "",
+            "summary": "Check\u0020if\u0020the\u0020game\u0020is\u0020ready\u0020for\u0020the\u0020next\u0020stage.",
             "url": "classes/App-Project-ProjectGame.html#method_checkNextStage"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AsetNextStage\u0028\u0029",
             "name": "setNextStage",
-            "summary": "",
+            "summary": "Set\u0020the\u0020next\u0020stage",
             "url": "classes/App-Project-ProjectGame.html#method_setNextStage"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AsetNewRound\u0028\u0029",
             "name": "setNewRound",
-            "summary": "",
+            "summary": "Set\u0020the\u0020new\u0020round.",
             "url": "classes/App-Project-ProjectGame.html#method_setNewRound"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AsetNewRoundTie\u0028\u0029",
             "name": "setNewRoundTie",
-            "summary": "",
+            "summary": "Set\u0020the\u0020new\u0020round\u0020when\u0020there\u0020is\u0020a\u0020tie.",
             "url": "classes/App-Project-ProjectGame.html#method_setNewRoundTie"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AgetWinner\u0028\u0029",
             "name": "getWinner",
-            "summary": "",
+            "summary": "Get\u0020the\u0020winner.",
             "url": "classes/App-Project-ProjectGame.html#method_getWinner"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AsetFlop\u0028\u0029",
             "name": "setFlop",
-            "summary": "",
+            "summary": "Set\u0020the\u0020gamestage\u0020to\u0020Flop.",
             "url": "classes/App-Project-ProjectGame.html#method_setFlop"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AsetTurn\u0028\u0029",
             "name": "setTurn",
-            "summary": "",
+            "summary": "Set\u0020the\u0020gamestage\u0020to\u0020Turn.",
             "url": "classes/App-Project-ProjectGame.html#method_setTurn"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AsetRiver\u0028\u0029",
             "name": "setRiver",
-            "summary": "",
+            "summary": "Set\u0020the\u0020gamestage\u0020to\u0020River.",
             "url": "classes/App-Project-ProjectGame.html#method_setRiver"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AgetTableCards\u0028\u0029",
             "name": "getTableCards",
-            "summary": "",
+            "summary": "Get\u0020the\u0020table\u0020cards.",
             "url": "classes/App-Project-ProjectGame.html#method_getTableCards"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AisWinnerByFold\u0028\u0029",
             "name": "isWinnerByFold",
-            "summary": "",
+            "summary": "Check\u0020if\u0020there\u0020is\u0020a\u0020winner\u0020by\u0020fold.",
             "url": "classes/App-Project-ProjectGame.html#method_isWinnerByFold"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AgetAndSetBestHands\u0028\u0029",
             "name": "getAndSetBestHands",
-            "summary": "",
+            "summary": "Checks\u0020each\u0020players\u0020best\u0020hands\u0020and\u0020saves\u0020it.",
             "url": "classes/App-Project-ProjectGame.html#method_getAndSetBestHands"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AcheckPreOrPostFlop\u0028\u0029",
             "name": "checkPreOrPostFlop",
-            "summary": "",
+            "summary": "Check\u0020if\u0020gamestage\u0020is\u0020pre\u0020or\u0020post\u0020flop.",
             "url": "classes/App-Project-ProjectGame.html#method_checkPreOrPostFlop"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AgetPlayer\u0028\u0029",
             "name": "getPlayer",
-            "summary": "",
+            "summary": "Gets\u0020the\u0020human\u0020player.",
             "url": "classes/App-Project-ProjectGame.html#method_getPlayer"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AisTied\u0028\u0029",
             "name": "isTied",
-            "summary": "",
+            "summary": "Checks\u0020if\u0020the\u0020round\u0020is\u0020tied.",
             "url": "classes/App-Project-ProjectGame.html#method_isTied"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AgetWinnersTie\u0028\u0029",
             "name": "getWinnersTie",
-            "summary": "",
+            "summary": "Gets\u0020the\u0020winners\u0020of\u0020the\u0020round\u0020when\u0020tied.",
             "url": "classes/App-Project-ProjectGame.html#method_getWinnersTie"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003AsetGameData\u0028\u0029",
             "name": "setGameData",
-            "summary": "",
+            "summary": "Sets\u0020the\u0020gamedata",
             "url": "classes/App-Project-ProjectGame.html#method_setGameData"
         },                {
             "fqsen": "\\App\\Project\\ProjectGame\u003A\u003A\u0024deck",
@@ -2353,12 +2343,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\ProjectPlayer\u003A\u003AsetBets\u0028\u0029",
             "name": "setBets",
-            "summary": "",
+            "summary": "Set\u0020the\u0020players\u0020bets.",
             "url": "classes/App-Project-ProjectPlayer.html#method_setBets"
         },                {
             "fqsen": "\\App\\Project\\ProjectPlayer\u003A\u003AresetBets\u0028\u0029",
             "name": "resetBets",
-            "summary": "",
+            "summary": "Reset\u0020the\u0020players\u0020bets.",
             "url": "classes/App-Project-ProjectPlayer.html#method_resetBets"
         },                {
             "fqsen": "\\App\\Project\\ProjectPlayer\u003A\u003AaddToBets\u0028\u0029",
@@ -2398,7 +2388,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\ProjectPlayer\u003A\u003AgetString\u0028\u0029",
             "name": "getString",
-            "summary": "",
+            "summary": "Get\u0020the\u0020players\u0020cards\u0020as\u0020an\u0020array.",
             "url": "classes/App-Project-ProjectPlayer.html#method_getString"
         },                {
             "fqsen": "\\App\\Project\\ProjectPlayer\u003A\u003A\u0024isHuman",
@@ -2418,12 +2408,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\ProjectPlayer\u003A\u003AsetBest5CardHandArray\u0028\u0029",
             "name": "setBest5CardHandArray",
-            "summary": "",
+            "summary": "Set\u0020the\u0020players\u0020best\u00205\u0020card\u0020hand\u0020as\u0020an\u0020array.",
             "url": "classes/App-Project-ProjectPlayer.html#method_setBest5CardHandArray"
         },                {
             "fqsen": "\\App\\Project\\ProjectPlayer\u003A\u003AresetBest5CardHand\u0028\u0029",
             "name": "resetBest5CardHand",
-            "summary": "",
+            "summary": "Reset\u0020the\u0020players\u0020best\u00205\u0020card\u0020hand.",
             "url": "classes/App-Project-ProjectPlayer.html#method_resetBest5CardHand"
         },                {
             "fqsen": "\\App\\Project\\ProjectPlayer\u003A\u003AgetBest5CardHandArray\u0028\u0029",
@@ -2433,17 +2423,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Project\\ProjectPlayer\u003A\u003AgetBestHandName\u0028\u0029",
             "name": "getBestHandName",
-            "summary": "",
+            "summary": "Get\u0020the\u0020players\u0020best\u0020hand\u0020name.",
             "url": "classes/App-Project-ProjectPlayer.html#method_getBestHandName"
         },                {
             "fqsen": "\\App\\Project\\ProjectPlayer\u003A\u003AgetRole\u0028\u0029",
             "name": "getRole",
-            "summary": "",
+            "summary": "Get\u0020the\u0020players\u0020role.",
             "url": "classes/App-Project-ProjectPlayer.html#method_getRole"
         },                {
             "fqsen": "\\App\\Project\\ProjectPlayer\u003A\u003AresetHand\u0028\u0029",
             "name": "resetHand",
-            "summary": "",
+            "summary": "Reset\u0020the\u0020players\u0020hand.",
             "url": "classes/App-Project-ProjectPlayer.html#method_resetHand"
         },                {
             "fqsen": "\\App\\Project\\ProjectPlayer\u003A\u003AgetPlayerData\u0028\u0029",

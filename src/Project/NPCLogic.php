@@ -3,19 +3,20 @@
 namespace App\Project;
 
 use App\Cards\CardHand;
+use App\Cards\Card;
 
 /**
  * Class NPCLogic
- * 
+ *
  * This class is used to help with the NPC logic.
  */
 class NPCLogic
 {
     /**
      * Checks if the player is running low on chips.
-     * 
+     *
      * @param PlayerInterface $player The player to check.
-     * 
+     *
      * @return bool True if the player is running low on chips, false otherwise.
      */
     public function isRunningLowOnChips(PlayerInterface $player, int $initialChips): bool
@@ -67,13 +68,13 @@ class NPCLogic
         for ($i = 0; $i < $count; $i++) {
             if ($cards[$i] === "T") {
                 $cards[$i] = "10";
-            }elseif ($cards[$i] === "A") {
+            } elseif ($cards[$i] === "A") {
                 $cards[$i] = "14";
-            }elseif ($cards[$i] === "K") {
+            } elseif ($cards[$i] === "K") {
                 $cards[$i] = "13";
-            }elseif ($cards[$i] === "Q") {
+            } elseif ($cards[$i] === "Q") {
                 $cards[$i] = "12";
-            }elseif ($cards[$i] === "J") {
+            } elseif ($cards[$i] === "J") {
                 $cards[$i] = "11";
             }
         }
@@ -82,19 +83,19 @@ class NPCLogic
         for ($i = 0; $i < $count; $i++) {
             if ($cards[$i] === "10") {
                 $cards[$i] = "T";
-            }elseif ($cards[$i] === "14") {
+            } elseif ($cards[$i] === "14") {
                 $cards[$i] = "A";
-            }elseif ($cards[$i] === "13") {
+            } elseif ($cards[$i] === "13") {
                 $cards[$i] = "K";
-            }elseif ($cards[$i] === "12") {
+            } elseif ($cards[$i] === "12") {
                 $cards[$i] = "Q";
-            }elseif ($cards[$i] === "11") {
+            } elseif ($cards[$i] === "11") {
                 $cards[$i] = "J";
             }
         }
-        
+
         $cardValue = implode("", $cards);
-        
+
         return $cardValue;
     }
 
@@ -111,7 +112,7 @@ class NPCLogic
 
         if ($cards[0]->getSuit() === $cards[1]->getSuit()) {
             $type = "s";
-        }elseif ($cards[0]->getValue() === $cards[1]->getValue()) {
+        } elseif ($cards[0]->getValue() === $cards[1]->getValue()) {
             $type = "p";
         }
 
@@ -120,18 +121,18 @@ class NPCLogic
 
     /**
      * Adjusts the risk based on the starting cards rank.
-     * 
+     *
      * @param int $cardRank The rank of the starting cards.
-     * 
+     *
      * @return int The adjusted risk.
      */
     public function adjustCardRiskRank(int $cardRank): int
     {
         if ($cardRank <= 20) {
             return 50;
-        }elseif ($cardRank <= 50) {
+        } elseif ($cardRank <= 50) {
             return 40;
-        }elseif ($cardRank <= 100) {
+        } elseif ($cardRank <= 100) {
             return 30;
         }
 
@@ -140,9 +141,9 @@ class NPCLogic
 
     /**
      * Checks if the player has raised.
-     * 
+     *
      * @param array $actions The actions of the player.
-     * 
+     *
      * @return bool True if the player has raised, false otherwise.
      */
     public function hasPlayerRaised(array $actions): bool
@@ -156,9 +157,9 @@ class NPCLogic
 
     /**
      * Checks if the player has called.
-     * 
+     *
      * @param array $actions The actions of the player.
-     * 
+     *
      * @return bool True if the player has called, false otherwise.
      */
     public function hasPlayerCalled(array $actions): bool
@@ -172,9 +173,9 @@ class NPCLogic
 
     /**
      * Checks if the player has checked.
-     * 
+     *
      * @param array $actions The actions of the player.
-     * 
+     *
      * @return bool True if the player has checked, false otherwise.
      */
     public function hasPlayerChecked(array $actions): bool
@@ -188,9 +189,9 @@ class NPCLogic
 
     /**
      * Adjusts the risk based on the players actions.
-     * 
+     *
      * @param array $actions The actions of the player.
-     * 
+     *
      * @return int The adjusted risk.
      */
     public function adjustRiskPlayerActions(array $actions): int
@@ -207,7 +208,7 @@ class NPCLogic
             } elseif ($hasCalled) {
                 $riskAdjustment += 50;
             }
-        } elseif ($hasCalled){
+        } elseif ($hasCalled) {
             $riskAdjustment += 20;
         } elseif ($hasRaised) {
             $riskAdjustment -= 20;
@@ -218,10 +219,10 @@ class NPCLogic
 
     /**
      * Adjusts the risk based on the pot and blind size.
-     * 
+     *
      * @param int $pot The pot size.
      * @param int $blind The blind size.
-     * 
+     *
      * @return int The adjusted risk.
      */
     public function adjustRiskPotAndBlind(int $pot, int $blind): int
@@ -237,9 +238,9 @@ class NPCLogic
 
     /**
      * Adjusts the risk based on the hand risk points.
-     * 
+     *
      * @param float $points The hand risk points.
-     * 
+     *
      * @return int The adjusted risk.
      */
     public function adjustHandRiskPoints(float $points): int
@@ -255,12 +256,12 @@ class NPCLogic
 
     /**
      * Wrapper for the Matt checks method.
-     * 
+     *
      * @param NPCLogic $object The NPCLogic object.
      * @param PlayerInterface $player The player.
      * @param int $minRaise The minimum raise.
      * @param int $callSize The call size.
-     * 
+     *
      * @return array The action and the amount.
      */
     public function wrapperMattChecks(NPCLogic $object, PlayerInterface $player, int $minRaise, int $callSize): array
@@ -270,11 +271,11 @@ class NPCLogic
 
     /**
      * Sets the Matt checks.
-     * 
+     *
      * @param PlayerInterface $player The player.
      * @param int $minRaise The minimum raise.
      * @param int $callSize The call size.
-     * 
+     *
      * @return array The action and the amount.
      */
     public function setMattChecks(PlayerInterface $player, int $minRaise, int $callSize): array
@@ -285,12 +286,12 @@ class NPCLogic
 
     /**
      * Wrapper for the Matt calls method.
-     * 
+     *
      * @param NPCLogic $object The NPCLogic object.
      * @param PlayerInterface $player The player.
      * @param int $callSize The call size.
      * @param int|null $minRaise The minimum raise.
-     * 
+     *
      * @return array The action and the amount.
      */
     public function wrapperMattCalls(NPCLogic $object, PlayerInterface $player, int $callSize, ?int $minRaise = null): array
@@ -300,11 +301,11 @@ class NPCLogic
 
     /**
      * Sets the Matt calls.
-     * 
+     *
      * @param PlayerInterface $player The player.
      * @param int $callSize The call size.
      * @param int|null $minRaise The minimum raise.
-     * 
+     *
      * @return array The action and the amount.
      */
     public function setMattCalls(PlayerInterface $player, int $callSize, ?int $minRaise = null): array
@@ -315,12 +316,12 @@ class NPCLogic
 
     /**
      * Wrapper for the Matt raises method.
-     * 
+     *
      * @param NPCLogic $object The NPCLogic object.
      * @param PlayerInterface $player The player.
      * @param int $minRaise The minimum raise.
      * @param int $callSize The call size.
-     * 
+     *
      * @return array The action and the amount.
      */
     public function wrapperMattRaises(NPCLogic $object, PlayerInterface $player, int $minRaise, int $callSize): array
@@ -330,11 +331,11 @@ class NPCLogic
 
     /**
      * Sets the Matt raises.
-     * 
+     *
      * @param PlayerInterface $player The player.
      * @param int $minRaise The minimum raise.
      * @param int $callSize The call size.
-     * 
+     *
      * @return array The action and the amount.
      */
     public function setMattRaises(PlayerInterface $player, int $minRaise, int $callSize): array
@@ -345,12 +346,12 @@ class NPCLogic
 
     /**
      * Wrapper for the Matt folds method.
-     * 
+     *
      * @param NPCLogic $object The NPCLogic object.
      * @param PlayerInterface $player The player.
      * @param int|null $minRaise The minimum raise.
      * @param int|null $callSize The call size.
-     * 
+     *
      * @return array The action and the amount.
      */
     public function wrapperMattFolds(NPCLogic $object, PlayerInterface $player, ?int $minRaise = null, ?int $callSize = null): array
@@ -360,17 +361,17 @@ class NPCLogic
 
     /**
      * Sets the Matt folds.
-     * 
+     *
      * @param PlayerInterface $player The player.
      * @param int|null $minRaise The minimum raise.
      * @param int|null $callSize The call size.
-     * 
+     *
      * @return array The action and the amount.
      */
     public function setMattFolds(PlayerInterface $player, ?int $minRaise = null, ?int $callSize = null): array
     {
         $player->getPlayerActions()->setHasFolded();
-        $player->setHand(new CardHand);
+        $player->setHand(new CardHand());
         $player->resetBest5CardHand();
         $player->clearPlayerBets();
         $player->getPlayerActions()->addToRoundActions("fold");
@@ -380,12 +381,12 @@ class NPCLogic
 
     /**
      * Set the Matt actions.
-     * 
+     *
      * @param PlayerInterface $matt The player.
      * @param int $actions The number of actions.
      * @param int $minRaise The minimum raise.
      * @param int $callSize The call size.
-     * 
+     *
      * @return array The action and the amount.
      */
     public function getAndSetMattAction(PlayerInterface $matt, int $actions, int $minRaise, int $callSize): array

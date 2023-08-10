@@ -1,18 +1,19 @@
 <?php
 
 namespace App\Project;
+
 /**
  * Class GameLogic
- * 
+ *
  * This class is used to help with the game logic.
  */
 class GameLogic
 {
     /**
      * Check if the round is over.
-     * 
+     *
      * @param array $players The players.
-     * 
+     *
      * @return bool If the round is over.
      */
     public function isRoundOver(array $players): bool
@@ -33,9 +34,9 @@ class GameLogic
 
     /**
      * Gets the highest bet.
-     * 
+     *
      * @param array $players The players.
-     * 
+     *
      * @return int The highest bet.
      */
     public function getHighestBet(array $players): int
@@ -53,10 +54,10 @@ class GameLogic
 
     /**
      * Check if the player is ready.
-     * 
+     *
      * @param PlayerInterface $player The player.
      * @param array $players The players.
-     * 
+     *
      * @return bool If the player is ready.
      */
     public function isPlayerReady(PlayerInterface $player, array $players): bool
@@ -72,9 +73,9 @@ class GameLogic
 
     /**
      * Gets the number of folded players.
-     * 
+     *
      * @param array $players The players.
-     * 
+     *
      * @return int The number of folded players.
      */
     public function getNumberOfFoldedPlayers(array $players): int
@@ -92,9 +93,9 @@ class GameLogic
 
     /**
      * Check if the next stage is ready.
-     * 
+     *
      * @param array $players The players.
-     * 
+     *
      * @return bool If the next stage is ready.
      */
     public function checkNextStage(array $players): bool
@@ -121,9 +122,9 @@ class GameLogic
 
     /**
      * Get the winner.
-     * 
+     *
      * @param array $players The players.
-     * 
+     *
      * @return PlayerInterface The winner.
      */
     public function getWinner(array $players): PlayerInterface
@@ -137,9 +138,9 @@ class GameLogic
 
     /**
      * Check if the winner is by fold.
-     * 
+     *
      * @param array $players The players.
-     * 
+     *
      * @return bool If the winner is by fold.
      */
     public function isWinnerByFold(array $players): bool
@@ -153,9 +154,9 @@ class GameLogic
 
     /**
      * Get the winner by fold.
-     * 
+     *
      * @param array $players The players.
-     * 
+     *
      * @return PlayerInterface The winner.
      */
     public function getWinnerByFold(array $players): PlayerInterface
@@ -175,9 +176,9 @@ class GameLogic
 
     /**
      * Get the winner by hand.
-     * 
+     *
      * @param array $players The players.
-     * 
+     *
      * @return PlayerInterface The winner.
      */
     public function getWinnerByHand(array $players): PlayerInterface
@@ -201,9 +202,9 @@ class GameLogic
 
     /**
      * Check if the game is tied.
-     * 
+     *
      * @param array $players The players.
-     * 
+     *
      * @return bool If the game is tied.
      */
     public function isTied(array $players): bool
@@ -230,9 +231,9 @@ class GameLogic
 
     /**
      * Get the tied winners.
-     * 
+     *
      * @param array $players The players.
-     * 
+     *
      * @return array The tied winners.
      */
     public function getTiedWinners(array $players): array

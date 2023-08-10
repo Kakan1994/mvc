@@ -152,9 +152,9 @@ class CardHandsHelper
 
     /**
      * Get the numeric values of cards in a hand with ace low.
-     * 
+     *
      * @param CardHand $hand The hand.
-     * 
+     *
      * @return array Numeric values of the cards.
      */
     public function getCardNumericValuesAceLow(CardHand $hand): array

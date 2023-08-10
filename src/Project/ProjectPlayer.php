@@ -78,7 +78,7 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Get the players chips.
-     * 
+     *
      * @return int The amount of chips the player has.
      */
     public function getChips(): int
@@ -88,9 +88,9 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Increase the players chips.
-     * 
+     *
      * @param int $money The amount of chips to increase with.
-     * 
+     *
      * @return void
      */
     public function increaseChips(int $money): void
@@ -100,9 +100,9 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Decrease the players chips.
-     * 
+     *
      * @param int $money The amount of chips to decrease with.
-     * 
+     *
      * @return void
      */
     public function decreaseChips(int $money): void
@@ -115,7 +115,7 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Get the players bets.
-     * 
+     *
      * @return int The amount of chips the player has bet.
      */
     public function getBets(): int
@@ -125,9 +125,9 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Set the players bets.
-     * 
+     *
      * @param int $bets The amount of chips to set the players bets to.
-     * 
+     *
      * @return void
      */
     public function setBets(int $bets): void
@@ -137,7 +137,7 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Reset the players bets.
-     * 
+     *
      * @return void
      */
     public function resetBets(): void
@@ -147,9 +147,9 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Add to the players bets.
-     * 
+     *
      * @param int $betAmount The amount of chips to add to the players bets.
-     * 
+     *
      * @return void
      */
     public function addToBets(int $betAmount): void
@@ -162,7 +162,7 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Clear the players bets.
-     * 
+     *
      * @return void
      */
     public function clearPlayerBets(): void
@@ -173,7 +173,7 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Get total bets.
-     * 
+     *
      * @return int The total amount of chips the player has bet this round.
      */
     public function getTotalBets(): int
@@ -183,7 +183,7 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Get the players hand.
-     * 
+     *
      * @return CardHand The players hand.
      */
     public function getHand(): CardHand
@@ -193,9 +193,9 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Set the players hand.
-     * 
+     *
      * @param CardHand $hand The hand to set.
-     * 
+     *
      * @return void
      */
     public function setHand(CardHand $hand): void
@@ -205,7 +205,7 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Get the players moves.
-     * 
+     *
      * @return PlayerActions The players moves.
      */
     public function getPlayerActions(): PlayerActions
@@ -215,7 +215,7 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Get the players hand value.
-     * 
+     *
      * @return int The players hand value.
      */
     public function getHandValue(): int
@@ -225,7 +225,7 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Get the players cards as an array.
-     * 
+     *
      * @return array The players cards as an array.
      */
     public function getString(): array
@@ -235,7 +235,7 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Check if human
-     * 
+     *
      * @return bool True if human, false if not.
      */
     public function isHuman(): bool
@@ -249,9 +249,9 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Set the players hand value.
-     * 
+     *
      * @param int $handValue The hand value to set.
-     * 
+     *
      * @return void
      */
     public function setHandValue(int $handValue): void
@@ -261,17 +261,16 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Set the players best 5 card hand.
-     * 
+     *
      * @param CardHand $hand The hand to set.
-     * 
+     *
      * @return void
      */
     public function setBest5CardHand(CardHand $hand): void
     {
         $bestHandId = $this->cardHands->checkBestHand($hand);
 
-        switch ($bestHandId)
-        {
+        switch ($bestHandId) {
             case 9:
                 $this->bestHandName = "Straight Flush";
                 $this->best5CardHand = $this->cardHands->checkStraightFlush($hand);
@@ -313,7 +312,7 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Set the players best 5 card hand as an array.
-     * 
+     *
      * @return void
      */
     public function setBest5CardHandArray(): void
@@ -323,7 +322,7 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Reset the players best 5 card hand.
-     * 
+     *
      * @return void
      */
     public function resetBest5CardHand(): void
@@ -335,7 +334,7 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Get the players best 5 card hand.
-     * 
+     *
      * @return array The players best 5 card hand.
      */
     public function getBest5CardHandArray(): array
@@ -345,7 +344,7 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Get the players best hand name.
-     * 
+     *
      * @return string The players best hand name.
      */
     public function getBestHandName(): string
@@ -355,7 +354,7 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Get the players role.
-     * 
+     *
      * @return string The players role.
      */
     public function getRole(): string
@@ -365,7 +364,7 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Reset the players hand.
-     * 
+     *
      * @return void
      */
     public function resetHand(): void
@@ -377,7 +376,7 @@ class ProjectPlayer implements PlayerInterface
 
     /**
      * Get the players data.
-     * 
+     *
      * @return array<string, mixed> The players data.
      */
     public function getPlayerData(): array

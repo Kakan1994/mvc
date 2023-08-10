@@ -39,10 +39,10 @@ class SteveTurnController extends AbstractController
         }
 
         $playerCards = $playersTurn->getHand()->getCards();
-        
+
         $type = $playersTurn->getStartingCardType($playerCards);
         $cards = $playersTurn->getStartingCardValue($playerCards);
-        
+
 
         $preFlop = new PreFlop();
         $cardsRank = $preFlop->getHandByCardsAndType($cards, $type);
@@ -73,9 +73,6 @@ class SteveTurnController extends AbstractController
         }
 
         $playersTurn->clearRiskLevel();
-
-        $action = ucfirst($actionData[0]);
-        $amount = $actionData[1];
 
         $allCards = new cardHand();
 

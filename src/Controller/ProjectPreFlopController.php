@@ -30,8 +30,6 @@ class ProjectPreFlopController extends AbstractController
 
         $playerQueue = $game->getQue();
 
-        $buyIn = $session->get('buyin');
-
         $playersTurn = $game->getFirstPlayer();
 
         if ($playersTurn->getPlayerActions()->hasFolded()) {
@@ -42,7 +40,7 @@ class ProjectPreFlopController extends AbstractController
         }
 
         if ($playersTurn->getName() == "Matt") {
-           return $this->redirectToRoute('proj_matt_turn');
+            return $this->redirectToRoute('proj_matt_turn');
         }
 
         if ($playersTurn->getName() == "Steve") {

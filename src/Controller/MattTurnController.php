@@ -50,9 +50,6 @@ class MattTurnController extends AbstractController
             $playersTurn->decreaseChips($actionData[1]);
         }
 
-        $action = ucfirst($actionData[0]);
-        $amount = $actionData[1];
-
         $allCards = new cardHand();
 
         $playerCards = $playersTurn->getHand()->getCards();

@@ -14,7 +14,7 @@ class PlayerCheckController extends AbstractController
     /**
      * @Route("/proj/playercheck", name="proj_player_check", methods={"POST"})
      */
-    public function projPlayerCheck(SessionInterface $session, Request $request): Response
+    public function projPlayerCheck(SessionInterface $session): Response
     {
 
         $game = $session->get('game');

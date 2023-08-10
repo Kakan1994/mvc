@@ -6,7 +6,7 @@ use App\Cards\CardHand;
 
 /**
  * Class GameData
- * 
+ *
  * This class is used to store the game data.
  */
 class GameData
@@ -43,7 +43,7 @@ class GameData
 
     /**
      * Get the players.
-     * 
+     *
      * @return array The players.
      */
     public function getPlayers(): array
@@ -53,9 +53,9 @@ class GameData
 
     /**
      * Set the players.
-     * 
+     *
      * @param array $players The players.
-     * 
+     *
      * @return void
      */
     public function setPlayers(array $players): void
@@ -65,7 +65,7 @@ class GameData
 
     /**
      * Get the game stage.
-     * 
+     *
      * @return string The game stage.
      */
     public function getGameStage(): string
@@ -75,9 +75,9 @@ class GameData
 
     /**
      * Set the game stage.
-     * 
+     *
      * @param int $numOfTableCards The number of cards on the table.
-     * 
+     *
      * @return void
      */
     public function setGameStage(int $numOfTableCards): void
@@ -104,7 +104,7 @@ class GameData
 
     /**
      * Get the pot.
-     * 
+     *
      * @return int The pot.
      */
     public function getPot(): int
@@ -114,9 +114,9 @@ class GameData
 
     /**
      * Set the pot.
-     * 
+     *
      * @param int $pot The pot.
-     * 
+     *
      * @return void
      */
     public function setPot(int $pot): void
@@ -126,7 +126,7 @@ class GameData
 
     /**
      * Get the cards on the table.
-     * 
+     *
      * @return array The cards on the table.
      */
     public function getTableCards(): array
@@ -136,9 +136,9 @@ class GameData
 
     /**
      * Set the cards on the table.
-     * 
+     *
      * @param array $tableCards The cards on the table.
-     * 
+     *
      * @return void
      */
     public function setTableCards(array $tableCards): void
@@ -148,7 +148,7 @@ class GameData
 
     /**
      * Get the winner of the round.
-     * 
+     *
      * @return PlayerInterface The winner of the round.
      */
     public function getRoundWinner(): PlayerInterface
@@ -158,9 +158,9 @@ class GameData
 
     /**
      * Set the winner of the round.
-     * 
+     *
      * @param PlayerInterface $roundWinner The winner of the round.
-     * 
+     *
      * @return void
      */
     public function setRoundWinner(PlayerInterface $roundWinner): void
@@ -170,7 +170,7 @@ class GameData
 
     /**
      * Get the winning hand.
-     * 
+     *
      * @return array The winning hand.
      */
     public function getWinnerHand(): array
@@ -180,9 +180,9 @@ class GameData
 
     /**
      * Set the winning hand.
-     * 
+     *
      * @param array $winnerHand The winning hand.
-     * 
+     *
      * @return void
      */
     public function setWinnerHand(array $winnerHand): void

@@ -20,7 +20,7 @@ class ProjectController extends AbstractController
     /**
      * @Route("/proj/buyin", name="proj_buy_in")
      */
-    public function projBuyIn(SessionInterface $session): Response
+    public function projBuyIn(): Response
     {
         return $this->render('proj/prep_game.html.twig');
     }

@@ -37,6 +37,8 @@ interface PlayerInterface
 
     public function isHuman(): bool;
 
+    public function resetBest5CardHand(): void;
+
     public function setBest5CardHand(CardHand $hand): void;
 
     public function getBest5CardHandArray(): array;

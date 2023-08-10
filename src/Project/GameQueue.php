@@ -6,7 +6,7 @@ use Exception;
 
 /**
  * Class GameQueue
- * 
+ *
  * This class is used to store the game queue.
  */
 class GameQueue
@@ -15,7 +15,7 @@ class GameQueue
      * @var array $players The players in the game.
      */
     private array $players;
-    
+
     /**
      * @var PlayerInterface $smallBlindPlayer The small blind player.
      */
@@ -33,7 +33,7 @@ class GameQueue
 
     /**
      * Constructor.
-     * 
+     *
      * @param array $players The players.
      */
     public function __construct(array $players)
@@ -43,7 +43,7 @@ class GameQueue
 
     /**
      * Set the roles before the start of the game.
-     * 
+     *
      * @return array The players.
      */
     public function setRolesBeforeStart(): array
@@ -65,7 +65,7 @@ class GameQueue
 
     /**
      * Remove the first player from the queue.
-     * 
+     *
      * @return PlayerInterface The player.
      */
     public function dequePlayer(): PlayerInterface
@@ -78,9 +78,9 @@ class GameQueue
 
     /**
      * Add a player to the queue.
-     * 
+     *
      * @param PlayerInterface $player The player.
-     * 
+     *
      * @return void
      */
     public function enquePlayer(PlayerInterface $player): void
@@ -90,7 +90,7 @@ class GameQueue
 
     /**
      * Get the first player in the queue.
-     * 
+     *
      * @return PlayerInterface The player.
      */
     public function peek(): PlayerInterface
@@ -103,7 +103,7 @@ class GameQueue
 
     /**
      * Get the players in the queue.
-     * 
+     *
      * @return array The players.
      */
     public function getQue(): array
@@ -113,7 +113,7 @@ class GameQueue
 
     /**
      * Set the queue before the start of the game.
-     * 
+     *
      * @return array The players.
      */
     public function setQueBeforeStart(): array
@@ -144,7 +144,7 @@ class GameQueue
 
     /**
      * Shift the players in the queue.
-     * 
+     *
      * @return array The players.
      */
     public function shiftPlayers(): array
@@ -165,7 +165,7 @@ class GameQueue
 
     /**
      * Get the player who is the small blind.
-     * 
+     *
      * @return PlayerInterface The player.
      */
     public function getSmallBlindPlayer(): PlayerInterface
@@ -175,7 +175,7 @@ class GameQueue
 
     /**
      * Get the player who is the big blind.
-     * 
+     *
      * @return PlayerInterface The player.
      */
     public function getBigBlindPlayer(): PlayerInterface

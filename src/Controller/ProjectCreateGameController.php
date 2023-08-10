@@ -15,7 +15,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
-
 class ProjectCreateGameController extends AbstractController
 {
     /**
@@ -24,10 +23,9 @@ class ProjectCreateGameController extends AbstractController
     public function projCreateGame(SessionInterface $session, GameLogic $gameLogic, CardHands $cardHands, GameData $gameData): Response
     {
         $players = $session->get('players');
-        $buyIn = $session->get('buyin');
 
         $queue = new GameQueue($players);
-        $gameState = new GameState($buyIn);
+        $gameState = new GameState();
 
         $deck = new DeckOfCards();
         $deck->shuffle();

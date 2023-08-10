@@ -49,11 +49,9 @@ class ProjRiverController extends AbstractController
         }
 
         $playerQueueData = [];
-        $allBets = 0;
 
         foreach ($playerQueue as $player) {
             $playerQueueData[] = $player->getPlayerData();
-            $allBets += $player->getBets();
         }
 
         $player = $game->getFirstPlayer();

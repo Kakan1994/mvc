@@ -25,7 +25,6 @@ class ProjEndTurnController extends AbstractController
         $playerQueue = $game->getQue();
 
         $playerQueueData = [];
-        $allBets = 0;
 
         foreach ($playerQueue as $player) {
             $allCards = new cardHand();
@@ -47,7 +46,6 @@ class ProjEndTurnController extends AbstractController
             $player->setBest5CardHandArray();
 
             $playerQueueData[] = $player->getPlayerData();
-            $allBets += $player->getBets();
         }
 
         $pot = $game->getPot();
@@ -89,7 +87,6 @@ class ProjEndTurnController extends AbstractController
         $playerQueue = $game->getQue();
 
         $playerQueueData = [];
-        $allBets = 0;
 
         foreach ($playerQueue as $player) {
             $allCards = new cardHand();
@@ -106,16 +103,15 @@ class ProjEndTurnController extends AbstractController
                 foreach ($tableCards as $card) {
                     $allCards->addCard($card);
                 }
-            }        
+            }
             $player->setBest5CardHand($allCards);
             $player->setBest5CardHandArray();
 
             $playerQueueData[] = $player->getPlayerData();
-            $allBets += $player->getBets();
         }
 
         $pot = $game->getPot();
-        
+
         $winners = $game->getWinnersTie();
 
         $bestHand = $winners[0]->getBestHandName();

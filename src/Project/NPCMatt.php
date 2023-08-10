@@ -6,7 +6,7 @@ use App\Cards\CardHand;
 
 /**
  * Class NPCMatt
- * 
+ *
  * Represents a non-player character in the game.
  */
 class NPCMatt extends NPCLogic implements PlayerInterface
@@ -105,7 +105,7 @@ class NPCMatt extends NPCLogic implements PlayerInterface
 
     /**
      * Checks if the NPC is a human.
-     * 
+     *
      * @return bool Whether the NPC is a human or not.
      */
     public function isHuman(): bool
@@ -255,7 +255,7 @@ class NPCMatt extends NPCLogic implements PlayerInterface
 
     /**
      * Get the players hand value.
-     * 
+     *
      * @return int The players hand value.
      */
     public function getHandValue(): int
@@ -265,9 +265,9 @@ class NPCMatt extends NPCLogic implements PlayerInterface
 
     /**
      * Set the players hand value.
-     * 
+     *
      * @param int $handValue The hand value to set.
-     * 
+     *
      * @return void
      */
     public function setHandValue(int $handValue): void
@@ -277,9 +277,9 @@ class NPCMatt extends NPCLogic implements PlayerInterface
 
     /**
      * Set the players best 5 card hand.
-     * 
+     *
      * @param CardHand $hand The hand to set.
-     * 
+     *
      * @return void
      */
     public function setBest5CardHand(CardHand $hand): void
@@ -287,8 +287,7 @@ class NPCMatt extends NPCLogic implements PlayerInterface
         if (!empty($hand->getCards())) {
             $bestHandId = $this->cardHands->checkBestHand($hand);
 
-            switch ($bestHandId)
-            {
+            switch ($bestHandId) {
                 case 9:
                     $this->bestHandName = "Straight Flush";
                     $this->best5CardHand = $this->cardHands->checkStraightFlush($hand);
@@ -332,7 +331,7 @@ class NPCMatt extends NPCLogic implements PlayerInterface
 
     /**
      * Rest the players best 5 card hand.
-     * 
+     *
      * @return void
      */
     public function resetBest5CardHand(): void
@@ -344,7 +343,7 @@ class NPCMatt extends NPCLogic implements PlayerInterface
 
     /**
      * Reset the players hand.
-     * 
+     *
      * @return void
      */
     public function resetHand(): void
@@ -356,7 +355,7 @@ class NPCMatt extends NPCLogic implements PlayerInterface
 
     /**
      * Get the players best 5 card hand and set it as array.
-     * 
+     *
      * @return void
      */
     public function setBest5CardHandArray(): void
@@ -366,7 +365,7 @@ class NPCMatt extends NPCLogic implements PlayerInterface
 
     /**
      * Get the players best 5 card hand.
-     * 
+     *
      * @return array The players best 5 card hand.
      */
     public function getBest5CardHandArray(): array
@@ -376,7 +375,7 @@ class NPCMatt extends NPCLogic implements PlayerInterface
 
     /**
      * Get the players best hand name.
-     * 
+     *
      * @return string The players best hand name.
      */
     public function getBestHandName(): string
@@ -405,11 +404,11 @@ class NPCMatt extends NPCLogic implements PlayerInterface
 
     /**
      * Set and return the NPC's move.
-     * 
+     *
      * @param int $actions The actions the NPC can take.
      * @param int $highestBet The highest bet.
      * @param int $bigBlind The big blind.
-     * 
+     *
      * @return array The NPC's move.
      */
     public function setAndReturnMattMove(int $actions, int $highestBet, int $bigBlind): array
@@ -422,11 +421,11 @@ class NPCMatt extends NPCLogic implements PlayerInterface
 
     /**
      * Set the NPC's action.
-     * 
+     *
      * @param int $actions The actions the NPC can take.
      * @param int $callAmount The amount to call.
      * @param int $raiseAmount The amount to raise.
-     * 
+     *
      * @return array The NPC's action.
      */
     public function setMattAction(int $actions, int $callAmount, int $raiseAmount): array

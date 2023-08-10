@@ -64,7 +64,7 @@ class CardHand
     /**
      * Get the cards in the hand as a string.
      *
-     * @return string The cards in the hand as a string.
+     * @return array The cards in the hand as a array.
      */
     public function getCardsAsArrayProj(): array
     {
@@ -86,7 +86,7 @@ class CardHand
                 case "♠":
                     $suit = "S";
                     break;
-                }
+            }
             if ($value == "10") {
                 $value = "T";
             }

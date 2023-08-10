@@ -33,11 +33,8 @@ class ProjectRoundController extends AbstractController
     public function projRoundOver(SessionInterface $session): Response
     {
         $game = $session->get('game');
+        $game->setNewRound();
 
-        $winnerData = $game->setNewRound();
-
-        $player = $winnerData[0]->getName();
-        $pot = $winnerData[1];
 
         $session->set('game', $game);
 
@@ -50,17 +47,7 @@ class ProjectRoundController extends AbstractController
     public function projTiedRoundOver(SessionInterface $session): Response
     {
         $game = $session->get('game');
-
-        $winnerData = $game->setNewRoundTie();
-
-        $players = $winnerData[0];
-        $playerNames = "";
-
-        foreach ($players as $player) {
-            $playerNames .= $player->getName() . " ";
-        }
-
-        $pot = $winnerData[1];
+        $game->setNewRoundTie();
 
         $session->set('game', $game);
 

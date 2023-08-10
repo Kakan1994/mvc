@@ -194,7 +194,7 @@ class PreFlop
 
     /**
      * Get the rankings as array
-     * 
+     *
      * @return array $rankingsArray Array of all possible pre-flop hands
      */
     public function getRankingsArray(): array
@@ -204,13 +204,13 @@ class PreFlop
 
     /**
      * Get the ranks of a hand by cards and type
-     * 
+     *
      * @param string $cards Cards of the hand
      * @param string $type Type of the hand
-     * 
+     *
      * @return string $ranks Ranks of the hand
      */
-    public function getHandByCardsAndType(string $cards, string $type)
+    public function getHandByCardsAndType(string $cards, string $type): string
     {
         foreach ($this->rankingsArray as $key => $value) {
             if ($value->cards === $cards && $value->type === $type) {
@@ -221,9 +221,9 @@ class PreFlop
 
     /**
      * Covert cards from object to string array
-     * 
+     *
      * @param array $cards Cards to convert
-     * 
+     *
      * @return array $cardArray Converted cards
      */
     public function turnCardsIntoStringArray(array $cards): array
@@ -257,4 +257,3 @@ class PreFlop
     }
 
 }
-

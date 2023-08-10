@@ -478,7 +478,7 @@ class ProjectGameTest extends TestCase
     {
         $projectGame = $this->setUpGame();
         $projectGame->setQueAndRoles();
-        $res = $projectGame->getPlayer("Player 1");
+        $res = $projectGame->getPlayer();
         $exp = $projectGame->getFirstPlayer();
 
         $this->assertEquals(

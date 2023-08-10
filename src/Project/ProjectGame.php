@@ -51,7 +51,7 @@ class ProjectGame
 
     /**
      * Set player roles and add them to the game queue.
-     * 
+     *
      * @return array The game queue.
      */
     public function setQueAndRoles(): array
@@ -63,7 +63,7 @@ class ProjectGame
 
     /**
      * Take the blinds from the players.
-     * 
+     *
      * @return int The total pot.
      */
     public function takeBlinds(): int
@@ -84,7 +84,7 @@ class ProjectGame
 
     /**
      * Get GameState.
-     * 
+     *
      * @return GameState The game state.
      */
     public function getGameState(): GameState
@@ -94,7 +94,7 @@ class ProjectGame
 
     /**
      *  Deal cards to the players.
-     * 
+     *
      * @return array The game queue.
      */
     public function dealCards(): array
@@ -115,7 +115,7 @@ class ProjectGame
 
     /**
      * Get players from the game queue.
-     * 
+     *
      * @return array The game queue.
      */
     public function getQue(): array
@@ -125,9 +125,9 @@ class ProjectGame
 
     /**
      * Get the players possible actions.
-     * 
+     *
      * @param PlayerInterface $player The player.
-     * 
+     *
      * @return int The possible actions.
      */
     public function getPossibleActions(PlayerInterface $player): int
@@ -147,7 +147,7 @@ class ProjectGame
 
     /**
      * Deque a player from the game queue.
-     * 
+     *
      * @return PlayerInterface The player.
      */
     public function dequePlayer(): PlayerInterface
@@ -157,9 +157,9 @@ class ProjectGame
 
     /**
      * Enque a player to the game queue.
-     * 
+     *
      * @param PlayerInterface $player The player.
-     * 
+     *
      * @return PlayerInterface The player.
      */
     public function enquePlayer(PlayerInterface $player): PlayerInterface
@@ -171,7 +171,7 @@ class ProjectGame
 
     /**
      * Get the first player from the game queue.
-     * 
+     *
      * @return PlayerInterface The player.
      */
     public function getFirstPlayer(): PlayerInterface
@@ -181,7 +181,7 @@ class ProjectGame
 
     /**
      *  Check if the round is over.
-     * 
+     *
      * @return bool If the round is over.
      */
     public function roundOver(): bool
@@ -193,7 +193,7 @@ class ProjectGame
 
     /**
      * Get the highest bet.
-     * 
+     *
      * @return int The highest bet.
      */
     public function getHighestBet(): int
@@ -215,9 +215,9 @@ class ProjectGame
 
     /**
      * Add to the pot.
-     * 
+     *
      * @param int $amount The amount to add to the pot.
-     * 
+     *
      * @return int The total pot.
      */
     public function addToPot(int $amount): int
@@ -229,7 +229,7 @@ class ProjectGame
 
     /**
      * Get the big blind.
-     * 
+     *
      * @return int The big blind.
      */
     public function getBigBlind(): int
@@ -239,7 +239,7 @@ class ProjectGame
 
     /**
      * Get the small blind.
-     * 
+     *
      * @return int The small blind.
      */
     public function getSmallBlind(): int
@@ -249,7 +249,7 @@ class ProjectGame
 
     /**
      * Check if the game is ready for the next stage.
-     * 
+     *
      * @return bool If the game is ready for the next stage.
      */
     public function checkNextStage(): bool
@@ -279,7 +279,7 @@ class ProjectGame
 
     /**
      * Set the new round.
-     * 
+     *
      * @return array The winner and the pot.
      */
     public function setNewRound(): array
@@ -304,21 +304,21 @@ class ProjectGame
             }
         }
 
-            $this->gameState->resetPot();
-            $this->gameState->resetTableCards();
+        $this->gameState->resetPot();
+        $this->gameState->resetTableCards();
 
-            $this->gameQueue->setQueBeforeStart();
+        $this->gameQueue->setQueBeforeStart();
 
-            $this->takeBlinds();
-            $this->dealCards();
-    
+        $this->takeBlinds();
+        $this->dealCards();
+
 
         return [$winner, $pot];
     }
 
     /**
      * Set the new round when there is a tie.
-     * 
+     *
      * @return array The winners and the pot.
      */
     public function setNewRoundTie(): array
@@ -345,22 +345,22 @@ class ProjectGame
                 $player->getPlayerActions()->setHasFolded();
             }
         }
-        
-            $this->gameState->resetPot();
-            $this->gameState->resetTableCards();
 
-            $this->gameQueue->setQueBeforeStart();
+        $this->gameState->resetPot();
+        $this->gameState->resetTableCards();
 
-            $this->takeBlinds();
-            $this->dealCards();
-    
+        $this->gameQueue->setQueBeforeStart();
+
+        $this->takeBlinds();
+        $this->dealCards();
+
 
         return [$winners, $pot];
     }
 
     /**
      * Get the winner.
-     * 
+     *
      * @return PlayerInterface The winner.
      */
     public function getWinner(): PlayerInterface
@@ -372,7 +372,7 @@ class ProjectGame
 
     /**
      * Set the gamestage to Flop.
-     * 
+     *
      * @return array The table cards.
      */
     public function setFlop(): array
@@ -389,7 +389,7 @@ class ProjectGame
 
     /**
      * Set the gamestage to Turn.
-     * 
+     *
      * @return array The table cards.
      */
     public function setTurn(): array
@@ -404,7 +404,7 @@ class ProjectGame
 
     /**
      * Set the gamestage to River.
-     * 
+     *
      * @return array The table cards.
      */
     public function setRiver(): array
@@ -419,7 +419,7 @@ class ProjectGame
 
     /**
      * Get the table cards.
-     * 
+     *
      * @return array The table cards.
      */
     public function getTableCards(): array
@@ -430,7 +430,7 @@ class ProjectGame
 
     /**
      * Check if there is a winner by fold.
-     * 
+     *
      * @return bool If there is a winner by fold.
      */
     public function isWinnerByFold(): bool
@@ -442,7 +442,7 @@ class ProjectGame
 
     /**
      * Checks each players best hands and saves it.
-     * 
+     *
      * @return string The best hands.
      */
     public function getAndSetBestHands(): string
@@ -463,7 +463,7 @@ class ProjectGame
                 }
                 $bestHand = $this->cardHands->checkBestHand($allCards);
                 $bestHand = $bestHand*100;
-                switch ($bestHand){
+                switch ($bestHand) {
                     case 900:
                         $bestHandAfterCheck = $this->cardHands->checkStraightFlush($allCards);
                         $highCard = $this->cardHands->checkHighCardAceHigh($bestHandAfterCheck);
@@ -528,7 +528,7 @@ class ProjectGame
 
     /**
      * Check if gamestage is pre or post flop.
-     * 
+     *
      * @return string The gamestage.
      */
     public function checkPreOrPostFlop(): string
@@ -544,7 +544,7 @@ class ProjectGame
 
     /**
      * Gets the human player.
-     * 
+     *
      * @return PlayerInterface The human player.
      */
     public function getPlayer(): PlayerInterface
@@ -564,7 +564,7 @@ class ProjectGame
 
     /**
      * Checks if the round is tied.
-     * 
+     *
      * @return bool If the round is tied.
      */
     public function isTied(): bool
@@ -576,7 +576,7 @@ class ProjectGame
 
     /**
      * Gets the winners of the round when tied.
-     * 
+     *
      * @return array The winners.
      */
     public function getWinnersTie(): array
@@ -588,7 +588,7 @@ class ProjectGame
 
     /**
      * Sets the gamedata
-     * 
+     *
      * @return GameData The gamedata.
      */
     public function setGameData(): GameData

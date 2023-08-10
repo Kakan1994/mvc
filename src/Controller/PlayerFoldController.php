@@ -14,7 +14,7 @@ class PlayerFoldController extends AbstractController
     /**
      * @Route("/proj/playerfold", name="proj_player_fold", methods={"POST"})
      */
-    public function projPlayerFold(SessionInterface $session, Request $request): Response
+    public function projPlayerFold(SessionInterface $session): Response
     {
 
         $game = $session->get('game');

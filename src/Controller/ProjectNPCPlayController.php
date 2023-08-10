@@ -23,23 +23,20 @@ class ProjectNPCPlayController extends AbstractController
 
         $table = [];
 
-        if ($count == 0) 
-        {
+        if ($count == 0) {
             $game->setFlop();
             $game->setNextStage();
             $game->setTurn();
             $game->setNextStage();
             $table = $game->setRiver();
             $game->getAndSetBestHands();
-        } elseif ($count == 3) 
-        {
+        } elseif ($count == 3) {
             $game->setNextStage();
             $game->setTurn();
             $game->setNextStage();
             $table = $game->setRiver();
             $game->getAndSetBestHands();
-        } elseif ($count == 4) 
-        {
+        } elseif ($count == 4) {
             $game->setNextStage();
             $table = $game->setRiver();
             $game->getAndSetBestHands();

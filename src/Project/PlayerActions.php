@@ -4,7 +4,7 @@ namespace App\Project;
 
 /**
  * Class PlayerActions
- * 
+ *
  * Represents the actions a player can perform.
  */
 class PlayerActions
@@ -43,7 +43,7 @@ class PlayerActions
 
     /**
      * Returns player's latest round action.
-     * 
+     *
      * @return string The player's latest round action.
      */
     public function getLatestAction(): string

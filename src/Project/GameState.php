@@ -7,7 +7,7 @@ use App\Cards\Card;
 
 /**
  * Class GameState
- * 
+ *
  * This class is used to store the game state.
  */
 class GameState
@@ -51,7 +51,7 @@ class GameState
 
     /**
      * Get the table cards.
-     * 
+     *
      * @return CardHand The table cards.
      */
     public function getTableCards(): CardHand
@@ -61,7 +61,7 @@ class GameState
 
     /**
      * Get the trash cards.
-     * 
+     *
      * @return CardHand The trash cards.
      */
     public function getTrashCards(): CardHand
@@ -71,7 +71,7 @@ class GameState
 
     /**
      * Get the table cards as a string.
-     * 
+     *
      * @return array The table cards as a string.
      */
     public function getTableCardsAsString(): array
@@ -86,7 +86,7 @@ class GameState
 
     /**
      * Get the number of table cards.
-     * 
+     *
      * @return int The number of table cards.
      */
     public function getNumOfTableCards(): int
@@ -96,7 +96,7 @@ class GameState
 
     /**
      * Get the pot.
-     * 
+     *
      * @return int The pot.
      */
     public function getPot(): int
@@ -106,7 +106,7 @@ class GameState
 
     /**
      * Get the small blind.
-     * 
+     *
      * @return int The small blind.
      */
     public function getSmallBlind(): int
@@ -116,7 +116,7 @@ class GameState
 
     /**
      * Get the big blind.
-     * 
+     *
      * @return int The big blind.
      */
     public function getBigBlind(): int
@@ -126,9 +126,9 @@ class GameState
 
     /**
      * Add a card to the table.
-     * 
+     *
      * @param Card $card The card to add.
-     * 
+     *
      * @return void
      */
     public function addTableCard(Card $card): void
@@ -138,9 +138,9 @@ class GameState
 
     /**
      * Add a card to the trash.
-     * 
+     *
      * @param Card $card The card to add.
-     * 
+     *
      * @return void
      */
     public function addTrashCard(Card $card): void
@@ -150,9 +150,9 @@ class GameState
 
     /**
      * Set the pot.
-     * 
+     *
      * @param int $pot The pot.
-     * 
+     *
      * @return void
      */
     public function setPot(int $pot): void
@@ -162,9 +162,9 @@ class GameState
 
     /**
      * Set the small blind.
-     * 
+     *
      * @param int $smallBlind The small blind.
-     * 
+     *
      * @return void
      */
     public function setSmallBlind(int $smallBlind): void
@@ -174,9 +174,9 @@ class GameState
 
     /**
      * Set the big blind.
-     * 
+     *
      * @param int $bigBlind The big blind.
-     * 
+     *
      * @return void
      */
     public function setBigBlind(int $bigBlind): void
@@ -186,7 +186,7 @@ class GameState
 
     /**
      * Reset the table cards.
-     * 
+     *
      * @return void
      */
     public function resetTableCards(): void
@@ -196,9 +196,9 @@ class GameState
 
     /**
      * Add to the pot
-     * 
+     *
      * @param int $amount The amount to add.
-     * 
+     *
      * @return void
      */
     public function addToPot(int $amount): void
@@ -208,7 +208,7 @@ class GameState
 
     /**
      * Reset the pot.
-     * 
+     *
      * @return void
      */
     public function resetPot(): void

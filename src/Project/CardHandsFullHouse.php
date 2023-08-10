@@ -2,6 +2,7 @@
 
 namespace App\Project;
 
+use App\Cards\Card;
 use App\Cards\CardHand;
 
 class CardHandsFullHouse
@@ -38,10 +39,10 @@ class CardHandsFullHouse
 
     /**
      * Compares two cards by face value.
-     * 
+     *
      * @param Card $aSort The first card.
      * @param Card $bSort The second card.
-     * 
+     *
      * @return int The comparison result.
      */
     public function compareCardsBySuit($aSort, $bSort): int
@@ -51,11 +52,11 @@ class CardHandsFullHouse
 
     /**
      * Filter the full house cards.
-     * 
+     *
      * @param array $fullHouseCards The full house cards.
      * @param int $chosenThree The chosen three.
      * @param int $chosenPair The chosen pair.
-     * 
+     *
      * @return array The filtered full house cards.
      */
     public function filterFullHouseCards(array $fullHouseCards, int $chosenThree, int $chosenPair): array
@@ -80,9 +81,9 @@ class CardHandsFullHouse
 
     /**
      * Converts the face values to numeric values. For example, "A" to 14.
-     * 
+     *
      * @param array $cards The cards to convert.
-     * 
+     *
      * @return array The converted cards.
      */
     public function getCardValues(array $cards): array
@@ -94,9 +95,9 @@ class CardHandsFullHouse
 
     /**
      * Finds if the cards sent in is three or more or pair.
-     * 
+     *
      * @param array $counts The counts of the cards.
-     * 
+     *
      * @return array The three or more and pairs.
      */
     public function findThreeOrMoreAndPairs(array $counts): array
@@ -118,10 +119,10 @@ class CardHandsFullHouse
 
     /**
      * Find pairs that's not the chosen three.
-     * 
+     *
      * @param array $pairs The pairs.
      * @param int $chosenThree The chosen three.
-     * 
+     *
      * @return int|null The pair that's not the chosen three.
      */
     public function findDifferentPair(array $pairs, int $chosenThree): ?int
@@ -136,11 +137,11 @@ class CardHandsFullHouse
 
     /**
      * Find the full house cards.
-     * 
+     *
      * @param array $cards The cards to check.
      * @param int $chosenThree The chosen three.
      * @param int $chosenPair The chosen pair.
-     * 
+     *
      * @return array The full house cards.
      */
     public function gatherFullHouseCards(array $cards, int $chosenThree, int $chosenPair): array
