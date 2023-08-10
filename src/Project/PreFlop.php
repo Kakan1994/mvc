@@ -4,6 +4,9 @@ namespace App\Project;
 
 class PreFlop
 {
+    /**
+     * @var string $rankings The JSON string representing the rankings of the pre-flop hands.
+     */
     private $rankings = '[
         {"ranks": "1", "cards": "AA", "type": "p"},
         {"ranks": "2", "cards": "KK", "type": "p"},
@@ -176,18 +179,37 @@ class PreFlop
         {"ranks": "169", "cards": "T2", "type": "o"}
     ]';
 
+    /**
+     * @var array $rankingsArray Array of all possible pre-flop hands
+     */
     private $rankingsArray;
 
+    /**
+     * PreFlop constructor.
+     */
     public function __construct()
     {
         $this->rankingsArray = json_decode($this->rankings);
     }
 
-    public function getRankingsArray()
+    /**
+     * Get the rankings as array
+     * 
+     * @return array $rankingsArray Array of all possible pre-flop hands
+     */
+    public function getRankingsArray(): array
     {
         return $this->rankingsArray;
     }
 
+    /**
+     * Get the ranks of a hand by cards and type
+     * 
+     * @param string $cards Cards of the hand
+     * @param string $type Type of the hand
+     * 
+     * @return string $ranks Ranks of the hand
+     */
     public function getHandByCardsAndType(string $cards, string $type)
     {
         foreach ($this->rankingsArray as $key => $value) {
@@ -197,6 +219,13 @@ class PreFlop
         }
     }
 
+    /**
+     * Covert cards from object to string array
+     * 
+     * @param array $cards Cards to convert
+     * 
+     * @return array $cardArray Converted cards
+     */
     public function turnCardsIntoStringArray(array $cards): array
     {
         $cardArray = [];

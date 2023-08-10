@@ -69,4 +69,16 @@ class CardTest extends TestCase
         $exp = html_entity_decode('&#x1F0A7;', ENT_COMPAT, 'UTF-8'); // Expected unicode for Spades 7
         $this->assertEquals($exp, $res);
     }
+
+    /**
+     * Test toJson method.
+     */
+    public function testToJson(): void
+    {
+        $card = new Card('♥', 'A');
+        $res = $card->toJson();
+        $exp = '{"suit":"\u2665","value":"A"}';
+        $this->assertIsString($res);
+        $this->assertEquals($exp, $res);
+    }
 }

@@ -2,6 +2,11 @@
 
 namespace App\Project;
 
+/**
+ * Class PlayerActions
+ * 
+ * Represents the actions a player can perform.
+ */
 class PlayerActions
 {
     /**
@@ -50,6 +55,11 @@ class PlayerActions
         return "";
     }
 
+    /**
+     * Clear the round actions.
+     *
+     * @return void
+     */
     public function clearRoundActions(): void
     {
         $this->roundActions = [];
@@ -80,6 +90,11 @@ class PlayerActions
         return false;
     }
 
+    /**
+     * Returns the number of actions the player has taken.
+     *
+     * @return int The number of actions the player has taken.
+     */
     public function getNumberOfActions(): int
     {
         return count($this->roundActions);

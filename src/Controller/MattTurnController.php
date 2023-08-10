@@ -19,11 +19,6 @@ class MattTurnController extends AbstractController
     {
         $game = $session->get('game');
 
-        // error_log("Matt's cards");
-        // foreach ($game->getFirstPlayer()->getHand()->getCards() as $card) {
-        //     error_log(($card));
-        // }
-
         if ($game->roundOver()) {
             return $this->redirectToRoute('proj_round_over');
         }
@@ -50,16 +45,16 @@ class MattTurnController extends AbstractController
 
         if ($actionData[0] === "call" || $actionData[0] === "raise") {
             $game->addToPot($actionData[1]);
-            
+
             $playersTurn->addToBets($actionData[1]);
             $playersTurn->decreaseChips($actionData[1]);
         }
 
         $action = ucfirst($actionData[0]);
         $amount = $actionData[1];
-        
+
         $allCards = new cardHand();
-        
+
         $playerCards = $playersTurn->getHand()->getCards();
         if (!empty($playerCards)) {
             foreach ($playerCards as $card) {
@@ -67,12 +62,11 @@ class MattTurnController extends AbstractController
                 $allCards->addCard($card);
             }
         }
-        
+
         $tableCards = $game->getGameState()->getTableCards()->getCards();
 
         if (!empty($tableCards)) {
             foreach ($tableCards as $card) {
-                // error_log("card: " . $card);
                 $allCards->addCard($card);
             }
         }

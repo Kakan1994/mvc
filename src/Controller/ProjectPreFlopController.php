@@ -28,7 +28,7 @@ class ProjectPreFlopController extends AbstractController
             return $this->redirectToRoute('proj_change_stage');
         }
 
-        $playerQueue = $game->getPLayerQue();
+        $playerQueue = $game->getQue();
 
         $buyIn = $session->get('buyin');
 

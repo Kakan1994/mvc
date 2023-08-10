@@ -11,20 +11,33 @@ use App\Cards\DeckOfCards;
  */
 class ProjectGame
 {
+    /**
+     * @var DeckOfCards $deck The deck of cards.
+     * @var CardHands $cardHands The possible hands in the game.
+     * @var GameLogic $gameLogic The game logic.
+     * @var GameData $gameData The game data.
+     * @var GameQueue $gameQueue The game queue.
+     * @var GameState $gameState The game state.
+     * @var PreFlop $preFlop The pre flop logic.
+     */
     private DeckOfCards $deck;
-
     private CardHands $cardHands;
-
     private GameLogic $gameLogic;
-
     private GameData $gameData;
-
     private GameQueue $gameQueue;
-
     private GameState $gameState;
-
     private PreFlop $preFlop;
 
+    /**
+     * Game constructor.
+     *
+     * @param DeckOfCards $deck The deck of cards.
+     * @param CardHands $cardHands The possible hands in the game.
+     * @param GameLogic $gameLogic The game logic.
+     * @param GameData $gameData The game data.
+     * @param GameQueue $gameQueue The game queue.
+     * @param GameState $gameState The game state.
+     */
     public function __construct(DeckOfCards $deck, CardHands $cardHands, GameLogic $gameLogic, GameData $gameData, GameQueue $gameQueue, GameState $gameState)
     {
         $this->deck = $deck;
@@ -36,6 +49,11 @@ class ProjectGame
         $this->preFlop = new PreFlop();
     }
 
+    /**
+     * Set player roles and add them to the game queue.
+     * 
+     * @return array The game queue.
+     */
     public function setQueAndRoles(): array
     {
         $this->gameQueue->setRolesBeforeStart();
@@ -43,6 +61,11 @@ class ProjectGame
         return $this->gameQueue->getQue();
     }
 
+    /**
+     * Take the blinds from the players.
+     * 
+     * @return int The total pot.
+     */
     public function takeBlinds(): int
     {
         $smallBlind = $this->gameState->getSmallBlind();
@@ -59,11 +82,21 @@ class ProjectGame
         return $this->gameState->getPot();
     }
 
+    /**
+     * Get GameState.
+     * 
+     * @return GameState The game state.
+     */
     public function getGameState(): GameState
     {
         return $this->gameState;
     }
 
+    /**
+     *  Deal cards to the players.
+     * 
+     * @return array The game queue.
+     */
     public function dealCards(): array
     {
         $this->deck = new DeckOfCards();
@@ -80,11 +113,23 @@ class ProjectGame
         return $this->gameQueue->getQue();
     }
 
+    /**
+     * Get players from the game queue.
+     * 
+     * @return array The game queue.
+     */
     public function getQue(): array
     {
         return $this->gameQueue->getQue();
     }
 
+    /**
+     * Get the players possible actions.
+     * 
+     * @param PlayerInterface $player The player.
+     * 
+     * @return int The possible actions.
+     */
     public function getPossibleActions(PlayerInterface $player): int
     {
         $players = $this->getQue();
@@ -100,11 +145,23 @@ class ProjectGame
         return 3;
     }
 
+    /**
+     * Deque a player from the game queue.
+     * 
+     * @return PlayerInterface The player.
+     */
     public function dequePlayer(): PlayerInterface
     {
         return $this->gameQueue->dequePlayer();
     }
 
+    /**
+     * Enque a player to the game queue.
+     * 
+     * @param PlayerInterface $player The player.
+     * 
+     * @return PlayerInterface The player.
+     */
     public function enquePlayer(PlayerInterface $player): PlayerInterface
     {
         $this->gameQueue->enquePlayer($player);
@@ -112,11 +169,21 @@ class ProjectGame
         return $player;
     }
 
+    /**
+     * Get the first player from the game queue.
+     * 
+     * @return PlayerInterface The player.
+     */
     public function getFirstPlayer(): PlayerInterface
     {
         return $this->gameQueue->peek();
     }
 
+    /**
+     *  Check if the round is over.
+     * 
+     * @return bool If the round is over.
+     */
     public function roundOver(): bool
     {
         $players = $this->gameQueue->getQue();
@@ -124,6 +191,11 @@ class ProjectGame
         return $this->gameLogic->isRoundOver($players);
     }
 
+    /**
+     * Get the highest bet.
+     * 
+     * @return int The highest bet.
+     */
     public function getHighestBet(): int
     {
         $players = $this->gameQueue->getQue();
@@ -131,16 +203,23 @@ class ProjectGame
         return $this->gameLogic->getHighestBet($players);
     }
 
-    public function getPLayerQue(): array
-    {
-        return $this->gameQueue->getQue();
-    }
-
+    /**
+     * Get the rounds pot.
+     *
+     * @return int The pot.
+     */
     public function getPot(): int
     {
         return $this->gameState->getPot();
     }
 
+    /**
+     * Add to the pot.
+     * 
+     * @param int $amount The amount to add to the pot.
+     * 
+     * @return int The total pot.
+     */
     public function addToPot(int $amount): int
     {
         $this->gameState->addToPot($amount);
@@ -148,16 +227,31 @@ class ProjectGame
         return $this->gameState->getPot();
     }
 
+    /**
+     * Get the big blind.
+     * 
+     * @return int The big blind.
+     */
     public function getBigBlind(): int
     {
         return $this->gameState->getBigBlind();
     }
 
+    /**
+     * Get the small blind.
+     * 
+     * @return int The small blind.
+     */
     public function getSmallBlind(): int
     {
         return $this->gameState->getSmallBlind();
     }
 
+    /**
+     * Check if the game is ready for the next stage.
+     * 
+     * @return bool If the game is ready for the next stage.
+     */
     public function checkNextStage(): bool
     {
         $players = $this->gameQueue->getQue();
@@ -165,6 +259,11 @@ class ProjectGame
         return $this->gameLogic->checkNextStage($players);
     }
 
+    /**
+     * Set the next stage
+     *
+     * @return array The players.
+     */
     public function setNextStage(): array
     {
         $players = $this->gameQueue->getQue();
@@ -178,6 +277,11 @@ class ProjectGame
         return $players;
     }
 
+    /**
+     * Set the new round.
+     * 
+     * @return array The winner and the pot.
+     */
     public function setNewRound(): array
     {
         $this->deck = new DeckOfCards();
@@ -212,6 +316,11 @@ class ProjectGame
         return [$winner, $pot];
     }
 
+    /**
+     * Set the new round when there is a tie.
+     * 
+     * @return array The winners and the pot.
+     */
     public function setNewRoundTie(): array
     {
         $this->deck = new DeckOfCards();
@@ -249,6 +358,11 @@ class ProjectGame
         return [$winners, $pot];
     }
 
+    /**
+     * Get the winner.
+     * 
+     * @return PlayerInterface The winner.
+     */
     public function getWinner(): PlayerInterface
     {
         $players = $this->gameQueue->getQue();
@@ -256,6 +370,11 @@ class ProjectGame
         return $this->gameLogic->getWinner($players);
     }
 
+    /**
+     * Set the gamestage to Flop.
+     * 
+     * @return array The table cards.
+     */
     public function setFlop(): array
     {
         $card= $this->deck->draw();
@@ -268,6 +387,11 @@ class ProjectGame
         return $this->getTableCards();
     }
 
+    /**
+     * Set the gamestage to Turn.
+     * 
+     * @return array The table cards.
+     */
     public function setTurn(): array
     {
         $card = $this->deck->draw();
@@ -278,6 +402,11 @@ class ProjectGame
         return $this->getTableCards();
     }
 
+    /**
+     * Set the gamestage to River.
+     * 
+     * @return array The table cards.
+     */
     public function setRiver(): array
     {
         $card = $this->deck->draw();
@@ -288,12 +417,22 @@ class ProjectGame
         return $this->getTableCards();
     }
 
+    /**
+     * Get the table cards.
+     * 
+     * @return array The table cards.
+     */
     public function getTableCards(): array
     {
         $arrayCards = $this->gameState->getTableCardsAsString();
         return $this->preFlop->turnCardsIntoStringArray($arrayCards);
     }
 
+    /**
+     * Check if there is a winner by fold.
+     * 
+     * @return bool If there is a winner by fold.
+     */
     public function isWinnerByFold(): bool
     {
         $players = $this->gameQueue->getQue();
@@ -301,6 +440,11 @@ class ProjectGame
         return $this->gameLogic->isWinnerByFold($players);
     }
 
+    /**
+     * Checks each players best hands and saves it.
+     * 
+     * @return string The best hands.
+     */
     public function getAndSetBestHands(): string
     {
         $tableCards = $this->gameState->getTableCards()->getCards();
@@ -382,9 +526,14 @@ class ProjectGame
         return "done";
     }
 
+    /**
+     * Check if gamestage is pre or post flop.
+     * 
+     * @return string The gamestage.
+     */
     public function checkPreOrPostFlop(): string
     {
-        $tableCards = $this->gameState->getTableCards();
+        $tableCards = $this->gameState->getTableCards()->getCards();
 
         if (empty($tableCards)) {
             return "pre";
@@ -393,6 +542,11 @@ class ProjectGame
         return "post";
     }
 
+    /**
+     * Gets the human player.
+     * 
+     * @return PlayerInterface The human player.
+     */
     public function getPlayer(): PlayerInterface
     {
         $human = "";
@@ -408,6 +562,11 @@ class ProjectGame
         return $human;
     }
 
+    /**
+     * Checks if the round is tied.
+     * 
+     * @return bool If the round is tied.
+     */
     public function isTied(): bool
     {
         $players = $this->gameQueue->getQue();
@@ -415,6 +574,11 @@ class ProjectGame
         return $this->gameLogic->isTied($players);
     }
 
+    /**
+     * Gets the winners of the round when tied.
+     * 
+     * @return array The winners.
+     */
     public function getWinnersTie(): array
     {
         $players = $this->gameQueue->getQue();
@@ -422,6 +586,11 @@ class ProjectGame
         return $this->gameLogic->getTiedWinners($players);
     }
 
+    /**
+     * Sets the gamedata
+     * 
+     * @return GameData The gamedata.
+     */
     public function setGameData(): GameData
     {
         $this->gameData->setPlayers($this->getQue());
@@ -431,10 +600,4 @@ class ProjectGame
 
         return $this->gameData;
     }
-
-    
-
-
-
-
 }

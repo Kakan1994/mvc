@@ -22,7 +22,7 @@ class ProjEndTurnController extends AbstractController
 
         $game = $session->get('game');
 
-        $playerQueue = $game->getPLayerQue();
+        $playerQueue = $game->getQue();
 
         $playerQueueData = [];
         $allBets = 0;
@@ -42,7 +42,7 @@ class ProjEndTurnController extends AbstractController
                 foreach ($tableCards as $card) {
                     $allCards->addCard($card);
                 }
-            }        
+            }
             $player->setBest5CardHand($allCards);
             $player->setBest5CardHandArray();
 
@@ -86,7 +86,7 @@ class ProjEndTurnController extends AbstractController
 
         $game = $session->get('game');
 
-        $playerQueue = $game->getPLayerQue();
+        $playerQueue = $game->getQue();
 
         $playerQueueData = [];
         $allBets = 0;

@@ -13,9 +13,15 @@ class ProjectPlayer implements PlayerInterface
      * @var int $bets The amount of chips the player has bet.
      * @var int $totalBets The total amount of chips the player has bet this round.
      * @var CardHand $hand The hand of the player.
+     * @var CardHand $best5CardHand The best 5 card hand of the player.
+     * @var array $best5CardHandArray The best 5 card hand of the player as an array.
+     * @var int $handValue The value of the players hand.
      * @var PlayerActions $playerActions The moves the player can make.
+     * @var bool $isHuman If the player is human or not.
+     * @var CardHands $cardHands The possible hands in the game.
+     * @var PreFlop $preFlop The pre flop logic.
+     * @var string $bestHandName The name of the best hand the player has.
      */
-
     private string $name;
     private string $role = "";
     private int $chips;
@@ -117,11 +123,23 @@ class ProjectPlayer implements PlayerInterface
         return $this->bets;
     }
 
+    /**
+     * Set the players bets.
+     * 
+     * @param int $bets The amount of chips to set the players bets to.
+     * 
+     * @return void
+     */
     public function setBets(int $bets): void
     {
         $this->bets = $bets;
     }
 
+    /**
+     * Reset the players bets.
+     * 
+     * @return void
+     */
     public function resetBets(): void
     {
         $this->bets = 0;
@@ -205,11 +223,21 @@ class ProjectPlayer implements PlayerInterface
         return $this->handValue;
     }
 
+    /**
+     * Get the players cards as an array.
+     * 
+     * @return array The players cards as an array.
+     */
     public function getString(): array
     {
         return $this->hand->getCardsAsArrayProj();
     }
 
+    /**
+     * Check if human
+     * 
+     * @return bool True if human, false if not.
+     */
     public function isHuman(): bool
     {
         if ($this->isHuman) {
@@ -283,11 +311,21 @@ class ProjectPlayer implements PlayerInterface
         }
     }
 
+    /**
+     * Set the players best 5 card hand as an array.
+     * 
+     * @return void
+     */
     public function setBest5CardHandArray(): void
     {
         $this->best5CardHandArray = $this->preFlop->turnCardsIntoStringArray($this->best5CardHand->getCards());
     }
 
+    /**
+     * Reset the players best 5 card hand.
+     * 
+     * @return void
+     */
     public function resetBest5CardHand(): void
     {
         $this->best5CardHand = new CardHand();
@@ -305,17 +343,31 @@ class ProjectPlayer implements PlayerInterface
         return $this->best5CardHandArray;
     }
 
+    /**
+     * Get the players best hand name.
+     * 
+     * @return string The players best hand name.
+     */
     public function getBestHandName(): string
     {
         return $this->bestHandName;
     }
-    
 
+    /**
+     * Get the players role.
+     * 
+     * @return string The players role.
+     */
     public function getRole(): string
     {
         return $this->role;
     }
 
+    /**
+     * Reset the players hand.
+     * 
+     * @return void
+     */
     public function resetHand(): void
     {
         $this->hand = new CardHand();

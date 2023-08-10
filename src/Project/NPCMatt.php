@@ -4,20 +4,76 @@ namespace App\Project;
 
 use App\Cards\CardHand;
 
+/**
+ * Class NPCMatt
+ * 
+ * Represents a non-player character in the game.
+ */
 class NPCMatt extends NPCLogic implements PlayerInterface
 {
+    /**
+     * @var string $name The name of the NPC.
+     */
     protected string $name;
+
+    /**
+     * @var string $role The role of the NPC.
+     */
     protected string $role = "";
+
+    /**
+     * @var int $chips The amount of chips the NPC has.
+     */
     protected int $chips;
+
+    /**
+     * @var int $bets The amount of bets the NPC has made.
+     */
     protected int $bets = 0;
+
+    /**
+     * @var CardHand $hand The hand of the NPC.
+     */
     protected CardHand $hand;
+
+    /**
+     * @var CardHand $best5CardHand The best 5 card hand of the NPC.
+     */
     protected CardHand $best5CardHand;
+
+    /**
+     * @var array $best5CardHandArray The best 5 card hand of the NPC as an array.
+     */
     protected array $best5CardHandArray = [];
+
+    /**
+     * @var PlayerActions $playerActions The player actions of the NPC.
+     */
     protected PlayerActions $playerActions;
+
+    /**
+     * @var int $handValue The value of the NPC's hand.
+     */
     protected int $handValue = 0;
+
+    /**
+     * @var bool $isHuman Whether the NPC is a human or not.
+     */
     private bool $isHuman = false;
+
+    /**
+     * @var CardHands $cardHands The possible hands in the game.
+     */
     private CardHands $cardHands;
+
+    /**
+     * @var PreFlop $preFlop The pre-flop logic.
+     */
     private PreFlop $preFlop;
+
+    /**
+     * @var string $bestHandName The name of the best hand.
+     */
     private string $bestHandName = "";
 
     /**
@@ -47,6 +103,11 @@ class NPCMatt extends NPCLogic implements PlayerInterface
         return $this->name;
     }
 
+    /**
+     * Checks if the NPC is a human.
+     * 
+     * @return bool Whether the NPC is a human or not.
+     */
     public function isHuman(): bool
     {
         if ($this->isHuman) {
@@ -125,6 +186,11 @@ class NPCMatt extends NPCLogic implements PlayerInterface
         return $this->bets;
     }
 
+    /**
+     * Reset the amount of chips the NPC has bet.
+     *
+     * @return void
+     */
     public function resetBets(): void
     {
         $this->bets = 0;
@@ -264,6 +330,11 @@ class NPCMatt extends NPCLogic implements PlayerInterface
         }
     }
 
+    /**
+     * Rest the players best 5 card hand.
+     * 
+     * @return void
+     */
     public function resetBest5CardHand(): void
     {
         $this->best5CardHand = new CardHand();
@@ -271,6 +342,11 @@ class NPCMatt extends NPCLogic implements PlayerInterface
         $this->bestHandName = "";
     }
 
+    /**
+     * Reset the players hand.
+     * 
+     * @return void
+     */
     public function resetHand(): void
     {
         $this->hand = new CardHand();
@@ -278,6 +354,11 @@ class NPCMatt extends NPCLogic implements PlayerInterface
         $this->resetBest5CardHand();
     }
 
+    /**
+     * Get the players best 5 card hand and set it as array.
+     * 
+     * @return void
+     */
     public function setBest5CardHandArray(): void
     {
         $this->best5CardHandArray = $this->preFlop->turnCardsIntoStringArray($this->best5CardHand->getCards());
@@ -293,6 +374,11 @@ class NPCMatt extends NPCLogic implements PlayerInterface
         return $this->best5CardHandArray;
     }
 
+    /**
+     * Get the players best hand name.
+     * 
+     * @return string The players best hand name.
+     */
     public function getBestHandName(): string
     {
         return $this->bestHandName;
@@ -317,6 +403,15 @@ class NPCMatt extends NPCLogic implements PlayerInterface
         ];
     }
 
+    /**
+     * Set and return the NPC's move.
+     * 
+     * @param int $actions The actions the NPC can take.
+     * @param int $highestBet The highest bet.
+     * @param int $bigBlind The big blind.
+     * 
+     * @return array The NPC's move.
+     */
     public function setAndReturnMattMove(int $actions, int $highestBet, int $bigBlind): array
     {
         $callAmount = $highestBet - $this->getBets();
@@ -325,6 +420,15 @@ class NPCMatt extends NPCLogic implements PlayerInterface
         return $this->setMattAction($actions, $callAmount, $raiseAmount);
     }
 
+    /**
+     * Set the NPC's action.
+     * 
+     * @param int $actions The actions the NPC can take.
+     * @param int $callAmount The amount to call.
+     * @param int $raiseAmount The amount to raise.
+     * 
+     * @return array The NPC's action.
+     */
     public function setMattAction(int $actions, int $callAmount, int $raiseAmount): array
     {
         $actionData = parent::getAndSetMattAction($this, $actions, $callAmount, $raiseAmount);

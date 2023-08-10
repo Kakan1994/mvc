@@ -48,7 +48,7 @@
       <file>src/Controller/HomeController.php</file>
       <file>src/Controller/LibraryController.php</file>
       <file>src/Controller/LibraryFormController.php</file> -->
-      <!-- <directory>src/Controller</directory> -->
+      <directory>src/Controller</directory>
       <directory>src/Repository</directory>
     </exclude>
   </source>

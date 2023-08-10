@@ -50,4 +50,39 @@ class CardHandTest extends TestCase
         $exp = ['♥A'];
         $this->assertEquals($exp, $res);
     }
+
+    /**
+     * Test getCardsAsArrayProj method.
+     */
+    public function testGetCardsAsArrayProj(): void
+    {
+        $cardHand = new CardHand();
+        $card = new Card('♥', 'A');
+        $cardHand->addCard($card);
+
+        $res = $cardHand->getCardsAsArrayProj();
+        $exp = ['AH'];
+        $this->assertEquals($exp, $res);
+
+        $card = new Card('♦', '10');
+        $cardHand->addCard($card);
+
+        $res = $cardHand->getCardsAsArrayProj();
+        $exp = ['AH', 'TD'];
+        $this->assertEquals($exp, $res);
+
+        $card = new Card('♠', 'J');
+        $cardHand->addCard($card);
+
+        $res = $cardHand->getCardsAsArrayProj();
+        $exp = ['AH', 'TD', 'JS'];
+        $this->assertEquals($exp, $res);
+
+        $card = new Card('♣', 'Q');
+        $cardHand->addCard($card);
+
+        $res = $cardHand->getCardsAsArrayProj();
+        $exp = ['AH', 'TD', 'JS', 'QC'];
+        $this->assertEquals($exp, $res);
+    }
 }

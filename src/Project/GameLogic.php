@@ -1,9 +1,20 @@
 <?php
 
 namespace App\Project;
-
+/**
+ * Class GameLogic
+ * 
+ * This class is used to help with the game logic.
+ */
 class GameLogic
 {
+    /**
+     * Check if the round is over.
+     * 
+     * @param array $players The players.
+     * 
+     * @return bool If the round is over.
+     */
     public function isRoundOver(array $players): bool
     {
         $folded = 0;
@@ -20,6 +31,13 @@ class GameLogic
         return false;
     }
 
+    /**
+     * Gets the highest bet.
+     * 
+     * @param array $players The players.
+     * 
+     * @return int The highest bet.
+     */
     public function getHighestBet(array $players): int
     {
         $highestBet = 0;
@@ -33,6 +51,14 @@ class GameLogic
         return $highestBet;
     }
 
+    /**
+     * Check if the player is ready.
+     * 
+     * @param PlayerInterface $player The player.
+     * @param array $players The players.
+     * 
+     * @return bool If the player is ready.
+     */
     public function isPlayerReady(PlayerInterface $player, array $players): bool
     {
         $highBet = $this->getHighestBet($players);
@@ -44,6 +70,13 @@ class GameLogic
         return false;
     }
 
+    /**
+     * Gets the number of folded players.
+     * 
+     * @param array $players The players.
+     * 
+     * @return int The number of folded players.
+     */
     public function getNumberOfFoldedPlayers(array $players): int
     {
         $folded = 0;
@@ -57,6 +90,13 @@ class GameLogic
         return $folded;
     }
 
+    /**
+     * Check if the next stage is ready.
+     * 
+     * @param array $players The players.
+     * 
+     * @return bool If the next stage is ready.
+     */
     public function checkNextStage(array $players): bool
     {
         $countRdy = 0;
@@ -79,6 +119,13 @@ class GameLogic
         return false;
     }
 
+    /**
+     * Get the winner.
+     * 
+     * @param array $players The players.
+     * 
+     * @return PlayerInterface The winner.
+     */
     public function getWinner(array $players): PlayerInterface
     {
         if ($this->isWinnerByFold($players)) {
@@ -88,6 +135,13 @@ class GameLogic
         return $this->getWinnerByHand($players);
     }
 
+    /**
+     * Check if the winner is by fold.
+     * 
+     * @param array $players The players.
+     * 
+     * @return bool If the winner is by fold.
+     */
     public function isWinnerByFold(array $players): bool
     {
         if ($this->getNumberOfFoldedPlayers($players) >= count($players) - 1) {
@@ -97,6 +151,13 @@ class GameLogic
         return false;
     }
 
+    /**
+     * Get the winner by fold.
+     * 
+     * @param array $players The players.
+     * 
+     * @return PlayerInterface The winner.
+     */
     public function getWinnerByFold(array $players): PlayerInterface
     {
         $winner = null;
@@ -112,6 +173,13 @@ class GameLogic
         return $winner;
     }
 
+    /**
+     * Get the winner by hand.
+     * 
+     * @param array $players The players.
+     * 
+     * @return PlayerInterface The winner.
+     */
     public function getWinnerByHand(array $players): PlayerInterface
     {
         $count = count($players);
@@ -131,6 +199,13 @@ class GameLogic
         return $winner;
     }
 
+    /**
+     * Check if the game is tied.
+     * 
+     * @param array $players The players.
+     * 
+     * @return bool If the game is tied.
+     */
     public function isTied(array $players): bool
     {
         $handValues = [];
@@ -143,11 +218,7 @@ class GameLogic
             array_push($handValues, $player->getHandValue());
         }
 
-        error_log("handValues: " . implode(", ", $handValues));
-
         $uniqueHandValues = array_unique($handValues);
-
-        error_log("handValues: " . implode(", ", $uniqueHandValues));
 
         if (count($uniqueHandValues) !== 1) {
 
@@ -157,6 +228,13 @@ class GameLogic
         return true;
     }
 
+    /**
+     * Get the tied winners.
+     * 
+     * @param array $players The players.
+     * 
+     * @return array The tied winners.
+     */
     public function getTiedWinners(array $players): array
     {
         $winners = [];

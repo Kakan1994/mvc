@@ -150,6 +150,13 @@ class CardHandsHelper
         return $this->faceValuesToNumeric($values);
     }
 
+    /**
+     * Get the numeric values of cards in a hand with ace low.
+     * 
+     * @param CardHand $hand The hand.
+     * 
+     * @return array Numeric values of the cards.
+     */
     public function getCardNumericValuesAceLow(CardHand $hand): array
     {
         $values = array_map(function ($card) {

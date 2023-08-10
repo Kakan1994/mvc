@@ -83,7 +83,6 @@ class SteveTurnController extends AbstractController
 
         if (!empty($playerCards)) {
             foreach ($playerCards as $card) {
-                // error_log("card: " . $card);
                 $allCards->addCard($card);
             }
         }
@@ -98,12 +97,6 @@ class SteveTurnController extends AbstractController
 
         $playersTurn->setBest5CardHand($allCards);
         $playersTurn->setBest5CardHandArray();
-
-        // error_log("Steve's best hand: ");
-        // foreach ($playersTurn->getBest5CardHandArray() as $card) {
-        //     error_log($card);
-        // }
-        // error_log("Steve's best hand name: " . $playersTurn->getBestHandName());
 
         $game->dequePlayer();
         $game->enquePlayer($playersTurn);

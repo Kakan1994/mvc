@@ -29,7 +29,7 @@ class ProjRiverController extends AbstractController
             return $this->redirectToRoute('proj_start_end_turn');
         }
 
-        $playerQueue = $game->getPLayerQue();
+        $playerQueue = $game->getQue();
 
         $playersTurn = $game->getFirstPlayer();
 

@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2023-08-01 12:16:18        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2023-08-10 16:41:57        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -93,7 +93,7 @@
                             <path d="M0 0h24v24H0z" fill="none">
                             <path d="M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z">
                         </svg>
-                        Violations (4)
+                        Violations (17)
                     </a>
                 </li>
                                     <li>
@@ -317,25 +317,72 @@
         "relations": []
     },
     {
-        "name": "\\App\\Project\\Player",
+        "name": "\\App\\Project\\GameLogic",
         "size": 3000,
-        "relations": [
-            "\\App\\Cards\\CardHand",
-            "\\App\\Cards\\Card"
-        ]
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\PlayerInterface",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\NPCLogic",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\ProjectPlayer",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\PlayerActions",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\PreFlop",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\GameState",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\NPCMatt",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\GameData",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\GameQueue",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Exception",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\CalculateValue",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\Project\\NPCSteve",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "\\App\\Project\\ProjectGame",
-        "size": 3000,
-        "relations": [
-            "\\App\\Project\\ListOfPlayers",
-            "\\App\\Cards\\DeckOfCards",
-            "\\App\\Project\\CardHands",
-            "\\App\\Cards\\CardHand"
-        ]
-    },
-    {
-        "name": "\\App\\Project\\ListOfPlayers",
         "size": 3000,
         "relations": []
     },
@@ -393,14 +440,13 @@
         "relations": []
     },
     {
-        "name": "\\App\\Controller\\GameController",
+        "name": "\\App\\Controller\\ProjFlopController",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\Symfony\\Component\\Routing\\Annotation\\Route",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Game\\Game"
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
         ]
     },
     {
@@ -414,14 +460,44 @@
         "relations": []
     },
     {
+        "name": "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\Symfony\\Component\\Routing\\Annotation\\Route",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+        "name": "\\App\\Controller\\ProjectCreatePlayersController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Project\\ProjectPlayer",
+            "\\App\\Project\\NPCMatt",
+            "\\App\\Project\\NPCSteve",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
+        ]
+    },
+    {
+        "name": "\\Symfony\\Component\\HttpFoundation\\Request",
         "size": 3000,
         "relations": []
+    },
+    {
+        "name": "\\App\\Controller\\GameController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Game\\Game"
+        ]
     },
     {
         "name": "\\App\\Game\\Game",
@@ -432,6 +508,98 @@
             "\\App\\Cards\\DeckOfCards",
             "\\App\\Game\\GameScore",
             "\\App\\Game\\GameException"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\PlayerFoldController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\ProjRiverController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\SteveTurnController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Project\\PreFlop",
+            "\\App\\Cards\\CardHand",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\PlayerCheckController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\ProjectCreateGameController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Project\\GameLogic",
+            "\\App\\Project\\CardHands",
+            "\\App\\Project\\GameData",
+            "\\App\\Project\\GameQueue",
+            "\\App\\Project\\GameState",
+            "\\App\\Cards\\DeckOfCards",
+            "\\App\\Project\\ProjectGame",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\ProjectNPCPlayController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\PlayerRaiseController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\ProjectRoundController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
         ]
     },
     {
@@ -447,9 +615,14 @@
         ]
     },
     {
-        "name": "\\Symfony\\Component\\HttpFoundation\\Request",
+        "name": "\\App\\Controller\\ProjStartFlopController",
         "size": 3000,
-        "relations": []
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
+        ]
     },
     {
         "name": "\\App\\Controller\\CardController",
@@ -527,21 +700,110 @@
         ]
     },
     {
+        "name": "\\App\\Controller\\ProjStartEndTurnController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\ProjectPreFlopController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\MattTurnController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Cards\\CardHand",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\ProjEndTurnController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Cards\\CardHand",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\PlayerCallController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\ProjTurnController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\ProjStartRiverController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\ProjStartTurnController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\ProjectController",
         "size": 3000,
         "relations": [
             "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
             "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\Routing\\Annotation\\Route",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\ProjectGameInitController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\Symfony\\Component\\Routing\\Annotation\\Route"
         ]
     },
     {
         "name": "\\App\\Game\\GameException",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Exception",
         "size": 3000,
         "relations": []
     },

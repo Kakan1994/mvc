@@ -249,8 +249,6 @@ class CardHands
     /**
      * @param CardHand $hand The hand to check.
      * @return CardHand The best straight in the hand.
-     * @return array The higest 3 of a kind in the hand
-     * @return Card The highest card in the hand.
      */
     public function checkStraight(CardHand $hand): CardHand
     {
